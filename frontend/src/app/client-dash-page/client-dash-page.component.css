@@ -1,0 +1,92 @@
+.clientDash {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+    padding-top: 5%;
+    background-color: #041C32;
+    --boxes-color: #04293A;
+    --text-color: #ffff;
+    overflow-y: auto;
+    color: var(--text-color);
+}
+
+.clientDash .boxes {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clientDash .boxes .box {
+    transition: .5s;
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: var(--boxes-color);
+    border-radius: 25px;
+}
+
+.clientDash .boxes .box h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.clientDash .boxes .box .grafico {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.clientDash .boxes .box:hover {
+    transform: scale(1.06);
+    transition: .5s;
+}
+
+.clientDash a {
+    text-decoration: 0;
+    color: var(--text-color);
+}
+
+#vendidos {
+    margin-top: 50px;
+    background-color: var(--boxes-color);
+    border-radius: 20px;
+    width: 49%;
+    padding: 20px;
+    height: 400px;
+}
+
+.comprados {
+    transition: .5s;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: var(--boxes-color);
+    border-radius: 20px;
+    width: 49%;
+    height: 400px;
+}
+
+#pontos {
+    padding: 20px;
+    margin-top: 50px;
+    background-color: var(--boxes-color);
+    border-radius: 20px;
+    width: 100%;
+    height: 400px;
+}
+
+.flex {
+    display: flex;
+    height: max-content;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
