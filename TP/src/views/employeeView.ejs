@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<meta charset="UTF-8" />
+<title>Employees</title>
+
+<% function renderEmployee(employee) { %>
+    <li>
+        <%= employee.name %>
+        <ul>
+            <li>
+                <p>ID: <%= employee.id %> </p>
+            </li>
+            <li>
+                <p>Telemovel: <%= employee.phone_number %> </p>
+            </li>
+            <li>
+                <p>Roule: <%= employee.roule.description %> </p>
+            </li>
+        </ul>
+    </li>
+<% } %> 
+
+<ul>
+    <%= employees.map(employee => renderEmployee(employee)) %>
+</ul>
+</html>

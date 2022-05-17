@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8" />
+<title>Clients</title>
+
+<% function renderClient(client) { %>
+    <li>
+        <%= client.name %>
+            <ul>
+                <li>
+                    <p>ID: <%= client.id %>
+                    </p>
+                </li>
+                <li>
+                    <p>ID: <%= client.id %>
+                    </p>
+                </li>
+                <li>
+                    <p>Telemovel: <%= client.phone_number %>
+                    </p>
+                </li>
+                <li>
+                    <p>Total de pontos: <%= client.accounts?.points %></p>
+                </li>
+            </ul>
+    </li>
+<% } %>
+
+        <ul>
+            <%= clients.map(client => renderClient(client)) %>
+        </ul>
+
+</html>

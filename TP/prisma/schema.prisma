@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Books {
+  id            String            @id @default(auto()) @map("_id") @db.ObjectId
+  employee_id   String
+  employee      Employees         @relation(fields: [employee_id], references: [id])
+  purchases     Purchases_Books[]
+  title         String
+  author        String
+  bar_code      String            @unique
+  state         String
+  price         Float
+  isbn          String
+  units_stock   Int
+  registered_at DateTime          @default(now())
+}
+
+model User {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  clients   Clients?
+  employees Employees?
+  email     String     @unique
+  password  String
+}
+
+model Employees {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  user_id      String?     @unique @db.ObjectId
+  user         User?       @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  roule_id     String?     @db.ObjectId
+  roule        Roules?     @relation(fields: [roule_id], references: [id])
+  name         String
+  clients      Clients[]
+  books        Books[]
+  purchases    Purchases[]
+  phone_number Int
+  created_at   DateTime    @default(now())
+}
+
+model Clients {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  employee_id  String?     @db.ObjectId
+  employee     Employees?  @relation(fields: [employee_id], references: [id])
+  user_id      String?     @db.ObjectId
+  user         User?       @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  name         String
+  purchases    Purchases[]
+  accounts     Accounts?
+  phone_number Int
+  created_at   DateTime    @default(now())
+}
+
+model Purchases {
+  id                String            @id @default(auto()) @map("_id") @db.ObjectId
+  employee_id       String?
+  client_id         String            @db.ObjectId
+  books             Purchases_Books[]
+  employee          Employees?        @relation(fields: [employee_id], references: [id])
+  client            Clients           @relation(fields: [client_id], references: [id])
+  nif               Int
+  total_price       Float
+  acumulated_points Int
+  created_at        DateTime          @default(now())
+}
+
+model Purchases_Books {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  purchase_id String    @db.ObjectId
+  book_id     String    @db.ObjectId
+  purchase    Purchases @relation(fields: [purchase_id], references: [id])
+  book        Books     @relation(fields: [book_id], references: [id])
+}
+
+model Accounts {
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  client_id            String   @unique @db.ObjectId
+  client               Clients  @relation(fields: [client_id], references: [id], onDelete: Cascade)
+  points               Int
+  transfer_description String
+  created_at           DateTime @default(now())
+}
+
+model Roules {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  employees   Employees[]
+  description String
+}
