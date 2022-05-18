@@ -1,0 +1,165 @@
+.selling {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.selling .filter {
+    position: relative;
+    width: 25%;
+    background-color: var(--boxes-color);
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid var(--roxo);
+    padding: 20px;
+}
+
+.selling .filter input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border: 3px solid var(--border-color);
+    border-radius: 18px;
+    background-color: transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
+    transition: .5s;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.selling h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.selling .filter h3 {
+    margin-bottom: 5px;
+}
+
+.selling .filter .dropDown {
+    transition: .5s;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    height: auto;
+    border: 3px solid var(--border-color);
+    border-radius: 18px;
+    background-color: transparent;
+    color: var(--border-color);
+    transition: .5s;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.selling .filter .dropDown .space {
+    flex: 1;
+}
+
+.selling .filter .dropDown .placeHolder {
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.selling .filter .dropDown .placeHolder h3 {
+    transition: .5s;
+    margin-bottom: 0;
+}
+
+.selling .filter .dropDown:hover .placeHolder h3 {
+    transition: .5s;
+    color: var(--roxo);
+}
+
+.selling .filter .dropDown:hover {
+    cursor: pointer;
+    border: 3px solid var(--roxo);
+}
+
+.selling .filter .dropDown .droped {
+    transition: .5s;
+    position: relative;
+    width: inherit;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.selling .filter .dropDown .droped.inactive {
+    transition: .5s;
+    height: 0;
+    position: absolute;
+}
+
+.selling .filter .dropDown .droped.inactive a {
+    display: none;
+}
+
+.selling .filter .dropDown .droped a {
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: rgba(227, 227, 227, 0.65);
+    overflow: hidden;
+}
+
+.selling .filter .dropDown .svgDropDown {
+    height: 30px;
+    width: 30px;
+    stroke: var(--border-color);
+}
+
+.selling .filter .dropDown:hover .svgDropDown {
+    cursor: pointer;
+    stroke: var(--roxo);
+}
+
+.selling .filter .dropDown .svgDropDown:hover {
+    cursor: pointer;
+    stroke: var(--roxo);
+}
+
+.selling .filter input:focus {
+    transition: .5s;
+    border: 3px solid var(--roxo);
+}
+
+.selling .filter input::placeholder {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.selling .library {
+    width: 73%;
+    max-height: 88vh;
+    height: auto;
+    min-height: 20vh;
+    background-color: var(--boxes-color);
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
