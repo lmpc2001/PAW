@@ -1,1 +1,58 @@
-<p>market-place works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="marketPlace">
+    <div class="filter">
+        <h1>Filtros</h1>
+        <h3>Nome do livro:</h3>
+        <input type="text" placeholder="Nome">
+        <h3>ISBN do livro:</h3>
+        <input type="text" placeholder="ISBN">
+        <h3>Valor minimo:</h3>
+        <input type="number" placeholder="Valor minimo">
+        <h3>Valor maximo:</h3>
+        <input type="number" placeholder="Valor maximo">
+        <h3>Autor do livro:</h3>
+        <div class="dropDown">
+            <div class="placeHolder">
+                <h3>Autor</h3>
+                <div class="space"></div>
+                <svg class="svgDropDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <polyline points="5 9 12 16 19 9" fill="none"  stroke-miterlimit="10"/>
+                </svg>
+            </div>
+            <div class="droped inactive">
+                <a href="">José Antonio Pinto</a>
+                <a href="">José Antonio Pinto</a>
+                <a href="">José Antonio Pinto</a>
+                <a href="">José Antonio Pinto</a>
+                <a href="">José Antonio Pinto</a>
+                <a href="">José Antonio Pinto</a>
+                <a href="">José Antonio Pinto</a>
+
+            </div>
+        </div>
+
+        <div class="flex">
+            <h3>Usados</h3>
+            <div class="checkbox">
+                <input type="checkbox" value="1" id="checkboxOneInput" />
+                <label for="checkboxOneInput"></label>
+            </div>
+        </div>
+
+        <div class="flex">
+            <h3>Novos</h3>
+            <div class="checkbox">
+                <input type="checkbox" value="1" id="checkboxTwoInput" />
+                <label for="checkboxTwoInput"></label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="library">
+        <h1>Livros</h1>
+
+    </div>
+</div>
