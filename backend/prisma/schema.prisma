@@ -11,6 +11,7 @@ model Books {
   id            String            @id @default(auto()) @map("_id") @db.ObjectId
   employee_id   String
   employee      Employees         @relation(fields: [employee_id], references: [id])
+  user_id       String
   purchases     Purchases_Books[]
   title         String
   author        String
