@@ -10,6 +10,8 @@ import { AdminDashPageComponent } from './admin-dash-page/admin-dash-page.compon
 import { ClientDashPageComponent } from './client-dash-page/client-dash-page.component';
 import { SellingPageComponent } from './selling-page/selling-page.component';
 import { MarketPlaceComponent } from './market-place/market-place.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { GlobalServicesService } from './services/global-services.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,15 @@ import { MarketPlaceComponent } from './market-place/market-place.component';
     AdminDashPageComponent,
     ClientDashPageComponent,
     SellingPageComponent,
-    MarketPlaceComponent
+    MarketPlaceComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [GlobalServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
