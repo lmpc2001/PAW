@@ -12,6 +12,7 @@ import { SellingPageComponent } from './selling-page/selling-page.component';
 import { MarketPlaceComponent } from './market-place/market-place.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { GlobalServicesService } from './services/global-services.service';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { GlobalServicesService } from './services/global-services.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgApexchartsModule,
   ],
   providers: [GlobalServicesService],
   bootstrap: [AppComponent]
