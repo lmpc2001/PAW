@@ -9,7 +9,7 @@ function checkRoule(ruleRequired) {
             return response.status(403).send({ error: 'Sem permissão para executar a operação solicitada' });
         }
 
-        return next();
+        next();
     }
 }
 

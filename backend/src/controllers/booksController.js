@@ -17,13 +17,17 @@ module.exports = {
 
     async search(request, response, next) {
         try {
-            const { author, title, isbn } = request.body;
-            
+            const { author, title, isbn, minimun, maximun } = request.body;
+
             const books = await prisma.books.findMany({
                 where: {
                     author: author != null ? author : undefined,
                     title: title != null ? title : undefined,
                     isbn: isbn != null ? isbn : undefined,
+                    price: (minimun & maximun != null) ? {
+                        gt: minimun,
+                        lt: maximun
+                    } : undefined
                 }
             });
 
@@ -40,7 +44,7 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { employee_id,
+            let { employee_id,
                 title,
                 author,
                 bar_code,
@@ -49,10 +53,17 @@ module.exports = {
                 isbn,
                 state } = request.body;
 
+            const requestImage = request.file;
+
+            const coverImage = requestImage.filename;
+
+            units_stock = Number(units_stock);
+            price = Number(price);
+
             await prisma.books.create({
                 data: {
-                    employee:{
-                        connect:{
+                    employee: {
+                        connect: {
                             id: employee_id
                         }
                     },
@@ -62,7 +73,8 @@ module.exports = {
                     bar_code,
                     isbn,
                     price,
-                    state
+                    state,
+                    coverImage
                 }
             })
 
@@ -79,7 +91,8 @@ module.exports = {
                 author,
                 bar_code,
                 price,
-                state } = request.body;
+                state,
+                coverImage } = request.body;
 
             const book = await prisma.books.findUnique({
                 where: {
@@ -100,7 +113,8 @@ module.exports = {
                     author,
                     bar_code,
                     price,
-                    state
+                    state,
+                    coverImage
                 }
             })
 

@@ -20,6 +20,7 @@ model Books {
   price         Float
   isbn          String
   units_stock   Int
+  coverImage    String
   registered_at DateTime          @default(now())
 }
 
@@ -49,7 +50,7 @@ model Clients {
   id           String      @id @default(auto()) @map("_id") @db.ObjectId
   employee_id  String?     @db.ObjectId
   employee     Employees?  @relation(fields: [employee_id], references: [id])
-  user_id      String?     @db.ObjectId
+  user_id      String?     @db.ObjectId @unique
   user         User?       @relation(fields: [user_id], references: [id], onDelete: Cascade)
   name         String
   purchases    Purchases[]

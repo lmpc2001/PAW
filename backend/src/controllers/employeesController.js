@@ -1,4 +1,4 @@
-const sha256 = require('crypto-js/sha256');
+const { SHA256 } = require('crypto-js');
 const { prisma } = require('../database/connection');
 
 module.exports = {
@@ -48,6 +48,7 @@ module.exports = {
         try {
             const { name, email, password, phone_number } = request.body;
 
+
             await prisma.user.create({
                 data: {
                     employees: {
@@ -62,7 +63,7 @@ module.exports = {
                         },
                     },
                     email,
-                    password: sha256.encrypt(password).toString()
+                    password: SHA256(password).toString()
                 }
             })
 
@@ -90,7 +91,7 @@ module.exports = {
                         },
                     },
                     email,
-                    password
+                    password: SHA256(password).toString()
                 }
             })
 
@@ -138,9 +139,9 @@ module.exports = {
                 where: {
                     id
                 },
-                select:{
-                    user:true
-                } 
+                select: {
+                    user: true
+                }
             })
 
             if (!employee) {

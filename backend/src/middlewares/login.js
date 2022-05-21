@@ -1,5 +1,9 @@
-const jwt = require('jsonwebtoken');
 const express = require('express');
+const {AES, enc} = require('crypto-js');
+const jwt = require('jsonwebtoken');
+const fs = require('fs');
+const path = require('path');
+const publicKey = fs.readFileSync(path.join(__dirname, '../keys', 'publicKey.pem'));
 
 module.exports = (request, response, next) => {
     const headerAuth = request.headers.authorization;
@@ -19,17 +23,20 @@ module.exports = (request, response, next) => {
     if (!/^Bearer$/i.test(prefix)) {
         return response.status(401).send({ error: 'Formato de token inválido' });
     }
+
     
-    jwt.verify(token, "private_key", (error, decoded) => {
+    jwt.verify(AES.decrypt(token, `${process.env.SECRET}`).toString(enc.Utf8), publicKey, (error, decoded) => {
+
         if (error) {
             return response.status(403).send({ error: 'Token inválido' });
         }
+
         
-        decoded.client_id != undefined && (request.body.client_id = decoded.client_id) 
-        request.body.employee_id = decoded.employee_id;
-        request.body.employee_rule = decoded.roule.description;
+        // decoded.client_id != undefined && (request.body.client_id = decoded.client_id) 
+        request.body.user_id = decoded.user_id;
+        request.body.employee_id = decoded.id;
+        request.body.employee_rule = decoded.roule?.description;
         
-        console.log(request.body)
-        return next();
+        next();
     })
 }
