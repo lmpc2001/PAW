@@ -9,7 +9,7 @@
 .adminDash .boxes .box {
     transition: .5s;
     width: 400px;
-    height: 250px;
+    height: auto;
     padding: 10px;
     padding-top: 20px;
     background-color: var(--boxes-color);
@@ -50,7 +50,7 @@
     background-color: var(--boxes-color);
     border-radius: 20px;
     width: 49%;
-    height: 400px;
+    height: auto;
     border: 3px solid var(--boxes-color);
 }
 
@@ -66,8 +66,9 @@
     background-color: var(--boxes-color);
     border-radius: 20px;
     width: 100%;
-    height: 400px;
+    height: auto;
     border: 3px solid var(--boxes-color);
+    margin-bottom: 3%;
 }
 
 .adminDash .pontos:hover {

@@ -4,32 +4,29 @@
 
     <div class="boxes">
         <div class="box">
-            <h1>Vendidos</h1>
-            <div class="grafico">
-                10
-            </div>
+            <apx-chart [series]="pontos.series!" [chart]="pontos.chart!" [xaxis]="pontos.xaxis!" [dataLabels]="pontos.dataLabels!" [stroke]="pontos.stroke!" [title]="pontos.title!"></apx-chart>
         </div>
         <div class="box">
-            <h1>Comprados</h1>
-            <div class="grafico">
-                10
-            </div>
+            <apx-chart [series]="vendidos.series!" [chart]="vendidos.chart!" [xaxis]="vendidos.xaxis!" [dataLabels]="vendidos.dataLabels!" [stroke]="vendidos.stroke!" [title]="vendidos.title!"></apx-chart>
         </div>
         <div class="box">
-            <h1>Pontos</h1>
-            <div class="grafico">
-                10
-            </div>
+            <apx-chart [series]="comprados.series!" [chart]="comprados.chart!" [xaxis]="comprados.xaxis!" [dataLabels]="comprados.dataLabels!" [stroke]="comprados.stroke!" [title]="comprados.title!"></apx-chart>
         </div>
     </div>
 
     <div class="flex">
         <div class="boxMedia">
             <h1>Vendidos</h1>
+            <div #chart>
+                <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!" [dataLabels]="chartOptions.dataLabels!"></apx-chart>
+            </div>
         </div>
 
         <div class="boxMedia">
             <h1>Comprados</h1>
+            <div #chart>
+                <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!" [dataLabels]="chartOptions.dataLabels!"></apx-chart>
+            </div>
 
         </div>
 
@@ -37,6 +34,8 @@
 
     <div class="pontos">
         <h1>Pontos</h1>
-
+        <div #chart>
+            <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!" [dataLabels]="chartOptions.dataLabels!"></apx-chart>
+        </div>
     </div>
 </div>
