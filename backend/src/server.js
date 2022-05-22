@@ -4,7 +4,7 @@ const routes = require('./routes/index');
 const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
-const { connectToCluster } = require('./database/connection')
+const { connectToCluster } = require('./database/connection');
 
 
 const PORT = process.env.PORT || 3333;
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..', 'uploads')));
 app.use(routes);
 

@@ -26,7 +26,6 @@ module.exports = (request, response, next) => {
 
     
     jwt.verify(AES.decrypt(token, `${process.env.SECRET}`).toString(enc.Utf8), publicKey, (error, decoded) => {
-
         if (error) {
             return response.status(403).send({ error: 'Token inválido' });
         }
