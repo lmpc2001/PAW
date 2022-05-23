@@ -8,7 +8,7 @@ import { RegistroPageComponent } from './registro-page/registro-page.component';
 import { SellingPageComponent } from './selling-page/selling-page.component';
 
 const routes: Routes = [
-  {path: 'Login', component: LoginPageComponent},
+  {path: '', component: LoginPageComponent},
   {path: 'Registo', component: RegistroPageComponent},
   {path: 'ClientDash', component: ClientDashPageComponent},
   {path: 'AdminDash', component: AdminDashPageComponent},
