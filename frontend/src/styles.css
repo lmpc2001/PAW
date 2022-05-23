@@ -43,3 +43,8 @@ body.white {
     --boxes-color: rgb(238, 238, 238);
     --text-color: black;
 }
+
+.apexcharts-tooltip {
+    background: var(--background-primary);
+    color: var(--text-color);
+}
