@@ -9,7 +9,6 @@ import {
   ApexTooltip,
   ApexStroke,
   ApexTitleSubtitle,
-  ApexGrid,
   ApexFill,
 } from 'ng-apexcharts'
 
@@ -36,21 +35,13 @@ export class AdminDashPageComponent implements OnInit {
   public fidelizacoes: Partial<ChartOptions>
   public vendidos: Partial<ChartOptions>
   public comprados: Partial<ChartOptions>
-
-  
+  public boxes: Partial<ChartOptions>
+  public vendidosGraph: Partial<ChartOptions>
+  public compradosGraph: Partial<ChartOptions>
+  public pontosGraph: Partial<ChartOptions>
 
   constructor() {
     this.chartOptions = {
-      series: [
-        {
-          name: 'Pontos',
-          data: [0, 40, 50 , 51, 42, 109, 100],
-        },
-        {
-          name: 'Vendidos',
-          data: [51, 15, 45, 32, 60, 52, 41],
-        }
-      ],
       chart: {
         height: 350,
         type: 'area',
@@ -74,19 +65,53 @@ export class AdminDashPageComponent implements OnInit {
         ],
       },
       tooltip: {
+        theme: "black",
         x: {
           format: 'dd/MM/yy HH:mm',
         },
-      }
+      },
     }
 
-    this.users = {
+    this.vendidosGraph = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Unidades',
+          data: [0, 40, 10 , 6, 2, 65, 52],
         },
-      ],
+        {
+          name: 'Ganhos',
+          data: [0, 80, 24, 41, 3, 100, 60],
+        }
+      ]
+    }
+
+    this.compradosGraph = {
+      series: [
+        {
+          name: 'Unidades',
+          data: [0, 10, 8 , 0, 71, 9, 42],
+        },
+        {
+          name: 'Comprados',
+          data: [0, 5, 12, 0, 5, 20, 80],
+        }
+      ]
+    }
+
+    this.pontosGraph = {
+      series: [
+        {
+          name: 'Ganhos',
+          data: [0, 40, 50 , 51, 42, 109, 100],
+        },
+        {
+          name: 'Gastos',
+          data: [51, 15, 45, 32, 60, 52, 41],
+        }
+      ]
+    }
+
+    this.boxes = {
       chart: {
         height: 150,
         type: 'line',
@@ -103,6 +128,28 @@ export class AdminDashPageComponent implements OnInit {
       stroke: {
         curve: 'smooth',
       },
+      tooltip: {theme: "black"},
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '2018-09-19T00:00:00.000Z',
+          '2018-09-19T01:30:00.000Z',
+          '2018-09-19T02:30:00.000Z',
+          '2018-09-19T03:30:00.000Z',
+          '2018-09-19T04:30:00.000Z',
+          '2018-09-19T05:30:00.000Z',
+          '2018-09-19T06:30:00.000Z',
+        ],
+      }
+    }
+
+    this.users = {
+      series: [
+        {
+          name: 'Users',
+          data: [10, 41, 35, 51, 49, 62, 69],
+        }
+      ],
       title: {
         text: 'Users',
         offsetX: 30,
@@ -110,32 +157,16 @@ export class AdminDashPageComponent implements OnInit {
           fontSize: '30px',
           color: '#fff',
         },
-      },
+      }      
     }
 
     this.fidelizacoes = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Fidelizacoes',
+          data: [6, 74, 40, 51, 49, 77, 4],
         },
       ],
-      chart: {
-        height: 150,
-        type: 'line',
-        zoom: {
-          enabled: false,
-        },
-        sparkline: {
-          enabled: true,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
       title: {
         text: 'Fidelizações',
         offsetX: 30,
@@ -143,32 +174,16 @@ export class AdminDashPageComponent implements OnInit {
           fontSize: '30px',
           color: '#fff',
         },
-      },
+      }
     }
 
     this.vendidos = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Vendidos',
+          data: [5, 69, 35, 32, 49, 62, 86],
         },
       ],
-      chart: {
-        height: 150,
-        type: 'line',
-        zoom: {
-          enabled: false,
-        },
-        sparkline: {
-          enabled: true,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
       title: {
         text: 'Vendidos',
         offsetX: 30,
@@ -176,32 +191,16 @@ export class AdminDashPageComponent implements OnInit {
           fontSize: '30px',
           color: '#fff',
         },
-      },
+      }
     }
 
     this.comprados = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Comprados',
+          data: [10, 0, 12, 51, 35, 9, 63],
         },
       ],
-      chart: {
-        height: 150,
-        type: 'line',
-        zoom: {
-          enabled: false,
-        },
-        sparkline: {
-          enabled: true,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
       title: {
         text: 'Comprados',
         offsetX: 30,
@@ -209,7 +208,7 @@ export class AdminDashPageComponent implements OnInit {
           fontSize: '30px',
           color: '#fff',
         },
-      },
+      }
     }
   }
 
