@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component'; 
+import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistroPageComponent } from './registro-page/registro-page.component';
@@ -12,6 +12,7 @@ import { SellingPageComponent } from './selling-page/selling-page.component';
 import { MarketPlaceComponent } from './market-place/market-place.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { RestServiceService } from './services/rest/rest-service.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     BrowserAnimationsModule,
     NgApexchartsModule,
   ],
-  providers: [],
+  providers: [RestServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Book } from '../services/rest/models/book';
+import { BookService } from '../services/rest/book/book.service';
 
 @Component({
   selector: 'app-market-place',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./market-place.component.css']
 })
 export class MarketPlaceComponent implements OnInit {
+  book!: Book;
 
-  constructor() { }
+  constructor(public rest:BookService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  getAllBooks(){
+    this.rest.getAllBooks().subscribe((data: any) => {
+    this.book = data;
+    })
+  }
+
+  getBookByISBN(){
+    var filter = this.route.snapshot.params['isbn'];
+    this.rest.getBook(filter).subscribe((data: any) => {
+    this.book = data;
+    })
+  }
 }
