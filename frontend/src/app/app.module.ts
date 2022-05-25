@@ -13,6 +13,8 @@ import { MarketPlaceComponent } from './market-place/market-place.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { RestServiceService } from './services/rest/rest-service.service';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RestServiceService } from './services/rest/rest-service.service';
     ClientDashPageComponent,
     SellingPageComponent,
     MarketPlaceComponent,
-    NavBarComponent
+    NavBarComponent,
+    BookDetailsComponent,
+    CreateBookComponent
   ],
   imports: [
     BrowserModule,
