@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { GlobalServicesService } from '../services/global-services.service';
 
 interface linkProps {
   name: string
@@ -13,7 +12,7 @@ interface linkProps {
 })
 
 export class NavBarComponent implements OnInit {
-  constructor(public GlobalServicesService:GlobalServicesService) {}
+  constructor() {}
 
   link1: linkProps = {
     name: 'DashBoard',
@@ -28,18 +27,6 @@ export class NavBarComponent implements OnInit {
   link3: linkProps = {
     name: 'Market Place',
     to: '/MarketPlace',
-  }
-
-  chagePage(page:string) {
-    console.log("ChangePage");
-    this.GlobalServicesService.setPage(page);
-  }
-
-  getClass(name:string){
-    if (name == this.GlobalServicesService.getPage()){ 
-      return "linksNav active"
-    }
-    return "linksNav "
   }
 
   ngOnInit(): void {}
