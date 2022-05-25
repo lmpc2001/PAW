@@ -4,30 +4,28 @@
 <meta charset="UTF-8" />
 <title>Books</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body { padding-top:50px; }
+</style>
+
 <% function renderBook(book) { %>
     <li>
-        <%= book.title %>
+        <strong><%= book.title %></strong>
         <ul>
             <li>
                 <p>ID: <%= book.id %> </p>
-            </li>
-            <li>
                 <p>Author: <%= book.author %> </p>
-            </li>
-            <li>
                 <p>Bar Code: <%= book.bar_code %> </p>
-            </li>
-            <li>
                 <p>Price: <%= book.price %> </p>
-            </li>
-            <li>
                 <p>State: <%= book.state %> </p>
+                <img src="<%= book.coverImage %>" alt="Image Cover" />
             </li>
         </ul>
     </li>
 <% } %> 
 
 <ul>
-    <%= books.map(book => renderBook(book)) %>
+    <%= books.forEach(book => renderBook(book))%>
 </ul>
 </html>

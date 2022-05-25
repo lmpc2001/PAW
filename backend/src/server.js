@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '..', 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 app.use(routes);
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))

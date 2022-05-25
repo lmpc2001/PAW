@@ -3,11 +3,14 @@ const { prisma } = require('../database/connection');
 module.exports = {
     async index(request, response, next) {
         try {
-            const books = await prisma.books.findMany();
+            let books = await prisma.books.findMany();
 
             if (!books) {
                 return response.status(404).send("No books have yet been added to the platform!");
-            }
+            }            
+            books.map(book => {
+                book.coverImage = `http://localhost:3333/uploads/${book.coverImage}`;
+            })
 
             return response.status(200).render('bookView', { books })
         } catch (error) {
