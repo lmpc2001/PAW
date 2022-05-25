@@ -11,7 +11,6 @@ import { ClientDashPageComponent } from './client-dash-page/client-dash-page.com
 import { SellingPageComponent } from './selling-page/selling-page.component';
 import { MarketPlaceComponent } from './market-place/market-place.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { GlobalServicesService } from './services/global-services.service';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
@@ -31,7 +30,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     BrowserAnimationsModule,
     NgApexchartsModule,
   ],
-  providers: [GlobalServicesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
