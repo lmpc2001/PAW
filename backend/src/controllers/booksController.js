@@ -44,8 +44,8 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            let { employee_id,
-                title,
+            let { employee_id, user_id } = request;
+            let {  title,
                 author,
                 bar_code,
                 price,
@@ -57,6 +57,8 @@ module.exports = {
 
             const coverImage = requestImage.filename;
 
+            console.log(units_stock)
+
             units_stock = Number(units_stock);
             price = Number(price);
 
@@ -67,6 +69,7 @@ module.exports = {
                             id: employee_id
                         }
                     },
+                    user_id,
                     units_stock,
                     title,
                     author,

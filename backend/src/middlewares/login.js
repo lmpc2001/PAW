@@ -32,10 +32,9 @@ module.exports = (request, response, next) => {
 
         
         // decoded.client_id != undefined && (request.body.client_id = decoded.client_id) 
-        request.body.user_id = decoded.user_id;
-        request.body.employee_id = decoded.id;
-        request.body.employee_rule = decoded.roule?.description;
-        
+        request.user_id = decoded.user_id;
+        request.employee_id = decoded.id;
+        request.employee_rule = decoded.roule?.description;
         next();
     })
 }
