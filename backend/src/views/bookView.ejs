@@ -1,31 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<meta charset="UTF-8" />
-<title>Books</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
-  body { padding-top:50px; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <% function renderBook(book) { %>
-    <li>
-        <strong><%= book.title %></strong>
-        <ul>
-            <li>
-                <p>ID: <%= book.id %> </p>
-                <p>Author: <%= book.author %> </p>
-                <p>Bar Code: <%= book.bar_code %> </p>
-                <p>Price: <%= book.price %> </p>
-                <p>State: <%= book.state %> </p>
-                <img src="<%= book.coverImage %>" alt="Image Cover" />
-            </li>
-        </ul>
-    </li>
-<% } %> 
+    <div class="container">
+        <div class="imageGallery">
+            <img src="<%= book.coverImage %>"
+                alt="">
+        </div>
+        <div class="productInfo">
+            <h1 id="title-h1">
+                <%= book.title %>
+            </h1>
+            <h3 id="productPageRightSectionTop-authors-h3">
+                de <p>
+                    <%= book.author %>
+                </p>&nbsp;
+            </h3>
 
-<ul>
-    <%= books.forEach(book => renderBook(book))%>
-</ul>
+            <div class="aditional-info">
+                <span class="title">editor: </span>
+                <span class="text">
+                    <%= book.publisher %>
+                        Manuscrito Editora, junho de 2022
+                </span>
+                <span>&nbsp;‧&nbsp;</span>
+
+
+                <span class="title">ISBN:</span>
+                <span class="text">
+                    <%= book.isbn %>
+                </span>
+                <span>&nbsp;‧&nbsp;</span>
+
+                <span class="product-details title">ver detalhes do produto</span>
+
+                <div class="rating">
+                    <span class="title">Estrelas:</span>
+                    <div class="stars">
+                        <input type="checkbox" class="star"></input>
+                        <input type="checkbox" class="star"></input>
+                        <input type="checkbox" class="star"></input>
+                        <input type="checkbox" class="star"></input>
+                        <input type="checkbox" class="star"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+        <body>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                body {
+                    width: 100vw;
+                    height: 100vh;
+                    display: flex;
+                }
+
+                .container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 25px;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    background-color: wheat;
+                }
+
+                .productInfo {
+                    margin-left: 50px;
+                    height: 465px;
+                }
+
+                .imageGallery {
+                    width: 310px;
+                    height: 465px;
+                    background-color: aquamarine;
+                }
+
+                .imageGallery img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                h1 {
+                    font-family: BryantProMedium;
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 1;
+                    color: #262626;
+                }
+
+                h3 {
+                    display: flex;
+                    margin-bottom: 15px;
+                }
+
+                h3 p {
+                    margin-left: 10px;
+                }
+
+                .title {
+                    font-weight: 300;
+                    text-transform: lowercase;
+                }
+
+                .text {
+                    font-weight: 500;
+                }
+
+                .rating {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 25px;
+                }
+
+                .stars {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-left: 10px;
+                }
+
+                .star+.star {
+                    margin-left: 5px;
+                }
+            </style>
+            <%= books.forEach(book=> renderBook(book))%>
+        </body>
+
 </html>
