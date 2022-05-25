@@ -82,7 +82,15 @@ export class AdminDashPageComponent implements OnInit {
           name: 'Ganhos',
           data: [0, 80, 24, 41, 3, 100, 60],
         }
-      ]
+      ],
+      title: {
+        text: 'Vendidos',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
+        },
+      }  
     }
 
     this.compradosGraph = {
@@ -95,7 +103,15 @@ export class AdminDashPageComponent implements OnInit {
           name: 'Comprados',
           data: [0, 5, 12, 0, 5, 20, 80],
         }
-      ]
+      ],
+      title: {
+        text: 'Comprados',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
+        },
+      }  
     }
 
     this.pontosGraph = {
@@ -108,13 +124,21 @@ export class AdminDashPageComponent implements OnInit {
           name: 'Gastos',
           data: [51, 15, 45, 32, 60, 52, 41],
         }
-      ]
+      ],
+      title: {
+        text: 'Pontos',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
+        },
+      }  
     }
 
     this.boxes = {
       chart: {
         height: 150,
-        type: 'line',
+        type: 'area',
         zoom: {
           enabled: false,
         },

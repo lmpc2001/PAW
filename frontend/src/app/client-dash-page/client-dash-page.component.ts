@@ -31,23 +31,17 @@ export type ChartOptions = {
 export class ClientDashPageComponent implements OnInit {
   @ViewChild('chart') chart: ChartComponent | undefined
   public chartOptions: Partial<ChartOptions>
-  public pontos: Partial<ChartOptions>
+  public users: Partial<ChartOptions>
+  public fidelizacoes: Partial<ChartOptions>
   public vendidos: Partial<ChartOptions>
   public comprados: Partial<ChartOptions>
+  public boxes: Partial<ChartOptions>
+  public vendidosGraph: Partial<ChartOptions>
+  public compradosGraph: Partial<ChartOptions>
+  public pontosGraph: Partial<ChartOptions>
 
-  constructor() { 
-
+  constructor() {
     this.chartOptions = {
-      series: [
-        {
-          name: 'Pontos',
-          data: [0, 40, 50 , 51, 42, 109, 100],
-        },
-        {
-          name: 'Vendidos',
-          data: [51, 15, 45, 32, 60, 52, 41],
-        }
-      ],
       chart: {
         height: 350,
         type: 'area',
@@ -71,35 +65,66 @@ export class ClientDashPageComponent implements OnInit {
         ],
       },
       tooltip: {
+        theme: "black",
         x: {
           format: 'dd/MM/yy HH:mm',
+        },
+      },
+    }
+
+    this.vendidosGraph = {
+      series: [
+        {
+          name: 'Unidades',
+          data: [0, 40, 10 , 6, 2, 65, 52],
+        },
+        {
+          name: 'Ganhos',
+          data: [0, 80, 24, 41, 3, 100, 60],
+        }
+      ],
+      title: {
+        text: 'Vendidos',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
         },
       }
     }
 
-    this.pontos = {
+    this.compradosGraph = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Unidades',
+          data: [0, 10, 8 , 0, 71, 9, 42],
         },
+        {
+          name: 'Comprados',
+          data: [0, 5, 12, 0, 5, 20, 80],
+        }
       ],
-      chart: {
-        height: 150,
-        type: 'line',
-        zoom: {
-          enabled: false,
+      title: {
+        text: 'Comprados',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
         },
-        sparkline: {
-          enabled: true,
+      }
+    }
+
+    this.pontosGraph = {
+      series: [
+        {
+          name: 'Ganhos',
+          data: [0, 40, 50 , 51, 42, 109, 100],
         },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
+        {
+          name: 'Gastos',
+          data: [51, 15, 45, 32, 60, 52, 41],
+        }
+      ],
       title: {
         text: 'Pontos',
         offsetX: 30,
@@ -107,73 +132,107 @@ export class ClientDashPageComponent implements OnInit {
           fontSize: '30px',
           color: '#fff',
         },
+      }
+    }
+
+    this.boxes = {
+      chart: {
+        height: 150,
+        type: 'area',
+        zoom: {
+          enabled: false,
+        },
+        sparkline: {
+          enabled: true,
+        }
       },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: 'smooth',
+      },
+      tooltip: {theme: "black"},
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '2018-09-19T00:00:00.000Z',
+          '2018-09-19T01:30:00.000Z',
+          '2018-09-19T02:30:00.000Z',
+          '2018-09-19T03:30:00.000Z',
+          '2018-09-19T04:30:00.000Z',
+          '2018-09-19T05:30:00.000Z',
+          '2018-09-19T06:30:00.000Z',
+        ],
+      }
+    }
+
+    this.users = {
+      series: [
+        {
+          name: 'Users',
+          data: [10, 41, 35, 51, 49, 62, 69],
+        }
+      ],
+      title: {
+        text: 'Users',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
+        },
+      }      
+    }
+
+    this.fidelizacoes = {
+      series: [
+        {
+          name: 'Fidelizacoes',
+          data: [6, 74, 40, 51, 49, 77, 4],
+        },
+      ],
+      title: {
+        text: 'Fidelizações',
+        offsetX: 30,
+        style: {
+          fontSize: '30px',
+          color: '#fff',
+        },
+      }
     }
 
     this.vendidos = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Vendidos',
+          data: [5, 69, 35, 32, 49, 62, 86],
         },
       ],
-      chart: {
-        height: 150,
-        type: 'line',
-        zoom: {
-          enabled: false,
-        },
-        sparkline: {
-          enabled: true,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
       title: {
-        text: 'Livros vendidos',
+        text: 'Vendidos',
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      },
+      }
     }
 
     this.comprados = {
       series: [
         {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Comprados',
+          data: [10, 0, 12, 51, 35, 9, 63],
         },
       ],
-      chart: {
-        height: 150,
-        type: 'line',
-        zoom: {
-          enabled: false,
-        },
-        sparkline: {
-          enabled: true,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
       title: {
-        text: 'Livros comprados',
+        text: 'Comprados',
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      },
+      }
     }
   }
 
