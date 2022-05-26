@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar [page]="this.page"></app-nav-bar>
 
 <div class="selling">
     <div class="filter">
@@ -12,41 +12,41 @@
         <h3>Valor maximo:</h3>
         <input type="number" placeholder="Valor maximo" min="0">
         <h3>Clientes:</h3>
-        <div class="dropDown">
+        <div class="dropDown" (click)="changeDropedCliente()">
             <div class="placeHolder">
-                <h3>Cliente</h3>
+                <h3>{{this.client}}</h3>
                 <div class="space"></div>
                 <svg class="svgDropDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <polyline points="5 9 12 16 19 9" fill="none"  stroke-miterlimit="10"/>
                 </svg>
             </div>
-            <div class="droped inactive">
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
+            <div class={{this.dropedCliente}}>
+                <button class="escolha" (click)="changeClientLabel('José Antonio Pinto')" href="">José Antonio Pinto</button>
+                <button class="escolha" (click)="changeClientLabel('José Pinto')" href="">José Pinto</button>
+                <button class="escolha" (click)="changeClientLabel('Gonçalo Pedro')" href="">Gonçalo Pedro</button>
+                <button class="escolha" (click)="changeClientLabel('Luis Pires')" href="">Luis Pires</button>
+                <button class="escolha" (click)="changeClientLabel('Frontend')" href="">Frontend</button>
+                <button class="escolha" (click)="changeClientLabel('BackEnd')" href="">Backend</button>
+                <button class="escolha" (click)="changeClientLabel('DEVOPS')" href="">DEVOPS</button>
             </div>
         </div>
         <h3>Autor:</h3>
-        <div class="dropDown">
+        <div class="dropDown" (click)="changeDropedAutor()">
             <div class="placeHolder">
-                <h3>Autor</h3>
+                <h3>{{this.autorLabel}}</h3>
                 <div class="space"></div>
                 <svg class="svgDropDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <polyline points="5 9 12 16 19 9" fill="none"  stroke-miterlimit="10"/>
                 </svg>
             </div>
-            <div class="droped inactive">
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
-                <a href="">José Antonio Pinto</a>
+            <div class={{this.dropedAutor}}>
+                <button class="escolha" (click)="changeAutorLabel('José Antonio Pinto')" href="">José Antonio Pinto</button>
+                <button class="escolha" (click)="changeAutorLabel('José Pinto')" href="">José Pinto</button>
+                <button class="escolha" (click)="changeAutorLabel('Gonçalo Pedro')" href="">Gonçalo Pedro</button>
+                <button class="escolha" (click)="changeAutorLabel('Luis Pires')" href="">Luis Pires</button>
+                <button class="escolha" (click)="changeAutorLabel('Frontend')" href="">Frontend</button>
+                <button class="escolha" (click)="changeAutorLabel('BackEnd')" href="">Backend</button>
+                <button class="escolha" (click)="changeAutorLabel('DEVOPS')" href="">DEVOPS</button>
             </div>
         </div>
 
