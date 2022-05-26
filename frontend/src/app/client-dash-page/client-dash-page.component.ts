@@ -239,4 +239,5 @@ export class ClientDashPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  page = "DashBoard"
 }
