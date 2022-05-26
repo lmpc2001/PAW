@@ -10,6 +10,7 @@ module.exports = {
     async login(request, response, next) {
         try {
             const { email, password } = request.body;
+            console.log('Entrei');
 
             const hashPassword = SHA256(password).toString();
 
@@ -53,6 +54,7 @@ module.exports = {
             const login_token = jwt.sign(user_logedIn, privateKey, { algorithm: 'RS256', expiresIn: "30 min" });
 
             return response.status(200).json({
+                login: true,
                 token: AES.encrypt(login_token, `${process.env.SECRET}`).toString(),
             })
         } catch (error) {

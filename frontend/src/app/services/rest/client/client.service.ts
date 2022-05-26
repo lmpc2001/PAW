@@ -25,8 +25,8 @@ export class ClientService {
     return this.http.get<Client>(baseUrl + '/search/' + filter)
   }
 
-  createClient(client: Client):Observable<Client> {
-    return this.http.post<Client>(baseUrl + '/create', JSON.stringify(client), httpOptions)
+  createClient(platform: 'web'|'store',client: Client):Observable<Client> {
+    return this.http.post<Client>(baseUrl + `/create?platform=${platform}`, JSON.stringify(client), httpOptions)
   }
 
   updateClient(id:string, client: Client):Observable<Client> {

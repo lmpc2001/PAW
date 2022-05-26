@@ -14,14 +14,14 @@
             <div class="flex">
                 <h3>Sou funcionario</h3>
                 <div class="checkbox">
-                    <input type="checkbox" value="1" id="checkboxOneInput" />
+                    <input type="checkbox" value="1" id="checkboxOneInput" name="userType" [(ngModel)]="userType"/>
                     <label for="checkboxOneInput"></label>
                 </div>
             </div>
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <input type="tel" placeholder="Phone number">
-            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Name" name="name"  [(ngModel)]="name">
+            <input type="text" placeholder="Email" name="email"  [(ngModel)]="email">
+            <input type="tel" placeholder="Phone number" name="phone_number"  [(ngModel)]="phone_number">
+            <input type="password" placeholder="Password" name="password"  [(ngModel)]="password">
             <button class="btnConfirmar" (click)="submit()">Confirmar</button>
         </form>
     </div>

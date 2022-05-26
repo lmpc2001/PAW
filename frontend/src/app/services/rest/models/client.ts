@@ -1,9 +1,11 @@
-interface IClient{
-    id: string;
+interface IClient {
+    id?: string;
     userId?: string;
     employee_id?: string;
     name: string;
-    phone_Number: string;
+    phone_number: string;
+    email: string;
+    password: string;
 }
 
 export class Client {

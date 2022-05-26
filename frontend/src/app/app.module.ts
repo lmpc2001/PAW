@@ -15,7 +15,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { RecoverPageComponent } from './recover-page/recover-page.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,8 @@ import { RecoverPageComponent } from './recover-page/recover-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgApexchartsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
