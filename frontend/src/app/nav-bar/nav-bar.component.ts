@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-
+import { Component, Input, OnInit } from '@angular/core'
 interface linkProps {
   name: string
   to: string
@@ -10,9 +9,19 @@ interface linkProps {
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
 })
-
 export class NavBarComponent implements OnInit {
+  @Input() page: String | undefined
+
   constructor() {}
+
+  getPage(linkName:string) {
+    switch (linkName){
+      case this.page:
+        return "linksNav active";
+      default:
+        return "linksNav";
+    }
+  }
 
   link1: linkProps = {
     name: 'DashBoard',
