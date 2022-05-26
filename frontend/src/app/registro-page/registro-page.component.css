@@ -130,3 +130,49 @@
     cursor: pointer;
     transform: scale(1.05);
 }
+
+.registoForm form input[type=checkbox] {
+    visibility: hidden;
+}
+
+.registoForm form .checkbox {
+    width: 50px;
+    height: 20px;
+    background: var(--border-color);
+    margin: 10px;
+    margin-bottom: 0px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.registoForm form .checkbox label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    background: var(--tongle-color);
+}
+
+.registoForm form .checkbox input[type=checkbox]:checked+label {
+    left: 27px;
+    background: var(--roxo);
+}
+
+.registoForm form .flex {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.registoForm form .flex h3 {
+    margin-bottom: 0;
+    margin-top: auto;
+}
