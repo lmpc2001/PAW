@@ -1,6 +1,6 @@
 <div class="adminDash ">
 
-    <app-nav-bar></app-nav-bar>
+    <app-nav-bar [page]="this.page"></app-nav-bar>
 
     <div class="boxes">
         <apx-chart class="box" [series]="users.series!" [chart]="boxes.chart!" [xaxis]="boxes.xaxis!" [dataLabels]="boxes.dataLabels!" [stroke]="boxes.stroke!" [title]="users.title!" [tooltip]="boxes.tooltip!"></apx-chart>
