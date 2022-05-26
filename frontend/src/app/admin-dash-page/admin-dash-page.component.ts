@@ -253,4 +253,6 @@ export class AdminDashPageComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  page = "DashBoard"
 }

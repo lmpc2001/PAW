@@ -96,33 +96,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .selling .filter .dropDown .droped.inactive {
     transition: .5s;
     height: 0;
     position: absolute;
-}
-
-.selling .filter .dropDown .droped.inactive a {
-    display: none;
-}
-
-.selling .filter .dropDown .droped a {
-    height: 50px;
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-color);
-    background-color: rgba(227, 227, 227, 0.65);
-    overflow: hidden;
 }
 
 .selling .filter .dropDown .svgDropDown {
