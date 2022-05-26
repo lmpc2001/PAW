@@ -1,6 +1,6 @@
 <div class="navBar">
 
-    <a class="linksNav" href={{link1.to}}>
+    <a class="{{getPage(link1.name)}}" href={{link1.to}}>
         <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect x="3.4" y="3.4" width="6.6" height="6.61" fill="none" />
             <rect x="13.9" y="3.4" width="6.6" height="6.61" fill="none" />
@@ -8,14 +8,14 @@
             <rect x="13.9" y="13.9" width="6.6" height="6.61" fill="none" />
         </svg> {{link1.name}}
     </a>
-    <a class="linksNav" href={{link2.to}}>
+    <a class="{{getPage(link2.name)}}" href={{link2.to}}>
         <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M18,8.4A7.1,7.1,0,0,0,12,5a7,7,0,0,0,0,14,7.1,7.1,0,0,0,6-3.4" fill="none" />
             <line x1="3" y1="10" x2="13" y2="10" fill="none" />
             <line x1="3" y1="14" x2="13" y2="14" fill="none" />
         </svg> {{link2.name}}
     </a>
-    <a class="linksNav" href={{link3.to}}>
+    <a class="{{getPage(link3.name)}}" href={{link3.to}}>
         <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <ellipse cx="12" cy="5" rx="6.5" ry="2" fill="none" />
             <path d="M18.5,5,17,19c0,.8-2,2-5,2s-5-1.2-5-2L5.5,5" fill="none" />
