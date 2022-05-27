@@ -4,24 +4,32 @@
     <div class="filter">
         <h1>Filtros</h1>
         <h3>Nome do livro:</h3>
-        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="Título" name="title" [(ngModel)]="title">
         <h3>ISBN do livro:</h3>
-        <input type="text" placeholder="ISBN">
+        <input type="text" placeholder="ISBN" name="isbn" [(ngModel)]="isbn">
         <h3>Valor minimo:</h3>
-        <input type="number" placeholder="Valor minimo" min="0">
-        <h3>Valor maximo:</h3>
-        <input type="number" placeholder="Valor maximo" min="0">
+        <input type="number" placeholder="Valor minimo" min="0" name="price" [(ngModel)]="price">
+        <h3>Imagem da Capa:</h3>
+        <label for="coverImage" class="new-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <line x1="12" y1="8" x2="12" y2="16" fill="#fff" stroke="#000" stroke-miterlimit="10" />
+                <line x1="16" y1="12" x2="8" y2="12" fill="#fff" stroke="#000" stroke-miterlimit="10" />
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#000" />
+            </svg>
+        </label>
+        <input type="file" placeholder="Ficheiro" id="coverImage" (change)="setImage($event)">
         <h3>Clientes:</h3>
         <div class="dropDown" (click)="changeDropedCliente()">
             <div class="placeHolder">
                 <h3>{{this.client}}</h3>
                 <div class="space"></div>
                 <svg class="svgDropDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <polyline points="5 9 12 16 19 9" fill="none"  stroke-miterlimit="10"/>
+                    <polyline points="5 9 12 16 19 9" fill="none" stroke-miterlimit="10" />
                 </svg>
             </div>
             <div class={{this.dropedCliente}}>
-                <button class="escolha" (click)="changeClientLabel('José Antonio Pinto')" href="">José Antonio Pinto</button>
+                <button class="escolha" (click)="changeClientLabel('José Antonio Pinto')" href="">José Antonio
+                    Pinto</button>
                 <button class="escolha" (click)="changeClientLabel('José Pinto')" href="">José Pinto</button>
                 <button class="escolha" (click)="changeClientLabel('Gonçalo Pedro')" href="">Gonçalo Pedro</button>
                 <button class="escolha" (click)="changeClientLabel('Luis Pires')" href="">Luis Pires</button>
@@ -36,11 +44,12 @@
                 <h3>{{this.autorLabel}}</h3>
                 <div class="space"></div>
                 <svg class="svgDropDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <polyline points="5 9 12 16 19 9" fill="none"  stroke-miterlimit="10"/>
+                    <polyline points="5 9 12 16 19 9" fill="none" stroke-miterlimit="10" />
                 </svg>
             </div>
             <div class={{this.dropedAutor}}>
-                <button class="escolha" (click)="changeAutorLabel('José Antonio Pinto')" href="">José Antonio Pinto</button>
+                <button class="escolha" (click)="changeAutorLabel('José Antonio Pinto')" href="">José Antonio
+                    Pinto</button>
                 <button class="escolha" (click)="changeAutorLabel('José Pinto')" href="">José Pinto</button>
                 <button class="escolha" (click)="changeAutorLabel('Gonçalo Pedro')" href="">Gonçalo Pedro</button>
                 <button class="escolha" (click)="changeAutorLabel('Luis Pires')" href="">Luis Pires</button>

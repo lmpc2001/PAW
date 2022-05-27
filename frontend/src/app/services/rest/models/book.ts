@@ -1,26 +1,21 @@
-enum State {
-    new,
-    used,
-}
-
-interface IBook{
-    id: string;
+interface IBook {
+    id?: string;
     employee_id?: string;
     user_id?: string;
     title: string;
     author: string;
     bar_code: string;
-    state: State;
+    state: 'Novo' | 'Usado';
     price: number;
     isbn: string;
     units_stock: number;
-    coverImage: string;
+    coverImage: File;
 }
 
 export class Book {
-    book:IBook
+    book: IBook
 
-    constructor(bookInfo: IBook){
+    constructor(bookInfo: IBook) {
         this.book = bookInfo
     }
 }

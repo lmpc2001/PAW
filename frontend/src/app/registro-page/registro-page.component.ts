@@ -10,30 +10,55 @@ import { EmployeeService } from '../services/rest/employee/employee.service';
 })
 export class RegistroPageComponent implements OnInit {
 
-  @Input() userType: string = 'client';
+  @Input() userType: string = 'cliente';
   @Input() name: string = '';
   @Input() email: string = '';
   @Input() phone_number: string = '';
   @Input() password: string = '';
 
-  constructor(private router: Router, public rest: ClientService, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, public rest?: ClientService, public restEmployee?: EmployeeService) { }
 
   ngOnInit(): void {
+  }
+
+  changeUserType() {
+
+    if (this.userType == 'cliente') {
+      this.userType = 'funcionario'
+    } else {
+      this.userType = 'cliente'
+    }
   }
 
   submit() {
     try {
       var platform = this.route.snapshot.queryParams['platform'];
-      this.rest?.createClient(platform,{
-        client:{
-          name: this.name,
-          email: this.email,
-          phone_number: this.phone_number,
-          password: this.password
-        }
-      }).subscribe((data: any) => {
-        console.log(data);
-      })
+
+      if (this.userType == 'cliente') {
+        this.rest?.createClient(platform, {
+          client: {
+            name: this.name,
+            email: this.email,
+            phone_number: this.phone_number,
+            password: this.password
+          }
+        }).subscribe((data: any) => {
+          console.log(data);
+        })
+      } else {
+        this.restEmployee?.createEmployee({
+          employee: {
+            name: this.name,
+            email: this.email,
+            phone_number: this.phone_number,
+            password: this.password
+          }
+        }).subscribe((data: any) => {
+          console.log(data);
+        })
+      }
+
+
     } catch (error) {
       console.log(error)
     }
