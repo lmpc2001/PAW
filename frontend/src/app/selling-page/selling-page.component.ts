@@ -72,7 +72,7 @@ export class SellingPageComponent implements OnInit {
     })
   }
 
-  createBookBtn:string = "create active";
+  createBookBtn:string = "create inactive";
   newImage:string = "new-image plus";
 
   changeBookBtnState(){
