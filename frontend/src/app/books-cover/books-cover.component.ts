@@ -14,6 +14,8 @@ export class BooksCoverComponent implements OnInit {
   @Input() bookUnits: number = 0
   @Input() bookState: boolean = false
 
+  @Input() page: string = ''
+
   bookEditbtn: string = 'bookEdit inactive'
 
   constructor() {}
@@ -32,8 +34,20 @@ export class BooksCoverComponent implements OnInit {
       : (this.bookEditbtn = 'bookEdit active')
   }
 
-  deleteBook(){
-    console.log("Delete book")
+  actionBook() {
+    if (this.page == 'Selling') {
+      console.log('Delete book')
+    } else {
+      console.log('Book bought')
+    }
     this.bookEditbtn = 'bookEdit inactive'
+  }
+  
+  getTextBtn() {
+    if (this.page == 'Selling') {
+      return 'Eliminar livro'
+    } else {
+      return 'Comprar livro'
+    }
   }
 }
