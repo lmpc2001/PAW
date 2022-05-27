@@ -29,7 +29,7 @@
     color: var(--text-color);
 }
 
-input[type="file"] {
+#selling input[type="file"] {
     visibility: hidden;
     display: none;
 }
@@ -139,14 +139,27 @@ input[type="file"] {
 
 #selling .library {
     width: 73%;
-    max-height: 88vh;
-    height: auto;
     min-height: 20vh;
     background-color: var(--boxes-color);
     border-radius: 20px;
     padding: 20px;
+    padding-right: 10px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.booksArray {
+    height: 100%;
+    width: 100%;
+    display: inline;
+}
+
+.booksArray .gridItem {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 #selling .manageBooks {
@@ -159,6 +172,19 @@ input[type="file"] {
     border: 3px solid var(--roxo);
     padding: 20px;
     margin-bottom: 10px;
+}
+
+#selling .manageBooks .new-image {
+    color: var(--roxo);
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#selling .manageBooks .new-image svg {
+    margin-left: 15px;
 }
 
 #selling .collum {
@@ -265,8 +291,14 @@ input[type="file"] {
 }
 
 #selling form label svg {
+    transition: .5s;
     width: 40px;
     stroke: var(--tongle-color);
+}
+
+#selling form label:hover svg {
+    transition: .5s;
+    stroke: var(--roxo);
 }
 
 #selling form label:hover {
@@ -286,6 +318,7 @@ input[type="file"] {
     color: white;
     border: 0;
     margin-top: 20px;
+    font-weight: bolder;
 }
 
 #selling form .btnConfirmar:hover {

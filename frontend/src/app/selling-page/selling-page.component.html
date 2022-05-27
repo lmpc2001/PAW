@@ -2,10 +2,8 @@
 
 <div id="selling">
     <div class="collum">
-
-
         <div class="manageBooks">
-            <label class={{this.newImage}} (click)="changeBookBtnState()">
+            <label class={{this.newImage}} (click)="changeBookBtnState()">Adicionar livro
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <line x1="12" y1="8" x2="12" y2="16" fill="#fff"  stroke-miterlimit="10" />
                     <line x1="16" y1="12" x2="8" y2="12" fill="#fff"  stroke-miterlimit="10" />
@@ -24,7 +22,7 @@
                     <input type="number" placeholder="Numero de unidades" min="1">
                     <h3>Valor para venda:</h3>
                     <input type="number" placeholder="Valor de venda" min="0.01">
-                    <label for="coverImageID">
+                    <label for="coverImageID" class="coverImageLabel">
                         <h3>Imagem de capa</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <line x1="12" y1="8" x2="12" y2="16" fill="#fff"  stroke-miterlimit="10" />
@@ -40,7 +38,7 @@
                             <label for="checkboxOneInput"></label>
                         </div>
                     </div>
-                    <button class="btnConfirmar">Submeter</button>
+                    <button class="btnConfirmar" (click)="this.createBook()">Adicionar livro</button>
                 </form>
             </div>
         </div>
@@ -98,6 +96,18 @@
 
     <div class="library">
         <h1>Vendas</h1>
+        <div class="booksArray">
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover [bookAutor]="this.author" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+        </div>
+
 
     </div>
 </div>
