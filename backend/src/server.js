@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3333;
 
 const app = express();
 
-connectToCluster();
+// connectToCluster();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
