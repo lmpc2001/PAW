@@ -1,0 +1,635 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Bookstore",
+        "description": "Projeto desenvolvido com o objetivo de controlar as compras e vendas de uma biblioteca, bem como permitir a negociação de livros usados",
+        "version": "1.0.0"
+    },
+    "host": "localhost:3333",
+    "basePath": "/api/v1",
+    "tags": [],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/books": {
+            "get": {
+                "description": "Returns all books from the system",
+                "responses": {
+                    "200": {
+                        "description": "A list of books.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Returns a specific book from the system",
+                "responses": {
+                    "200": {
+                        "description": "A specific book.",
+                        "parameters": [
+                            {
+                                "name": "author",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "title",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "isbn",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "minimun",
+                                "description": "Minimun price that user wants to pay for the book",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "maximun",
+                                "description": "Maximun price that user wants to pay for the book",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "state",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "coverImage",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "employee_id",
+                                "in": "request",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            },
+                            {
+                                "name": "user_id",
+                                "in": "request",
+                                "schema": {
+                                    "$ref": "#/definitions/Books"
+                                }
+                            }
+                        ],
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create new book in system",
+                "tags": [
+                    "Books"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "units_stock",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "isbn",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "coverImage",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "employee_id",
+                        "in": "request",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "request",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New Book is created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update book in the system",
+                "tags": [
+                    "Books"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Book ID",
+                        "in": "params",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "units_stock",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "isbn",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    }
+                ],
+                "put": {
+                    "description": "Delete an existent book from the system",
+                    "tags": [
+                        "Books"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "Book ID",
+                            "in": "params",
+                            "schema": {
+                                "$ref": "#/definitions/Books"
+                            }
+                        }
+                    ]
+                },
+                "responses": {
+                    "200": {
+                        "description": "Get Book",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "New Book is created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Book not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/clients": {
+            "get": {
+                "description": "Returns all clients from the system",
+                "responses": {
+                    "200": {
+                        "description": "A list of clients.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/client"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Returns a specific client from the system",
+                "responses": {
+                    "200": {
+                        "description": "A specific client.",
+                        "parameters": [
+                            {
+                                "name": "author",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "title",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "isbn",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "minimun",
+                                "description": "Minimun price that user wants to pay for the book",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "maximun",
+                                "description": "Maximun price that user wants to pay for the book",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "state",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "coverImage",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "employee_id",
+                                "in": "request",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            },
+                            {
+                                "name": "user_id",
+                                "in": "request",
+                                "schema": {
+                                    "$ref": "#/definitions/Clients"
+                                }
+                            }
+                        ],
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/client"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create new client in system",
+                "tags": [
+                    "Clients"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "units_stock",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "isbn",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "coverImage",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "employee_id",
+                        "in": "request",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "request",
+                        "schema": {
+                            "$ref": "#/definitions/Clients"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New Book is created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/client"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update book in the system",
+                "tags": [
+                    "Clients"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Book ID",
+                        "in": "params",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "units_stock",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "isbn",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Books"
+                        }
+                    }
+                ],
+                "put": {
+                    "description": "Delete an existent book from the system",
+                    "tags": [
+                        "Books"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "Book ID",
+                            "in": "params",
+                            "schema": {
+                                "$ref": "#/definitions/Books"
+                            }
+                        }
+                    ]
+                },
+                "responses": {
+                    "200": {
+                        "description": "Get Book",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "New Book is created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Book not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "items": {
+                                        "$ref": "#/components/schemas/book"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,9 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { connectToCluster } = require('./database/connection');
 
+const swaggerUI = require('swagger-ui-express');
+const swaggerConfig = require('./swaggerConfig.json');
+
 
 const PORT = process.env.PORT || 3333;
 
@@ -23,5 +26,7 @@ app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 app.use(routes);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerConfig));
+app.use('/api/v1', routes);
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
