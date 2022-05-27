@@ -12,8 +12,6 @@ import { SellingPageComponent } from './selling-page/selling-page.component';
 import { MarketPlaceComponent } from './market-place/market-place.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { BookDetailsComponent } from './book-details/book-details.component';
-import { CreateBookComponent } from './create-book/create-book.component';
 import { RecoverPageComponent } from './recover-page/recover-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,8 +26,6 @@ import { BooksCoverComponent } from './books-cover/books-cover.component';
     SellingPageComponent,
     MarketPlaceComponent,
     NavBarComponent,
-    BookDetailsComponent,
-    CreateBookComponent,
     RecoverPageComponent,
     BooksCoverComponent
   ],
