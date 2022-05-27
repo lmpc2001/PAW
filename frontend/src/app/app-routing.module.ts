@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'Registo', component: RegistroPageComponent},
   {path: 'ClientDash', component: ClientDashPageComponent},
-  {path: 'AdminDash', component: AdminDashPageComponent},
+  {path: 'ShopDash', component: AdminDashPageComponent},
   {path: 'Selling', component: SellingPageComponent},
   {path: 'MarketPlace', component: MarketPlaceComponent},
   {path: 'Recover', component:RecoverPageComponent}
