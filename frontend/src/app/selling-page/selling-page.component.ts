@@ -71,4 +71,18 @@ export class SellingPageComponent implements OnInit {
       error: (error) => console.log(error),
     })
   }
+
+  createBookBtn:string = "create active";
+  newImage:string = "new-image plus";
+
+  changeBookBtnState(){
+    if (this.createBookBtn == "create active"){
+      this.createBookBtn = "create inactive";
+      this.newImage = "new-image plus";
+    } else {
+      this.createBookBtn = "create active";
+      this.newImage = "new-image cross";
+    }
+  }
+
 }
