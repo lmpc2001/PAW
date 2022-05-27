@@ -134,14 +134,27 @@
 
 .marketPlace .library {
     width: 73%;
-    max-height: 88vh;
-    height: auto;
     min-height: 20vh;
     background-color: var(--boxes-color);
     border-radius: 20px;
     padding: 20px;
+    padding-right: 10px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.marketPlace .library .booksArray {
+    height: 100%;
+    width: 100%;
+    display: inline;
+}
+
+.marketPlace .library .booksArray .gridItem {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .marketPlace .filter input[type=checkbox] {
