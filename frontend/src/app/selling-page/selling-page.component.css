@@ -148,13 +148,13 @@
     overflow-x: hidden;
 }
 
-.booksArray {
+#selling .library .booksArray {
     height: 100%;
     width: 100%;
     display: inline;
 }
 
-.booksArray .gridItem {
+#selling .library .booksArray .gridItem {
     display: inline-block;
     width: max-content;
     height: max-content;
