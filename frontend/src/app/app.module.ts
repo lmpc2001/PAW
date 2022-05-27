@@ -17,6 +17,7 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { RecoverPageComponent } from './recover-page/recover-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BooksCoverComponent } from './books-cover/books-cover.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     BookDetailsComponent,
     CreateBookComponent,
-    RecoverPageComponent
+    RecoverPageComponent,
+    BooksCoverComponent
   ],
   imports: [
     BrowserModule,
