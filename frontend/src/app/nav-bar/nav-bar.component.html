@@ -1,4 +1,4 @@
-<div class="navBar">
+<div id="navBar">
 
     <a class="{{getPage(link1.name)}}" href={{link1.to}}>
         <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -9,16 +9,21 @@
         </svg> {{link1.name}}
     </a>
     <a class="{{getPage(link2.name)}}" href={{link2.to}}>
-        <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M18,8.4A7.1,7.1,0,0,0,12,5a7,7,0,0,0,0,14,7.1,7.1,0,0,0,6-3.4" fill="none" />
-            <line x1="3" y1="10" x2="13" y2="10" fill="none" />
-            <line x1="3" y1="14" x2="13" y2="14" fill="none" />
+        <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <ellipse cx="128" cy="104" rx="104" ry="48" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></ellipse>
+            <line x1="128" y1="152" x2="128" y2="200" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <path d="M24,104v48c0,24,40,48,104,48s104-24,104-48V104" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+            <line x1="192" y1="142.1" x2="192" y2="190.1" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <line x1="64" y1="142.1" x2="64" y2="190.1" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
         </svg> {{link2.name}}
     </a>
     <a class="{{getPage(link3.name)}}" href={{link3.to}}>
-        <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <ellipse cx="12" cy="5" rx="6.5" ry="2" fill="none" />
-            <path d="M18.5,5,17,19c0,.8-2,2-5,2s-5-1.2-5-2L5.5,5" fill="none" />
+        <svg class="svgLinks" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
+            <line x1="32" y1="80" x2="224" y2="80" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <path d="M168,112a40,40,0,0,1-80,0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
         </svg> {{link3.name}}
     </a>
     <div class="space"></div>
