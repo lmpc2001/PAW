@@ -66,11 +66,11 @@
     overflow: hidden;
 }
 
-.bookEdit.active {
-    position: absolute;
+.bookEdit {
+    transition: .5s;
+    position: fixed;
     z-index: 99;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     background-color: rgba(204, 204, 204, 0.577);
     top: 0;
     left: 0;
@@ -79,8 +79,18 @@
     justify-content: center;
 }
 
-.bookEdit.active .box {
-    height: 50vh;
+.bookEdit.inactive {
+    transition: .5s;
+    height: 0;
+}
+
+.bookEdit.active {
+    transition: .5s;
+    height: 100%;
+}
+
+.bookEdit .box {
+    transition: .5s;
     width: 70vh;
     background-color: var(--background-primary);
     border: 2px solid var(--roxo);
@@ -89,6 +99,17 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+}
+
+.bookEdit.active .box {
+    transition: .5s;
+    height: 50%;
+}
+
+.bookEdit.inactive .box {
+    transition: .01s;
+    visibility: hidden;
+    height: 0;
 }
 
 .bookEdit.active .box .flex {
@@ -107,14 +128,6 @@
 
 .bookEdit.active .box .flex svg:hover {
     cursor: pointer;
-}
-
-.bookEdit.inactive .box .visible {
-    display: none;
-}
-
-.bookEdit.active .box .visible {
-    display: unset;
 }
 
 .bookEdit.active .info {
