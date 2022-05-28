@@ -1,0 +1,40 @@
+<div id="adminTools">
+    <h1>Admin Tools</h1>
+
+    <div class="tabela">
+        <div class="option {{this.dropDownFuncionarios}}" (click)="setDropdownState('funcionarios')">
+            <h2>Gerir funcionarios</h2>
+            <svg class="svg {{this.dropDownFuncionarios}}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polyline points="8 12 12 16 16 12" fill="none"  stroke-miterlimit="10"/>
+                <line x1="12" y1="16" x2="12" y2="7" fill="none"  stroke-miterlimit="10"/>
+                <circle cx="12" cy="12" r="10" fill="none" />
+            </svg>
+        </div>
+        <div class="infoTable {{this.dropDownFuncionarios}}">
+            <app-users-info class="line" [dataContext]="this.dataContextFunc" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextFunc" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextFunc" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextFunc" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextFunc" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+        </div>
+    </div>
+
+    <div class="tabela">
+        <div class="option {{this.dropDownClientes}}" (click)="setDropdownState('clientes')">
+            <h2>Gerir clientes</h2>
+            <svg class="svg {{this.dropDownClientes}}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polyline points="8 12 12 16 16 12" fill="none"  stroke-miterlimit="10"/>
+                <line x1="12" y1="16" x2="12" y2="7" fill="none"  stroke-miterlimit="10"/>
+                <circle cx="12" cy="12" r="10" fill="none" />
+            </svg>
+        </div>
+        <div class="infoTable {{this.dropDownClientes}}">
+            <app-users-info class="line" [dataContext]="this.dataContextUser" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextUser" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextUser" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextUser" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+            <app-users-info class="line" [dataContext]="this.dataContextUser" [date]="this.date" [email]="this.email" [id]="this.id" [nome]="this.nome" [phone_number]="this.phone_number"></app-users-info>
+        </div>
+    </div>
+
+</div>

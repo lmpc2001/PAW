@@ -1,10 +1,10 @@
-.recover {
+#recover {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.apresentacao {
+#recover .apresentacao {
     height: 100vh;
     width: 50vw;
     background-color: var(--background-primary);
@@ -13,22 +13,22 @@
     padding: 10%;
 }
 
-.apresentacao .text {
+#recover .apresentacao .text {
     margin-bottom: 0%;
     margin-top: auto;
 }
 
-.apresentacao .text h1 {
+#recover .apresentacao .text h1 {
     font-size: 60px;
     color: white;
 }
 
-.apresentacao .text h2 {
+#recover .apresentacao .text h2 {
     font-size: 35px;
     color: var(--border-color);
 }
 
-.recoverForm {
+#recover .recoverForm {
     height: 100vh;
     width: 50vw;
     background-color: var(--background-secundary);
@@ -38,7 +38,7 @@
     justify-content: center;
 }
 
-.recoverForm form {
+#recover .recoverForm form {
     height: auto;
     width: auto;
     display: flex;
@@ -46,7 +46,7 @@
     justify-content: center;
 }
 
-.recoverForm form input {
+#recover .recoverForm form input {
     box-sizing: border-box;
     width: 305px;
     height: 50px;
@@ -65,14 +65,14 @@
     border: 3px solid var(--roxo);
 }
 
-.recoverForm form input::placeholder {
+#recover .recoverForm form input::placeholder {
     font-size: 14px;
     display: flex;
     align-items: center;
     color: var(--border-color);
 }
 
-.recoverForm .btns {
+#recover .recoverForm .btns {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +80,7 @@
     width: 400px;
 }
 
-.recoverForm .btns .btnsForm {
+#recover .recoverForm .btns .btnsForm {
     font-size: 30px;
     background: transparent;
     color: white;
@@ -91,7 +91,7 @@
     text-decoration: none;
 }
 
-.recoverForm form a {
+#recover .recoverForm form a {
     transition: .5s;
     text-decoration: none;
     color: var(--border-color);
@@ -100,21 +100,21 @@
     margin-right: auto;
 }
 
-.recoverForm form a:hover {
+#recover .recoverForm form a:hover {
     transition: .5s;
     color: var(--roxo);
 }
 
-.recoverForm .btns .btnsForm.active {
+#recover .recoverForm .btns .btnsForm.active {
     border-bottom: 3px solid var(--roxo);
 }
 
-.recoverForm .btns .btnsForm:hover {
+#recover .recoverForm .btns .btnsForm:hover {
     transition: .5s;
     color: var(--roxo);
 }
 
-.recoverForm form .btnConfirmar {
+#recover .recoverForm form .btnConfirmar {
     transition: .5s;
     width: 305px;
     height: 40%;
@@ -131,7 +131,7 @@
     margin-top: 20px;
 }
 
-.recoverForm form .btnConfirmar:hover {
+#recover .recoverForm form .btnConfirmar:hover {
     transition: .5s;
     cursor: pointer;
     transform: scale(1.05);

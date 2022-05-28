@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminDashPageComponent } from './admin-dash-page/admin-dash-page.component';
+import { ShopDashComponent} from './shop-dash/shop-dash.component'
 import { ClientDashPageComponent } from './client-dash-page/client-dash-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MarketPlaceComponent } from './market-place/market-place.component';
@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'Registo', component: RegistroPageComponent},
   {path: 'ClientDash', component: ClientDashPageComponent},
-  {path: 'AdminDash', component: AdminDashPageComponent},
+  {path: 'ShopDash', component: ShopDashComponent},
   {path: 'Selling', component: SellingPageComponent},
   {path: 'MarketPlace', component: MarketPlaceComponent},
   {path: 'Recover', component:RecoverPageComponent}

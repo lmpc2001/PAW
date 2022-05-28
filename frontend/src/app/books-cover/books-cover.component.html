@@ -1,0 +1,40 @@
+<div id="booksCover">
+    <div class="book" (click)="bookEdit()">
+        <div class="bookInfo">
+            <h3>Nome: {{this.bookName}}</h3>
+            <h4>Preço: {{this.bookPrice}} euros</h4>
+        </div>
+        <img class="imageStyle" src="{{this.imageUrl}}" alt="Imagem1" />
+    </div>
+
+</div>
+<div class="{{this.bookEditbtn}}">
+    <div class="box">
+        <div class="flex">
+            <h1 class="visible">{{this.bookName}}</h1>
+            <svg class="visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" (click)="bookEdit()">
+                <line x1="12" y1="8" x2="12" y2="16" fill="#fff"  stroke-miterlimit="10" />
+                <line x1="16" y1="12" x2="8" y2="12" fill="#fff"  stroke-miterlimit="10" />
+                <circle cx="12" cy="12" r="10" fill="none"  />
+            </svg>
+        </div>
+        <div class="info">
+            <div class="textos">
+                <div class="textosInfo">
+                    <h3 class="visible">Autor: {{this.bookAutor}}</h3>
+                    <h3 class="visible">ISPM: {{this.bookISPM}}</h3>
+                    <h3 class="visible">Unidades: {{this.bookUnits}}</h3>
+                    <h3 class="visible">Preço: {{this.bookPrice}} euros</h3>
+                    <div class="flex">
+                        <h3>Usado:</h3>
+                        <div class="{{getToogleState()}}">
+                            <label for="checkboxOneInput"></label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btnEliminar" (click)="actionBook()">{{this.getTextBtn()}}</button>
+            </div>
+            <img class="imagePopUp" src="{{this.imageUrl}}" alt="Imagem" />
+        </div>
+    </div>
+</div>

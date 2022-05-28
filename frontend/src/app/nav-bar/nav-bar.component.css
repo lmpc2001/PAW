@@ -1,4 +1,4 @@
-.navBar {
+#navBar {
     width: 90vw;
     height: 60px;
     background-color: var(--boxes-color);
@@ -10,12 +10,12 @@
     padding: 0 20px;
 }
 
-.navBar a {
+#navBar a {
     text-decoration: 0;
     color: var(--text-color);
 }
 
-.navBar .linksNav .svgLinks {
+#navBar .linksNav .svgLinks {
     transition: 0.5s;
     stroke: var(--text-color);
     width: 30px;
@@ -23,55 +23,55 @@
     margin-right: 10px;
 }
 
-.navBar .linksNav:hover .svgLinks {
+#navBar .linksNav:hover .svgLinks {
     transition: 0.5s;
     stroke: var(--roxo);
     cursor: pointer;
 }
 
-.navBar .linksNav.active .svgLinks {
+#navBar .linksNav.active .svgLinks {
     transition: 0.5s;
     stroke: var(--roxo);
 }
 
-.navBar .exit {
+#navBar .exit {
     width: 35px;
     height: 35px;
     margin: auto 0;
     margin-right: 10px;
 }
 
-.navBar button {
+#navBar button {
     background-color: transparent;
     border: 0;
 }
 
-.navBar .exit .svgTheam {
+#navBar .exit .svgTheam {
     transition: 0.5s;
     stroke: var(--text-color);
 }
 
-.navBar .exit .svgTheam:hover {
+#navBar .exit .svgTheam:hover {
     transition: 0.5s;
     stroke: var(--roxo);
     cursor: pointer;
 }
 
-.navBar .space {
+#navBar .space {
     flex: 1;
 }
 
-.navBar .exit .svgExit {
+#navBar .exit .svgExit {
     transition: 0.5s;
     stroke: var(--text-color);
 }
 
-.navBar .exit .svgExit:hover {
+#navBar .exit .svgExit:hover {
     transition: 0.5s;
     stroke: var(--roxo);
 }
 
-.navBar .linksNav {
+#navBar .linksNav {
     transition: 0.5s;
     width: max-content;
     margin-left: 50px;
@@ -86,13 +86,13 @@
     padding-right: 10px;
 }
 
-.navBar .linksNav.active {
+#navBar .linksNav.active {
     transition: 0.5s;
     border-bottom: 3px solid var(--roxo);
     color: var(--roxo);
 }
 
-.navBar .linksNav:hover {
+#navBar .linksNav:hover {
     transition: 0.5s;
     border-bottom: 3px solid var(--roxo);
     color: var(--roxo);

@@ -1,10 +1,10 @@
-.marketPlace {
+#marketPlace {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.marketPlace .filter {
+#marketPlace .filter {
     position: relative;
     width: 25%;
     background-color: var(--boxes-color);
@@ -14,7 +14,7 @@
     padding: 20px;
 }
 
-.marketPlace .filter input {
+#marketPlace .filter input {
     box-sizing: border-box;
     width: 100%;
     height: 50px;
@@ -29,16 +29,16 @@
     color: var(--text-color);
 }
 
-.marketPlace h1 {
+#marketPlace h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.marketPlace .filter h3 {
+#marketPlace .filter h3 {
     margin-bottom: 5px;
 }
 
-.marketPlace .filter .dropDown {
+#marketPlace .filter .dropDown {
     transition: .5s;
     box-sizing: border-box;
     width: 100%;
@@ -60,11 +60,11 @@
     padding-bottom: 10px;
 }
 
-.marketPlace .filter .dropDown .space {
+#marketPlace .filter .dropDown .space {
     flex: 1;
 }
 
-.marketPlace .filter .dropDown .placeHolder {
+#marketPlace .filter .dropDown .placeHolder {
     transition: .5s;
     display: flex;
     align-items: center;
@@ -73,22 +73,22 @@
     height: 100%;
 }
 
-.marketPlace .filter .dropDown .placeHolder h3 {
+#marketPlace .filter .dropDown .placeHolder h3 {
     transition: .5s;
     margin-bottom: 0;
 }
 
-.marketPlace .filter .dropDown:hover .placeHolder h3 {
+#marketPlace .filter .dropDown:hover .placeHolder h3 {
     transition: .5s;
     color: var(--roxo);
 }
 
-.marketPlace .filter .dropDown:hover {
+#marketPlace .filter .dropDown:hover {
     cursor: pointer;
     border: 3px solid var(--roxo);
 }
 
-.marketPlace .filter .dropDown .droped {
+#marketPlace .filter .dropDown .droped {
     transition: .5s;
     position: relative;
     width: inherit;
@@ -99,56 +99,69 @@
     margin-top: 10px;
 }
 
-.marketPlace .filter .dropDown .droped.inactive {
+#marketPlace .filter .dropDown .droped.inactive {
     transition: .5s;
     height: 0;
     position: absolute;
 }
 
-.marketPlace .filter .dropDown .svgDropDown {
+#marketPlace .filter .dropDown .svgDropDown {
     height: 30px;
     width: 30px;
     stroke: var(--border-color);
 }
 
-.marketPlace .filter .dropDown:hover .svgDropDown {
+#marketPlace .filter .dropDown:hover .svgDropDown {
     cursor: pointer;
     stroke: var(--roxo);
 }
 
-.marketPlace .filter .dropDown .svgDropDown:hover {
+#marketPlace .filter .dropDown .svgDropDown:hover {
     cursor: pointer;
     stroke: var(--roxo);
 }
 
-.marketPlace .filter input:focus {
+#marketPlace .filter input:focus {
     transition: .5s;
     border: 3px solid var(--roxo);
 }
 
-.marketPlace .filter input::placeholder {
+#marketPlace .filter input::placeholder {
     font-size: 14px;
     display: flex;
     align-items: center;
 }
 
-.marketPlace .library {
+#marketPlace .library {
     width: 73%;
-    max-height: 88vh;
-    height: auto;
     min-height: 20vh;
     background-color: var(--boxes-color);
     border-radius: 20px;
     padding: 20px;
+    padding-right: 10px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.marketPlace .filter input[type=checkbox] {
+#marketPlace .library .booksArray {
+    height: 100%;
+    width: 100%;
+    display: inline;
+}
+
+#marketPlace .library .booksArray .gridItem {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#marketPlace .filter input[type=checkbox] {
     visibility: hidden;
 }
 
-.marketPlace .filter .checkbox {
+#marketPlace .filter .checkbox {
     width: 50px;
     height: 20px;
     background: var(--border-color);
@@ -158,7 +171,7 @@
     border-radius: 10px;
 }
 
-.marketPlace .filter .checkbox label {
+#marketPlace .filter .checkbox label {
     display: block;
     width: 24px;
     height: 24px;
@@ -171,12 +184,12 @@
     background: var(--tongle-color);
 }
 
-.marketPlace .filter .checkbox input[type=checkbox]:checked+label {
+#marketPlace .filter .checkbox input[type=checkbox]:checked+label {
     left: 27px;
     background: var(--roxo);
 }
 
-.marketPlace .filter .flex {
+#marketPlace .filter .flex {
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -184,7 +197,7 @@
     padding: 10px;
 }
 
-.marketPlace .filter .flex h3 {
+#marketPlace .filter .flex h3 {
     margin-bottom: 0;
     margin-top: auto;
 }

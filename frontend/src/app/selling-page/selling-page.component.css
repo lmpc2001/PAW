@@ -1,12 +1,12 @@
-.selling {
+#selling {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.selling .filter {
+#selling .filter {
     position: relative;
-    width: 25%;
+    width: 100%;
     background-color: var(--boxes-color);
     height: auto;
     border-radius: 20px;
@@ -14,7 +14,7 @@
     padding: 20px;
 }
 
-.selling .filter input {
+#selling input {
     box-sizing: border-box;
     width: 100%;
     height: 50px;
@@ -29,36 +29,21 @@
     color: var(--text-color);
 }
 
-.new-image {
-    background: var(--roxo);
-    border-radius: 18px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-.new-image svg {
-    height: 50px;
-}
-
-input[type="file"] {
+#selling input[type="file"] {
     visibility: hidden;
     display: none;
 }
 
-.selling h1 {
+#selling h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.selling .filter h3 {
+#selling .filter h3 {
     margin-bottom: 5px;
 }
 
-.selling .filter .dropDown {
+#selling .filter .dropDown {
     transition: .5s;
     box-sizing: border-box;
     width: 100%;
@@ -80,11 +65,11 @@ input[type="file"] {
     padding-bottom: 10px;
 }
 
-.selling .filter .dropDown .space {
+#selling .filter .dropDown .space {
     flex: 1;
 }
 
-.selling .filter .dropDown .placeHolder {
+#selling .filter .dropDown .placeHolder {
     transition: .5s;
     display: flex;
     align-items: center;
@@ -93,22 +78,22 @@ input[type="file"] {
     height: 100%;
 }
 
-.selling .filter .dropDown .placeHolder h3 {
+#selling .filter .dropDown .placeHolder h3 {
     transition: .5s;
     margin-bottom: 0;
 }
 
-.selling .filter .dropDown:hover .placeHolder h3 {
+#selling .filter .dropDown:hover .placeHolder h3 {
     transition: .5s;
     color: var(--roxo);
 }
 
-.selling .filter .dropDown:hover {
+#selling .filter .dropDown:hover {
     cursor: pointer;
     border: 3px solid var(--roxo);
 }
 
-.selling .filter .dropDown .droped {
+#selling .filter .dropDown .droped {
     transition: .5s;
     position: relative;
     width: inherit;
@@ -119,47 +104,225 @@ input[type="file"] {
     margin-top: 10px;
 }
 
-.selling .filter .dropDown .droped.inactive {
+#selling .filter .dropDown .droped.inactive {
     transition: .5s;
     height: 0;
     position: absolute;
 }
 
-.selling .filter .dropDown .svgDropDown {
+#selling .filter .dropDown .svgDropDown {
     height: 30px;
     width: 30px;
     stroke: var(--border-color);
 }
 
-.selling .filter .dropDown:hover .svgDropDown {
+#selling .filter .dropDown:hover .svgDropDown {
     cursor: pointer;
     stroke: var(--roxo);
 }
 
-.selling .filter .dropDown .svgDropDown:hover {
+#selling .filter .dropDown .svgDropDown:hover {
     cursor: pointer;
     stroke: var(--roxo);
 }
 
-.selling .filter input:focus {
+#selling .filter input:focus {
     transition: .5s;
     border: 3px solid var(--roxo);
 }
 
-.selling .filter input::placeholder {
+#selling .filter input::placeholder {
     font-size: 14px;
     display: flex;
     align-items: center;
 }
 
-.selling .library {
+#selling .library {
     width: 73%;
-    max-height: 88vh;
-    height: auto;
     min-height: 20vh;
     background-color: var(--boxes-color);
     border-radius: 20px;
     padding: 20px;
+    padding-right: 10px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#selling .library .booksArray {
+    height: 100%;
+    width: 100%;
+    display: inline;
+}
+
+#selling .library .booksArray .gridItem {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#selling .manageBooks {
+    position: relative;
+    width: 100%;
+    background-color: var(--boxes-color);
+    height: auto;
+    min-height: 50px;
+    border-radius: 20px;
+    border: 3px solid var(--roxo);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+#selling .manageBooks .new-image {
+    color: var(--roxo);
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#selling .manageBooks .new-image svg {
+    margin-left: 15px;
+}
+
+#selling .collum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+}
+
+#selling .collum .new-image {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#selling .collum .new-image.plus svg {
+    transition: .5s;
+    height: 50px;
+    stroke: var(--roxo);
+}
+
+#selling .collum .new-image.cross svg {
+    transition: .5s;
+    height: 50px;
+    stroke: var(--roxo);
+    transform: rotateZ(45deg);
+}
+
+#selling .collum .create.active {
+    transition: .5s;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+#selling .collum .create.inactive {
+    transition: .5s;
+    display: none;
+}
+
+#selling form input[type=checkbox] {
+    visibility: hidden;
+}
+
+#selling form .checkbox {
+    width: 50px;
+    height: 20px;
+    background: var(--border-color);
+    margin: 10px;
+    margin-bottom: 0px;
+    position: relative;
+    border-radius: 10px;
+}
+
+#selling form .checkbox label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    background: var(--tongle-color);
+}
+
+#selling form .checkbox input[type=checkbox]:checked+label {
+    left: 27px;
+    background: var(--roxo);
+}
+
+#selling form .flex {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+#selling form .flex h3 {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+#selling form {
+    width: 100%;
+    height: auto;
+}
+
+#selling form label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+#selling form label svg {
+    transition: .5s;
+    width: 40px;
+    stroke: var(--tongle-color);
+}
+
+#selling form label:hover svg {
+    transition: .5s;
+    stroke: var(--roxo);
+}
+
+#selling form label:hover {
+    cursor: pointer;
+}
+
+#selling form .btnConfirmar {
+    transition: .5s;
+    width: 100%;
+    height: 40px;
+    background: var(--roxo);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 0;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+#selling form .btnConfirmar:hover {
+    transition: .5s;
+    cursor: pointer;
+    transform: scale(1.05);
 }
