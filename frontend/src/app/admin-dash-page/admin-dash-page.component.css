@@ -38,11 +38,6 @@
     font-weight: bolder;
 }
 
-.adminDash a {
-    text-decoration: 0;
-    color: var(--text-color);
-}
-
 .adminDash .flex .boxMedia {
     transition: .5s;
     padding: 20px;
