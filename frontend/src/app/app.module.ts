@@ -16,6 +16,8 @@ import { RecoverPageComponent } from './recover-page/recover-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BooksCoverComponent } from './books-cover/books-cover.component';
+import { AdminToolsComponent } from './admin-tools/admin-tools.component';
+import { FuncionariosInfoComponent } from './funcionarios-info/funcionarios-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { BooksCoverComponent } from './books-cover/books-cover.component';
     MarketPlaceComponent,
     NavBarComponent,
     RecoverPageComponent,
-    BooksCoverComponent
+    BooksCoverComponent,
+    AdminToolsComponent,
+    FuncionariosInfoComponent
   ],
   imports: [
     BrowserModule,
