@@ -1,0 +1,81 @@
+.shopDash .boxes {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shopDash .boxes .box {
+    transition: .5s;
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: var(--boxes-color);
+    border-radius: 25px;
+    border: 3px solid var(--boxes-color);
+}
+
+.shopDash .boxes .box:hover {
+    transition: 0.5s;
+    border: 3px solid var(--roxo);
+    transform: scale(1.06);
+}
+
+.shopDash .boxes .box h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.shopDash .boxes .box .grafico {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.shopDash .flex .boxMedia {
+    transition: .5s;
+    padding: 20px;
+    margin-top: 25px;
+    background-color: var(--boxes-color);
+    border-radius: 20px;
+    width: 49%;
+    height: auto;
+    border: 3px solid var(--boxes-color);
+}
+
+.shopDash .flex .boxMedia:hover {
+    transition: 0.5s;
+    border: 3px solid var(--roxo);
+    transform: scale(1.06);
+}
+
+.shopDash .pontos {
+    padding: 20px;
+    margin-top: 25px;
+    background-color: var(--boxes-color);
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--boxes-color);
+    margin-bottom: 3%;
+}
+
+.shopDash .pontos:hover {
+    transition: 0.5s;
+    border: 3px solid var(--roxo);
+    transform: scale(1.06);
+}
+
+.shopDash .flex {
+    display: flex;
+    height: max-content;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
