@@ -19,12 +19,12 @@ export class MarketPlaceComponent implements OnInit {
   bookName: string = 'Legacy'
   bookPrice: number = 2
   bookAutor: string = 'Ze Maria Lencastre'
-  bookISPM: string = 'A5D42A2'
+  bookISBN: string = 'A5D42A2'
   bookUnits: number = 3
-  bookState: boolean = false
+  bookState: string = ''
   /* --------------------------------- */
 
-  constructor(public rest: BookService, private router: Router) { }
+  constructor(public rest: BookService, private router: Router) {  }
 
   ngOnInit(): void { 
     this.getAllBooks()
@@ -41,10 +41,9 @@ export class MarketPlaceComponent implements OnInit {
 
 
   getAllBooks() {
-    console.log('Hi')
     this.rest.getAllBooks().subscribe((data: any) => {
-      console.log(data);
-      this.books = data;
+      // console.log(data);
+      // this.books = data;
     })
   }
 

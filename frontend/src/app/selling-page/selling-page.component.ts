@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { BookService } from '../services/rest/book/book.service'
 import { Book } from '../services/rest/models/book'
-//import { Book } from '../services/rest/models/book';
 
 @Component({
   selector: 'app-selling-page',
@@ -14,7 +13,6 @@ export class SellingPageComponent implements OnInit {
   @Input() author: string = ''
   @Input() isbn: string = ''
   @Input() price: number = 0
-  @Input() bar_code: string = ''
   @Input() units_stock: number = 0
   @Input() coverImage!: File
   @Input() bookData: Book | undefined
@@ -22,13 +20,14 @@ export class SellingPageComponent implements OnInit {
   /* -----------------------------
   Variaveis para ir buscar à DB para a popUp dos livros
   ----------------------------- */
-  imageUrl: string = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ZSu--8n0BPe0VhWIg5xfbAHaL2%26pid%3DApi&f=1' /*../../assets/svg/image-portrait.svg*/
-  bookName: string = 'Legacy'
-  bookPrice: number = 2
-  bookAutor: string = 'Ze Maria Lencastre'
-  bookISPM: string = 'A5D42A2'
-  bookUnits: number = 3
-  bookState: boolean = false
+  id: string =''
+  imageUrl: string = ''
+  bookName: string = ''
+  bookPrice: number = 0
+  bookAutor: string = ''
+  bookISBN: string = ''
+  bookUnits: number = 0
+  bookState: string = ''
   /* --------------------------------- */
   previewPhotos: string = ''
 
@@ -75,18 +74,48 @@ export class SellingPageComponent implements OnInit {
     this.bookData = new Book({
       title: this.title,
       author: this.author,
-      bar_code: this.bar_code,
       price: this.price,
       isbn: this.isbn,
       coverImage: this.coverImage,
       units_stock: this.units_stock,
       state: "Usado",
     })
+
+
     this.rest.createBook(this.bookData).subscribe({
       complete: () => this.router.navigate(['/']),
       error: (error) => console.log(error),
     })
   }
+
+  getBook(id: string) {
+    this.rest.getBook(id).subscribe((book:any) => {
+      this.imageUrl = book.coverImage.
+      this.bookName = book.title
+      this.bookPrice = book.price,
+      this.bookAutor = book.author,
+      this.bookISBN = book.isbn
+      this.bookUnits = book.units_stock
+      this.bookState = book.state
+    })
+  }
+
+  // getAllBooks() {
+  //   this.rest.getAllBooks().subscribe((book:any) => {
+  //     this.imageUrl = book.coverImage.
+  //     this.bookName = book.title
+  //     this.bookPrice = book.price,
+  //     this.bookAutor = book.author,
+  //     this.bookISBN = book.isbn
+  //     this.bookUnits = book.units_stock
+  //     this.bookState = book.state
+  //   })
+
+  //   this.rest.getAllBooks().subscribe((data: any) => {
+  //     console.log(data);
+  //     this.books = data;
+  //   })
+  // }
 
   createBookBtn: string = 'create inactive'
   newImage: string = 'new-image plus'

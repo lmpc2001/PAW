@@ -50,7 +50,6 @@ module.exports = {
             let { employee_id, user_id } = request;
             let {  title,
                 author,
-                bar_code,
                 price,
                 units_stock,
                 isbn,
@@ -59,8 +58,6 @@ module.exports = {
             const requestImage = request.file;
 
             const coverImage = requestImage.filename;
-
-            console.log(units_stock)
 
             units_stock = Number(units_stock);
             price = Number(price);
@@ -76,7 +73,6 @@ module.exports = {
                     units_stock,
                     title,
                     author,
-                    bar_code,
                     isbn,
                     price,
                     state,

@@ -13,17 +13,17 @@
             <div class={{this.createBookBtn}}>
                 <form action="">
                     <h3>Titulo:</h3>
-                    <input type="text" placeholder="Titulo">
+                    <input type="text" placeholder="Titulo" name="title" [(ngModel)]="title">
                     <h3>Autor:</h3>
-                    <input type="text" placeholder="Autor">
-                    <h3>ISPM:</h3>
-                    <input type="text" placeholder="ISPM">
+                    <input type="text" placeholder="Autor" name="author" [(ngModel)]="author">
+                    <h3>ISBN:</h3>
+                    <input type="text" placeholder="ISBN" name="isbn" [(ngModel)]="isbn">
                     <h3>Numero de unidades:</h3>
-                    <input type="number" placeholder="Numero de unidades" min="1">
+                    <input type="number" placeholder="Numero de unidades" min="1" name="units_stock" [(ngModel)]="units_stock">
                     <h3>Valor para venda:</h3>
-                    <input type="number" placeholder="Valor de venda" min="0.01">
+                    <input type="number" placeholder="Valor de venda" min="0.01" name="price" [(ngModel)]="price">
                     <label for="coverImageID" class="coverImageLabel">
-                        <h3>Imagem de capa</h3>
+                        <h3>Imagem de capa: ({{coverImage?.name}})</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <line x1="12" y1="8" x2="12" y2="16" fill="#fff"  stroke-miterlimit="10" />
                             <line x1="16" y1="12" x2="8" y2="12" fill="#fff"  stroke-miterlimit="10" />
@@ -45,11 +45,11 @@
         <div class="filter">
             <h1>Filtros</h1>
             <h3>Nome do livro:</h3>
-            <input type="text" placeholder="Título" name="title" [(ngModel)]="title">
+            <input type="text" placeholder="Título" >
             <h3>ISBN do livro:</h3>
-            <input type="text" placeholder="ISBN" name="isbn" [(ngModel)]="isbn">
+            <input type="text" placeholder="ISBN" >
             <h3>Valor minimo:</h3>
-            <input type="number" placeholder="Valor minimo" min="0" name="price" [(ngModel)]="price">
+            <input type="number" placeholder="Valor minimo" min="0" >
             <h3>Clientes:</h3>
             <div class="dropDown" (click)="changeDropedCliente()">
                 <div class="placeHolder">
@@ -97,15 +97,15 @@
     <div class="library">
         <h1>Vendas</h1>
         <div class="booksArray">
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISPM]="this.bookISPM" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+            <app-books-cover (click)="getBook(id)" [page]="this.page" [id]="this.id" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
         </div>
 
 

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { BookService } from '../services/rest/book/book.service'
 
 @Component({
   selector: 'app-books-cover',
@@ -6,19 +8,21 @@ import { Component, Input, OnInit } from '@angular/core'
   styleUrls: ['./books-cover.component.css'],
 })
 export class BooksCoverComponent implements OnInit {
+  @Input() id: string = ''
   @Input() imageUrl: string = ''
   @Input() bookName: string = 'Não existe'
   @Input() bookPrice: number = 0
   @Input() bookAutor: string = 'Não existe'
-  @Input() bookISPM: string = 'Não existe'
+  @Input() bookISBN: string = 'Não existe'
   @Input() bookUnits: number = 0
-  @Input() bookState: boolean = false
+  @Input() bookState: string = ''
 
   @Input() page: string = ''
 
   bookEditbtn: string = 'bookEdit inactive'
 
-  constructor() {}
+  constructor(public rest: BookService, private router: Router) {}
+
   ngOnInit(): void {}
 
   getToogleState() {
@@ -50,4 +54,13 @@ export class BooksCoverComponent implements OnInit {
       return 'Comprar livro'
     }
   }
+  
+  // handleBtnClick() {
+  //   if (this.page == 'Selling') {
+  //     this.rest.deleteBook(this.id)
+  //   } else {
+  //     return 'Comprar livro'
+  //   }
+  // }
+
 }

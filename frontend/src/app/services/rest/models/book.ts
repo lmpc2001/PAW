@@ -4,7 +4,6 @@ interface IBook {
     user_id?: string;
     title: string;
     author: string;
-    bar_code: string;
     state: 'Novo' | 'Usado';
     price: number;
     isbn: string;

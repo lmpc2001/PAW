@@ -15,7 +15,6 @@ model Books {
   purchases     Purchases_Books[]
   title         String
   author        String
-  bar_code      String            @unique
   state         String
   price         Float
   isbn          String
