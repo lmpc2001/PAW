@@ -12,6 +12,10 @@ export class LoginPageComponent implements OnInit {
 
   @Input() email: string = '';
   @Input() password: string = '';
+
+  msg = "Email ou password incorreta"
+  type = true
+  display = false
   rest: LoginService;
 
   constructor(private router: Router, rest: LoginService) {
@@ -26,12 +30,19 @@ export class LoginPageComponent implements OnInit {
         email: this.email,
         password: this.password
       }).subscribe((data: any) => {
-        if(data.login) {
-          localStorage.setItem('token', data.token);
-          this.router.navigate(['/', 'ClientDash'])
+        complete: () => {
+          if(data.login) {
+            localStorage.setItem('token', data.token);
+            this.router.navigate(['/', 'ClientDash'])
+          } else {
+            this.display = true
+          }
         }
+        error: () => this.display = true
       })
     } catch (error) {
+      console.log("ola")
+
       console.log(error)
     }
   }
