@@ -47,7 +47,10 @@ export class RegistroPageComponent implements OnInit {
             password: this.password
           }
         }).subscribe({
-          error: () => console.log('Insere Aqui')
+          error: () => {
+            this.msg = "Dados invalidos"
+            this.display = true
+          }
         })
       } else {
         this.restEmployee?.createEmployee({
@@ -58,7 +61,10 @@ export class RegistroPageComponent implements OnInit {
             password: this.password
           }
         }).subscribe({
-          error: () => console.log('Insere Aqui')
+          error: () => {
+            this.msg = "Dados invalidos"
+            this.display = true
+          }
         })
       }
     } catch (error) {
