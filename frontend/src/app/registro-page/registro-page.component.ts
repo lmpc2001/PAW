@@ -35,15 +35,15 @@ export class RegistroPageComponent implements OnInit {
       var platform = this.route.snapshot.queryParams['platform'];
 
       if (this.userType == 'cliente') {
-        this.rest?.createClient(platform, {
+        this.rest?.createClient('web', {
           client: {
             name: this.name,
             email: this.email,
             phone_number: this.phone_number,
             password: this.password
           }
-        }).subscribe((data: any) => {
-          console.log(data);
+        }).subscribe({
+          error: () => console.log('Insere Aqui')
         })
       } else {
         this.restEmployee?.createEmployee({
@@ -53,12 +53,10 @@ export class RegistroPageComponent implements OnInit {
             phone_number: this.phone_number,
             password: this.password
           }
-        }).subscribe((data: any) => {
-          console.log(data);
+        }).subscribe({
+          error: () => console.log('Insere Aqui')
         })
       }
-
-
     } catch (error) {
       console.log(error)
     }
