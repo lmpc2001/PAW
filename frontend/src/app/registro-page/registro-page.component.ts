@@ -48,7 +48,7 @@ export class RegistroPageComponent implements OnInit {
           }
         }).subscribe({
           error: () => {
-            this.msg = "Dados invalidos"
+            this.msg = "Os dados inseridos são invalidos"
             this.display = true
           }
         })
@@ -62,7 +62,7 @@ export class RegistroPageComponent implements OnInit {
           }
         }).subscribe({
           error: () => {
-            this.msg = "Dados invalidos"
+            this.msg = "Os dados inseridos são invalidos"
             this.display = true
           }
         })

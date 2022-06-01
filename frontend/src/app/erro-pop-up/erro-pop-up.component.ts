@@ -1,18 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
+import { Observable, Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'app-erro-pop-up',
   templateUrl: './erro-pop-up.component.html',
   styleUrls: ['./erro-pop-up.component.css'],
 })
-export class ErroPopUpComponent implements OnInit {
+export class ErroPopUpComponent implements OnInit, OnDestroy {
+  subscription: Subscription | undefined;
+  fiveSeconds: Observable<number> = timer(0, 5000);
   @Input() msg: string = 'Dados incorretos'
   @Input() type: boolean = true
   @Input() display: boolean = false
 
-  constructor() {}
+  constructor() {
+    this.setDisplay()
+   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   getType() {
     return this.type ? 'red' : 'green'
@@ -21,4 +27,15 @@ export class ErroPopUpComponent implements OnInit {
   getDisplay(){
     return this.display ? "display" : ""
   }
+
+  setDisplay(){
+    this.subscription = this.fiveSeconds.subscribe(() => {
+      this.display = false;
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
+  
 }
