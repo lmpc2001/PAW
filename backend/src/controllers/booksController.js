@@ -12,7 +12,8 @@ module.exports = {
                 book.coverImage = `http://localhost:3333/uploads/${book.coverImage}`;
             })
 
-            return response.status(200).render('bookView', { books })
+            // return response.status(200).render('bookView', { books })
+            return response.status(200).json({books:{ book: books } })
         } catch (error) {
             next(error);
         }
@@ -38,7 +39,8 @@ module.exports = {
                 return response.status(404).send("Book not found!");
             }
 
-            return response.status(200).render('bookView', { books })
+            // return response.status(200).render('bookView', { books })
+            return response.status(200).json({ books })
 
         } catch (error) {
             next(error);

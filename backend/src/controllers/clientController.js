@@ -14,7 +14,8 @@ module.exports = {
                 return response.status(404).send("No clients have yet been added to the platform!");
             }
 
-            return response.status(200).render('clientView', { clients });
+            // return response.status(200).render('clientView', { clients });
+            return response.status(200).json({ clients })
         } catch (error) {
             next(error);
         }
@@ -38,7 +39,7 @@ module.exports = {
             }
 
             return response.status(200).render("clientView", { clients });
-
+            return response.status(200).json({ clients })
         } catch (error) {
             next(error);
         }

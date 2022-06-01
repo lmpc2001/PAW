@@ -14,7 +14,8 @@ module.exports = {
                 return response.status(404).send("No employees have yet been added to the platform!");
             }
 
-            return response.status(200).render('employeeView', { employees })
+            // return response.status(200).render('employeeView', { employees })
+            return response.status(200).json({ employees })
         } catch (error) {
             next(error);
         }
@@ -37,8 +38,8 @@ module.exports = {
                 return response.status(404).send("Employee not found!");
             }
 
-            return response.status(200).render('employeeView', { employees })
-
+            // return response.status(200).render('employeeView', { employees })
+            return response.status(200).json({ employees })
         } catch (error) {
             next(error);
         }

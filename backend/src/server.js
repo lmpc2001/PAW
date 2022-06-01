@@ -15,16 +15,16 @@ const PORT = process.env.PORT || 3333;
 const app = express();
 
 // connectToCluster();
+app.use(cors());
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
-app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
+app.use('/uploads', cors(), express.static(path.join(__dirname, '..', 'uploads')));
 app.use(routes);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerConfig));
 app.use('/api/v1', routes);

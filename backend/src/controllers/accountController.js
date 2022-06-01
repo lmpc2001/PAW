@@ -9,8 +9,8 @@ module.exports = {
                 return response.status(404).send("Sem contas criadas!");
             }
 
-            return response.status(200).send(accounts);
-            // return response.status(200).json({accounts});
+            // return response.status(200).send(accounts);
+            return response.status(200).json({accounts});
         } catch (error) {
             next(error);
         }
@@ -30,8 +30,8 @@ module.exports = {
                 return response.status(404).send("O cliente selecionado não possui um programa de fidelização");
             }
 
-            return response.status(200).send(account);
-            // return response.status(200).json({accounts});
+            // return response.status(200).send(account);
+            return response.status(200).json({accounts});
 
         } catch (error) {
             next(error);

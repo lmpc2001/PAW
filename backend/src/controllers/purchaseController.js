@@ -18,7 +18,8 @@ module.exports = {
                 return response.status(404).send("No purchases have yet been added to the platform!");
             }
 
-            return response.status(200).render('purchaseView', { purchases });
+            // return response.status(200).render('purchaseView', { purchases });
+            return response.status(200).json({ purchases })
 
         } catch (error) {
             next(error);
@@ -49,8 +50,8 @@ module.exports = {
                 return response.status(404).send("Purchase not found!");
             }
 
-            return response.status(200).render('purchaseView', { purchases });
-
+            // return response.status(200).render('purchaseView', { purchases });
+            return response.status(200).json({ purchases })
         } catch (error) {
             next(error);
         }
