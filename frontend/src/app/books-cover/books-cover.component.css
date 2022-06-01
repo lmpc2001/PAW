@@ -92,7 +92,7 @@
 .bookEdit .box {
     transition: .5s;
     width: 70vh;
-    background-color: var(--background-primary);
+    background-color: var(--background-secundary);
     border: 2px solid var(--roxo);
     border-radius: 10px;
     display: flex;
