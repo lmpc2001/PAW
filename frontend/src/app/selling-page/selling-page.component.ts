@@ -9,6 +9,8 @@ import { Book } from '../services/rest/models/book'
   styleUrls: ['./selling-page.component.css'],
 })
 export class SellingPageComponent implements OnInit {
+  books!: any;
+
   @Input() title: string = ''
   @Input() author: string = ''
   @Input() isbn: string = ''
@@ -33,7 +35,9 @@ export class SellingPageComponent implements OnInit {
 
   constructor(public rest: BookService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllBooks();
+  }
 
   page = 'Selling'
 
@@ -88,20 +92,8 @@ export class SellingPageComponent implements OnInit {
     })
   }
 
-  getBook(id: string) {
-    this.rest.getBook(id).subscribe((book:any) => {
-      this.imageUrl = book.coverImage.
-      this.bookName = book.title
-      this.bookPrice = book.price,
-      this.bookAutor = book.author,
-      this.bookISBN = book.isbn
-      this.bookUnits = book.units_stock
-      this.bookState = book.state
-    })
-  }
-
-  // getAllBooks() {
-  //   this.rest.getAllBooks().subscribe((book:any) => {
+  // getBook(id: string) {
+  //   this.rest.getBook(id).subscribe((book:any) => {
   //     this.imageUrl = book.coverImage.
   //     this.bookName = book.title
   //     this.bookPrice = book.price,
@@ -110,12 +102,13 @@ export class SellingPageComponent implements OnInit {
   //     this.bookUnits = book.units_stock
   //     this.bookState = book.state
   //   })
-
-  //   this.rest.getAllBooks().subscribe((data: any) => {
-  //     console.log(data);
-  //     this.books = data;
-  //   })
   // }
+
+  getAllBooks() {
+    this.rest.getAllBooks().subscribe((data: any) => {
+      this.books = data.books.book;
+    })
+  }
 
   createBookBtn: string = 'create inactive'
   newImage: string = 'new-image plus'

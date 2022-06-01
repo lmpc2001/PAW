@@ -40,8 +40,6 @@ export class LoginPageComponent implements OnInit {
         this.display = true
       })
     } catch (error) {
-      console.log("ola")
-
       console.log(error)
     }
   }

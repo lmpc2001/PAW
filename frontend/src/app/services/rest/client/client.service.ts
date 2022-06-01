@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Client } from '../models/client';
 
-const baseUrl = 'http://localhost:3333/clients/';
+const baseUrl = 'http://localhost:3333/clients';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -30,10 +30,14 @@ export class ClientService {
   }
 
   updateClient(id:string, client: Client):Observable<Client> {
-    return this.http.put<Client>(baseUrl + '/update/' + id, JSON.stringify(client), httpOptions)
+    return this.http.put<Client>(baseUrl + '/update/' + id, JSON.stringify(client.client), httpOptions)
   }
 
   deleteClient(id:string):Observable<Client> {
     return this.http.delete<Client>(baseUrl + '/delete/' + id)
+  }
+
+  fidelizeClient(id:string):Observable<Client> {
+    return this.http.post<Client>(baseUrl + '/create/loyalty_program/' + id, httpOptions)
   }
 }

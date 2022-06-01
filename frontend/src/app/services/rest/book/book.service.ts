@@ -45,6 +45,6 @@ export class BookService {
   }
 
   deleteBook(id:string):Observable<Book> {
-    return this.http.delete<Book>(baseUrl + '/delete/' + id)
+    return this.http.delete<Book>(baseUrl + '/delete/' + id, httpOptions)
   }
 }

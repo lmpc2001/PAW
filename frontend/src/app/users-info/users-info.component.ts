@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { ClientService } from '../services/rest/client/client.service'
+import { EmployeeService } from '../services/rest/employee/employee.service'
 
 @Component({
   selector: 'app-users-info',
@@ -10,34 +12,34 @@ export class UsersInfoComponent implements OnInit {
   @Input() nome: string = ''
   @Input() date: string = ''
   @Input() phone_number: number = 0
-  @Input() email?: string = ''
+  @Input() email: string = ''
   @Input() dataContext: string = ''
   @Input() fidelizado: boolean = true
+  @Input() userType: 'e' | 'c' | '' = '';
 
   popUpVerify: string = 'alert inactive'
   popUpText: string = ''
   popUpBtn: string = ''
 
-  constructor() {}
+  constructor(public restE: EmployeeService, public restC: ClientService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   submit() {
     switch (this.popUpBtn) {
       case 'submit':
-        console.log('Info submited')
+        this.userType == 'c' ? this.updateClient(this.id) : this.updateEmployee(this.id);
+        this.changeValuePopUp()
         break
 
       case 'delete':
-        console.log('User deleted')
+        this.userType == 'c' ? this.deleteClient(this.id) : this.deleteEmployee(this.id);
+        this.changeValuePopUp()
         break
 
       case 'fidelizar':
-        console.log('User fidelizado')
-        break
-
-      case 'plusEmployee':
-        console.log('Funcionario atribuido')
+        this.userType == 'c' && this.fidelizeClient(this.id)
+        this.changeValuePopUp()
         break
 
       default:
@@ -46,7 +48,7 @@ export class UsersInfoComponent implements OnInit {
   }
 
   changeValuePopUp(btn?: string) {
-    if (this.popUpVerify == 'alert active') { this.popUpVerify = 'alert inactive'}
+    if (this.popUpVerify == 'alert active') { this.popUpVerify = 'alert inactive' }
     else { this.popUpVerify = 'alert active' }
 
     switch (btn) {
@@ -65,18 +67,59 @@ export class UsersInfoComponent implements OnInit {
         this.popUpText = `Tem a certeza que deseja fidelizar o utilizador ${this.id}?`
         break
 
-      case 'plusEmployee':
-        this.popUpBtn = btn
-        this.popUpText = `Tem a certeza que deseja atribuir um funcionario o utilizador ${this.id}?`
-        break
-
       default:
         break
     }
   }
 
   getDataContext(type: string) {
-    if (this.dataContext == type) { return 'show' } 
+    if (this.dataContext == type) { return 'show' }
     else { return 'hidden' }
+  }
+
+  deleteEmployee(id: string) {
+    this.restE.deleteEmployee(id).subscribe((data: any) => {
+      console.log(data);
+    })
+  }
+
+  deleteClient(id: string) {
+    this.restC.deleteClient(id).subscribe((data: any) => {
+      console.log(data);
+    })
+  }
+
+  fidelizeClient(id:string){
+    this.restC.fidelizeClient(id).subscribe((data:any) => {
+      console.log(data);
+    })
+  }
+
+  updateEmployee(id: string) {
+    this.restE.updateEmployee(id, {
+      employee: {
+        name: this.nome,
+        phone_number: this.phone_number,
+        email: this.email
+      }
+    }).subscribe((data: any) => {
+      console.log(data)
+    }, (error: any) => {
+      console.log(error)
+    })
+  }
+
+  updateClient(id: string) {
+    this.restC.updateClient(id, {
+      client: {
+        name: this.nome,
+        phone_number: this.phone_number,
+        email: this.email
+      }
+    }).subscribe((data: any) => {
+      console.log(data);
+    }, (error: any) => {
+      console.log(error)
+    })
   }
 }

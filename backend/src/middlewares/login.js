@@ -35,6 +35,7 @@ module.exports = (request, response, next) => {
         request.user_id = decoded.user_id;
         request.employee_id = decoded.id;
         request.employee_rule = decoded.roule?.description;
+
         next();
     })
 }

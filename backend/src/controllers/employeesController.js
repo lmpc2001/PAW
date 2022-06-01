@@ -6,7 +6,12 @@ module.exports = {
         try {
             const employees = await prisma.employees.findMany({
                 include: {
-                    roule: true
+                    roule: true,
+                    user: {
+                        select: {
+                            email: true,
+                        }
+                    }
                 }
             });
 
@@ -105,7 +110,10 @@ module.exports = {
     async update(request, response, next) {
         try {
             const { id } = request.params;
-            const { name } = request.body;
+            let { name, email, phone_number } = request.body;
+
+            phone_number = Number(phone_number);
+
 
             const employee = await prisma.employees.findUnique({
                 where: {
@@ -122,7 +130,13 @@ module.exports = {
                     id
                 },
                 data: {
-                    name
+                    name: name != undefined ? name : undefined,
+                    phone_number: phone_number != undefined ? phone_number : undefined,
+                    user: {
+                        update: {
+                            email: email != undefined ? email : undefined
+                        }
+                    }
                 }
             })
 

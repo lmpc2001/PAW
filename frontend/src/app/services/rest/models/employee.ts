@@ -4,9 +4,9 @@ interface IEmployee {
     roule_id?: string;
     employee_id?: string;
     name: string;
-    phone_number: string;
+    phone_number: number;
     email: string;
-    password: string;
+    password?: string;
 }
 
 export class Employee {

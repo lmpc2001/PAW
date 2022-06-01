@@ -8,10 +8,11 @@ const uploads = multer(multerConfig);
 
 const clientRouter = Router();
 
+
 clientRouter.get('/', clientController.index);
 clientRouter.get('/search/:id', clientController.search);
 clientRouter.post('/create', clientController.create);
-clientRouter.post('/create/loyalty_program', accountController.create);
+clientRouter.post('/create/loyalty_program/:id', accountController.create);
 clientRouter.put('/update/:id', clientController.update);
 clientRouter.delete('/delete/:id', clientController.delete);
 

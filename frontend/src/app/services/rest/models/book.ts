@@ -14,7 +14,7 @@ interface IBook {
 export class Book {
     book: IBook
 
-    constructor(bookInfo: IBook) {
+    constructor(private bookInfo: IBook) {
         this.book = bookInfo
     }
 }

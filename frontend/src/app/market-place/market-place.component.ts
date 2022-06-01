@@ -10,7 +10,7 @@ import { Book } from '../services/rest/models/book'
   styleUrls: ['./market-place.component.css'],
 })
 export class MarketPlaceComponent implements OnInit {
-  books!: Book[];
+  books!: any;
 
     /* -----------------------------
   Variaveis para ir buscar à DB para a popUp dos livros
@@ -39,11 +39,9 @@ export class MarketPlaceComponent implements OnInit {
   autorLabel: string = "Autor";
   changeAutorLabel(autor: string) { this.autorLabel = autor; }
 
-
   getAllBooks() {
     this.rest.getAllBooks().subscribe((data: any) => {
-      // console.log(data);
-      // this.books = data;
+      this.books = data.books.book;
     })
   }
 

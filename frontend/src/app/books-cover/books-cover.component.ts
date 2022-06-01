@@ -40,7 +40,7 @@ export class BooksCoverComponent implements OnInit {
 
   actionBook() {
     if (this.page == 'Selling') {
-      console.log('Delete book')
+      this.deleteBook();
     } else {
       console.log('Book bought')
     }
@@ -62,5 +62,13 @@ export class BooksCoverComponent implements OnInit {
   //     return 'Comprar livro'
   //   }
   // }
+
+
+  deleteBook(){
+    this.rest.deleteBook(this.id).subscribe({
+      complete: () => console.log('Sucesso'),
+      error: (error:any) => console.log(error),
+    })
+  }
 
 }

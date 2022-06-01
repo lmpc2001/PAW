@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { ClientService } from '../services/rest/client/client.service'
+import { EmployeeService } from '../services/rest/employee/employee.service'
 
 @Component({
   selector: 'app-admin-tools',
@@ -6,9 +8,15 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./admin-tools.component.css'],
 })
 export class AdminToolsComponent implements OnInit {
-  constructor() {}
+  employees!: any;
+  clients!:any
 
-  ngOnInit(): void {}
+  constructor(public restE: EmployeeService, public restC: ClientService) {}
+
+  ngOnInit(): void {
+    this.getAllEmployees();
+    this.getAllClients();
+  }
 
   id = 'JJM35J7NGF31'
   nome = 'João'
@@ -41,5 +49,19 @@ export class AdminToolsComponent implements OnInit {
       default:
         break
     }
+  }
+
+  getAllEmployees() {
+    this.restE.getAllEmployees().subscribe((data: any) => {
+      console.log(data);
+      this.employees = data.employees;
+    })
+  }
+
+  getAllClients() {
+    this.restC.getAllClients().subscribe((data: any) => {
+      console.log(data);
+      this.clients = data.clients;
+    })
   }
 }

@@ -10,7 +10,7 @@ module.exports = {
             }
 
             // return response.status(200).send(accounts);
-            return response.status(200).json({accounts});
+            return response.status(200).json({ accounts });
         } catch (error) {
             next(error);
         }
@@ -22,7 +22,7 @@ module.exports = {
 
             const account = await prisma.accounts.findMany({
                 where: {
-                   client_id 
+                    client_id
                 }
             });
 
@@ -31,7 +31,7 @@ module.exports = {
             }
 
             // return response.status(200).send(account);
-            return response.status(200).json({accounts});
+            return response.status(200).json({ accounts });
 
         } catch (error) {
             next(error);
@@ -40,13 +40,17 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { client_id, points, transfer_description } = request.body;
+            const { id } = request.params;
+            const { points = 50,
+                transfer_description = 'Assinatura do plano de fidelização'
+            } = request.body;
 
-            const account = await prisma.accounts.create({
+
+            await prisma.accounts.create({
                 data: {
                     client: {
                         connect: {
-                            id: client_id
+                            id
                         }
                     },
                     points,

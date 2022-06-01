@@ -17,11 +17,12 @@
                 <h3>{{this.autorLabel}}</h3>
                 <div class="space"></div>
                 <svg class="svgDropDown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <polyline points="5 9 12 16 19 9" fill="none"  stroke-miterlimit="10"/>
+                    <polyline points="5 9 12 16 19 9" fill="none" stroke-miterlimit="10" />
                 </svg>
             </div>
             <div class={{this.dropedAutor}}>
-                <button class="escolha" (click)="changeAutorLabel('José Antonio Pinto')" href="">José Antonio Pinto</button>
+                <button class="escolha" (click)="changeAutorLabel('José Antonio Pinto')" href="">José Antonio
+                    Pinto</button>
                 <button class="escolha" (click)="changeAutorLabel('José Pinto')" href="">José Pinto</button>
                 <button class="escolha" (click)="changeAutorLabel('Gonçalo Pedro')" href="">Gonçalo Pedro</button>
                 <button class="escolha" (click)="changeAutorLabel('Luis Pires')" href="">Luis Pires</button>
@@ -52,16 +53,10 @@
 
     <div class="library">
         <h1>Livros</h1>
-        <div class="booksArray">
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
-            <app-books-cover [page]="this.page" [bookAutor]="this.bookAutor" [bookISBN]="this.bookISBN" [bookName]="this.bookName" [bookPrice]="this.bookPrice" [bookState]="this.bookState" [bookUnits]="this.bookUnits" [imageUrl]="this.imageUrl" class="gridItem"></app-books-cover>
+        <div class="booksArray" *ngFor="let book of this.books">
+            <app-books-cover [page]="this.page" [bookAutor]="book.author" [bookISBN]="book.isbn" [bookName]="book.title"
+                [bookPrice]="book.price" [bookState]="book.state" [bookUnits]="book.units_stock"
+                [imageUrl]="book.coverImage" class="gridItem"></app-books-cover>
         </div>
     </div>
 </div>

@@ -10,8 +10,6 @@ module.exports = {
     async login(request, response, next) {
         try {
             const { email, password } = request.body;
-            console.log('Entrei');
-
             const hashPassword = SHA256(password).toString();
 
             const user = await prisma.user.findFirst({

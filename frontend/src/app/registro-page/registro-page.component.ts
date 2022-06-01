@@ -13,7 +13,7 @@ export class RegistroPageComponent implements OnInit {
   @Input() userType: string = 'cliente';
   @Input() name: string = '';
   @Input() email: string = '';
-  @Input() phone_number: string = '';
+  @Input() phone_number: number = 0;
   @Input() password: string = '';
 
   msg = "Email ou password incorreta"

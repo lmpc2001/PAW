@@ -1,22 +1,22 @@
 <div id="users">
     <form action="">
-        <input placeholder="ID: {{this.id}}" type="text">
-        <input placeholder="Nome: {{this.nome}}" type="text">
-        <input placeholder="Tlm: {{this.phone_number}}" type="text">
-        <input placeholder="Criado a {{this.date}}" type="text">
+        <input placeholder="ID: {{this.id}}" type="text" name="id" [(ngModel)]="id">
+        <input placeholder="Nome: {{this.nome}}" type="text" name="nome" [(ngModel)]="nome">
+        <input placeholder="Tlm: {{this.phone_number}}" type="text" name="phone_number" [(ngModel)]="phone_number">
+        <input placeholder="Criado a {{this.date}}" type="text" >
         <input class="{{this.getDataContext('funcionario')}}" placeholder="Password" type="password">
-        <input class="{{this.getDataContext('user')}}" placeholder="Email:{{this.email}}" type="password">
+        <input class="{{this.getDataContext('user')}}" placeholder="Email:{{this.email}}" type="text" name="email" [(ngModel)]="email">>
     </form>
 
     <div class="flex">
-        <div class="bts" (click)="this.changeValuePopUp('plusEmployee')">
+        <!-- <div class="bts" (click)="this.changeValuePopUp('plusEmployee')">
             <h3>Atribuir funcionario</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <line x1="12" y1="8" x2="12" y2="16" fill="#fff"  stroke-miterlimit="10"/>
                 <line x1="16" y1="12" x2="8" y2="12" fill="#fff"  stroke-miterlimit="10"/>
                 <circle cx="12" cy="12" r="10" fill="none" />
             </svg>
-        </div>
+        </div> -->
 
         <div class="bts" (click)="this.changeValuePopUp('delete')">
             <h3>Delete user</h3>

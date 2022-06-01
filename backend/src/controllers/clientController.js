@@ -6,7 +6,12 @@ module.exports = {
         try {
             const clients = await prisma.clients.findMany({
                 include: {
-                    accounts: true
+                    accounts: true,
+                    user: {
+                        select: {
+                            email: true,
+                        }
+                    }
                 }
             });
 
@@ -46,16 +51,16 @@ module.exports = {
     },
 
     async create(request, response, next) {
-        try{
+        try {
             const { platform } = request.query;
-            
+
             let { employee_id,
                 name,
                 email,
                 password,
                 phone_number } = request.body.client;
 
-                phone_number = Number(phone_number);
+            phone_number = Number(phone_number);
 
             if (platform == "web") {
                 await prisma.user.create({
@@ -93,7 +98,9 @@ module.exports = {
     async update(request, response, next) {
         try {
             const { id } = request.params;
-            const { name } = request.body;
+            let { name, email, phone_number } = request.body;
+
+            phone_number = Number(phone_number);
 
             const client = await prisma.clients.findUnique({
                 where: {
@@ -110,7 +117,13 @@ module.exports = {
                     id
                 },
                 data: {
-                    name
+                    name: name != undefined ? name : undefined,
+                    phone_number: phone_number != undefined ? phone_number : undefined,
+                    user: {
+                        update: {
+                            email: email != undefined ? email : undefined
+                        }
+                    }
                 }
             })
 
