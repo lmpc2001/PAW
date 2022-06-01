@@ -1,23 +1,24 @@
 .erroPopUp {
     transition: .5s;
-    width: 0px;
-    height: auto;
+    min-width: 400px;
+    width: auto;
+    height: 70px;
     position: absolute;
     z-index: 99;
     border-radius: 10px;
     right: 0;
     top: 0;
     margin: 15px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 0;
 }
 
 .erroPopUp.display {
     transition: .5s;
-    min-width: 400px;
-    width: auto;
+    opacity: 100%;
 }
 
 .erroPopUp.display.red {
