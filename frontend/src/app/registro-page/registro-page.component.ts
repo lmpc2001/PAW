@@ -16,6 +16,10 @@ export class RegistroPageComponent implements OnInit {
   @Input() phone_number: string = '';
   @Input() password: string = '';
 
+  msg = "Email ou password incorreta"
+  type = true
+  display = false
+
   constructor(private router: Router, private route: ActivatedRoute, public rest?: ClientService, public restEmployee?: EmployeeService) { }
 
   ngOnInit(): void {
@@ -35,7 +39,7 @@ export class RegistroPageComponent implements OnInit {
       var platform = this.route.snapshot.queryParams['platform'];
 
       if (this.userType == 'cliente') {
-        this.rest?.createClient(platform, {
+        this.rest?.createClient('web', {
           client: {
             name: this.name,
             email: this.email,
@@ -57,9 +61,9 @@ export class RegistroPageComponent implements OnInit {
           console.log(data);
         })
       }
-
-
     } catch (error) {
+      this.display = true
+      this.msg = "Algo deu errado, por favor tente outra vez!"
       console.log(error)
     }
   }

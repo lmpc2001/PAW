@@ -1,4 +1,6 @@
 <div id="registo">
+    <app-erro-pop-up [msg]="this.msg" [type]="this.type" [display]="this.display"></app-erro-pop-up>
+
     <div class="apresentacao">
         <div class="text">
             <h1>Registo Page</h1>
@@ -10,18 +12,18 @@
             <a href="/" class="btnsForm ">Login</a>
             <a href="/Registo" class="btnsForm active">Registar</a>
         </div>
-        <form>
+        <form mane="registroForm">
             <div class="flex">
-                <h3>Sou {{userType}}</h3>
+                <h3>Sou {{this.userType}}</h3>
                 <div class="checkbox">
-                    <input type="checkbox" value="1" id="checkboxOneInput" (change)="changeUserType()" />
+                    <input name="inputCheckbox" ng-model="inputCheckbox" type="checkbox" value="1" id="checkboxOneInput" (change)="changeUserType()" />
                     <label for="checkboxOneInput"></label>
                 </div>
             </div>
-            <input type="text" placeholder="Name" name="name" [(ngModel)]="name">
-            <input type="text" placeholder="Email" name="email" [(ngModel)]="email">
-            <input type="tel" placeholder="Phone number" name="phone_number" [(ngModel)]="phone_number">
-            <input type="password" placeholder="Password" name="password" [(ngModel)]="password">
+            <input name="inputName" ng-model="inputName" type="text" placeholder="Name" name="name" [(ngModel)]="name" required>
+            <input name="inputEmail" ng-model="inputEmail" type="email" placeholder="Email" name="email" [(ngModel)]="email" required>
+            <input name="inputTlm" ng-model="inputTlm" type="tel" placeholder="Phone number" name="phone_number" [(ngModel)]="phone_number" required maxlength="9" minlength="9">
+            <input name="inputPassword" ng-model="inputPassword" type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
             <button class="btnConfirmar" (click)="submit()">Confirmar</button>
         </form>
     </div>
