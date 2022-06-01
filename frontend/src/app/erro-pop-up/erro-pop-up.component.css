@@ -1,0 +1,51 @@
+.erroPopUp {
+    transition: .5s;
+    width: 0px;
+    height: auto;
+    position: absolute;
+    z-index: 99;
+    border-radius: 10px;
+    right: 0;
+    top: 0;
+    margin: 15px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.erroPopUp.display {
+    transition: .5s;
+    min-width: 400px;
+    width: auto;
+}
+
+.erroPopUp.display.red {
+    background-color: rgba(255, 0, 0, 0.368);
+}
+
+.erroPopUp.display.green {
+    background-color: rgba(72, 255, 0, 0.368);
+}
+
+.erroPopUp h2 {
+    display: none;
+}
+
+.erroPopUp.display h2 {
+    display: unset;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.erroPopUp svg {
+    display: none;
+}
+
+.erroPopUp.display svg {
+    display: unset;
+    height: 45px;
+    width: auto;
+    margin-left: 5px;
+    stroke: white;
+}
