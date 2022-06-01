@@ -18,6 +18,7 @@ import { BooksCoverComponent } from './books-cover/books-cover.component';
 import { AdminToolsComponent } from './admin-tools/admin-tools.component';
 import { UsersInfoComponent } from './users-info/users-info.component';
 import { ShopDashComponent } from './shop-dash/shop-dash.component';
+import { ErroPopUpComponent } from './erro-pop-up/erro-pop-up.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ShopDashComponent } from './shop-dash/shop-dash.component';
     BooksCoverComponent,
     AdminToolsComponent,
     UsersInfoComponent,
-    ShopDashComponent
+    ShopDashComponent,
+    ErroPopUpComponent
   ],
   imports: [
     BrowserModule,
