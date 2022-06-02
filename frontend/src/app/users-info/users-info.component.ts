@@ -13,9 +13,8 @@ export class UsersInfoComponent implements OnInit {
   @Input() date: string = ''
   @Input() phone_number: number = 0
   @Input() email: string = ''
-  @Input() dataContext: string = ''
   @Input() fidelizado: boolean = true
-  @Input() userType: 'e' | 'c' | '' = '';
+  @Input() userType: 'e' | 'c' | 'admin' | '' = '';
 
   popUpVerify: string = 'alert inactive'
   popUpText: string = ''
@@ -73,7 +72,7 @@ export class UsersInfoComponent implements OnInit {
   }
 
   getDataContext(type: string) {
-    if (this.dataContext == type) { return 'show' }
+    if (this.userType == type) { return 'show' }
     else { return 'hidden' }
   }
 

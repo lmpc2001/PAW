@@ -3,9 +3,9 @@
         <input placeholder="ID: {{this.id}}" type="text" name="id" [(ngModel)]="id">
         <input placeholder="Nome: {{this.nome}}" type="text" name="nome" [(ngModel)]="nome">
         <input placeholder="Tlm: {{this.phone_number}}" type="text" name="phone_number" [(ngModel)]="phone_number">
-        <input placeholder="Criado a {{this.date}}" type="text" >
-        <input class="{{this.getDataContext('funcionario')}}" placeholder="Password" type="password">
-        <input class="{{this.getDataContext('user')}}" placeholder="Email:{{this.email}}" type="text" name="email" [(ngModel)]="email">>
+        <input placeholder="Criado a {{this.date}}" type="text">
+        <input class="{{this.getDataContext('e')}}" placeholder="Password" type="password">
+        <input class="{{this.getDataContext('c')}}" placeholder="Email: {{this.email}}" type="text" name="email" [(ngModel)]="email">
     </form>
 
     <div class="flex">
@@ -28,7 +28,7 @@
             </svg>
         </div>
 
-        <div class="bts {{this.getDataContext('user')}}" (click)="this.changeValuePopUp('fidelizar')">
+        <div class="bts {{this.getDataContext('c')}}" (click)="this.changeValuePopUp('fidelizar')">
             <h3>Fidelizar</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <polygon points="18.5 20 12 14 5.5 20 5.5 4 18.5 4 18.5 20" fill="none"/>
