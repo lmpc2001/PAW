@@ -11,7 +11,7 @@
             </svg>
         </div>
         <div class="infoTable {{this.dropDownFuncionarios}}" *ngFor="let employee of this.employees">
-            <app-users-info class="line" [dataContext]="this.dataContextUser" userType="e" [date]="employee.created_at" [email]="employee.user.email" [id]="employee.id" [nome]="employee.name" [phone_number]="employee.phone_number"></app-users-info>
+            <app-users-info class="line" userType="e" [date]="employee.created_at" [email]="employee.user.email" [id]="employee.id" [nome]="employee.name" [phone_number]="employee.phone_number"></app-users-info>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
             </svg>
         </div>
         <div class="infoTable {{this.dropDownClientes}}" *ngFor="let client of this.clients">
-            <app-users-info class="line" [dataContext]="this.dataContextUser" userType="c" [date]="client.created_at" [email]="client.user.email" [id]="client.id" [nome]="client.name" [phone_number]="client.phone_number"></app-users-info>
+            <app-users-info class="line" userType="c" [date]="client.created_at" [email]="client.user.email" [id]="client.id" [nome]="client.name" [phone_number]="client.phone_number"></app-users-info>
         </div>
     </div>
 
