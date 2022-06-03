@@ -36,8 +36,6 @@ export class RegistroPageComponent implements OnInit {
 
   submit() {
     try {
-      var platform = this.route.snapshot.queryParams['platform'];
-
       if (this.userType == 'cliente') {
         this.rest?.createClient('web', {
           client: {

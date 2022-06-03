@@ -13,12 +13,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { RecoverPageComponent } from './recover-page/recover-page.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BooksCoverComponent } from './books-cover/books-cover.component';
 import { AdminToolsComponent } from './admin-tools/admin-tools.component';
 import { UsersInfoComponent } from './users-info/users-info.component';
 import { ShopDashComponent } from './shop-dash/shop-dash.component';
 import { ErroPopUpComponent } from './erro-pop-up/erro-pop-up.component';
+import { AuthorizationService } from './services/Authorization/authorization.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,9 @@ import { ErroPopUpComponent } from './erro-pop-up/erro-pop-up.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthorizationService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

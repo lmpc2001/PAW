@@ -28,6 +28,10 @@ export class ErroPopUpComponent implements OnInit, OnDestroy {
     return this.display ? "display" : ""
   }
 
+  changeDisplay() {
+    this.display = false;
+  }
+
   setDisplay(){
     this.subscription = this.fiveSeconds.subscribe(() => {
       this.display = false;

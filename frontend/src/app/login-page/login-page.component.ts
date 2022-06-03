@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute, Route, Router } from '@angular/router'
 import { ClientService } from '../services/rest/client/client.service';
 import { EmployeeService } from '../services/rest/employee/employee.service';
 import { LoginService } from '../services/rest/login/login.service';
@@ -18,13 +18,15 @@ export class LoginPageComponent implements OnInit {
   display = false
   rest: LoginService;
 
-  constructor(private router: Router, rest: LoginService) {
+  constructor(private router: Router, private route: ActivatedRoute, rest: LoginService) {
     this.rest = rest;
   }
 
   ngOnInit(): void { }
 
   submit() {
+    let nextPath = this.route.snapshot.queryParams['returnURL'];
+
     try {
       this.rest?.login({
         email: this.email,
@@ -32,9 +34,11 @@ export class LoginPageComponent implements OnInit {
       }).subscribe((data: any) => {
         if (data.login) {
           localStorage.setItem('token', data.token);
-          this.router.navigate(['/', 'ClientDash'])
-        } else {
-          this.display = true
+          if(nextPath){
+            this.router.navigate([nextPath])
+          } else {
+            this.router.navigate(['/', 'ClientDash'])
+          }
         }
       }, () => {
         this.display = true
