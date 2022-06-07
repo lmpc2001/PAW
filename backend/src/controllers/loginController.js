@@ -53,7 +53,7 @@ module.exports = {
 
             return response.status(200).json({
                 login: true,
-                user: AES.encrypt(user_logedIn, `${process.env.SECRET}`).toString(),
+                token: user_logedIn /*AES.encrypt(, `${process.env.SECRET}`).toString(),*/
             })
         } catch (error) {
             next(error)
