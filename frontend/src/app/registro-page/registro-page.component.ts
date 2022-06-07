@@ -26,12 +26,17 @@ export class RegistroPageComponent implements OnInit {
   }
 
   changeUserType() {
-
     if (this.userType == 'cliente') {
       this.userType = 'funcionario'
     } else {
       this.userType = 'cliente'
     }
+  }
+
+  closePopUp() {
+    setTimeout(() => {
+      this.display = false;
+    }, 5000)
   }
 
   submit() {
@@ -45,9 +50,19 @@ export class RegistroPageComponent implements OnInit {
             password: this.password
           }
         }).subscribe({
+          complete: () => {
+            this.msg = "Cliente registado com sucesso"
+            this.type = false;
+            this.display = true;
+
+            this.closePopUp();
+            this.router.navigate(['/login']);
+          },
           error: () => {
             this.msg = "Os dados inseridos são invalidos"
             this.display = true
+
+            this.closePopUp()
           }
         })
       } else {
@@ -59,9 +74,19 @@ export class RegistroPageComponent implements OnInit {
             password: this.password
           }
         }).subscribe({
+          complete: () => {
+            this.msg = "Empregado registado com sucesso"
+            this.type = false;
+            this.display = true;
+
+            this.closePopUp();
+            this.router.navigate(['/login']);
+          },
           error: () => {
             this.msg = "Os dados inseridos são invalidos"
             this.display = true
+
+            this.closePopUp();
           }
         })
       }

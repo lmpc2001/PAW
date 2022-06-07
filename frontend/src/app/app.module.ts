@@ -45,7 +45,7 @@ import { AuthorizationService } from './services/Authorization/authorization.ser
     FormsModule,
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthorizationService, multi: true}
+    // {provide: HTTP_INTERCEPTORS, useClass: AuthorizationService, multi: true}
   ],
   bootstrap: [AppComponent]
 })

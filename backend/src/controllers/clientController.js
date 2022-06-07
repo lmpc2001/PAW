@@ -43,7 +43,7 @@ module.exports = {
                 return response.status(404).send("Client not found!");
             }
 
-            return response.status(200).render("clientView", { clients });
+            // return response.status(200).render("clientView", { clients });
             return response.status(200).json({ clients })
         } catch (error) {
             next(error);
@@ -102,7 +102,7 @@ module.exports = {
 
             phone_number = Number(phone_number);
 
-            const client = await prisma.clients.findUnique({
+            let client = await prisma.clients.findUnique({
                 where: {
                     id
                 }
@@ -110,6 +110,16 @@ module.exports = {
 
             if (!client) {
                 return response.status(200).send("Client not found!");
+            }
+
+            client = await prisma.user.findUnique({
+                where: {
+                    email
+                }
+            })
+
+            if (client) {
+                return response.status(200).send("Email is already beeing used");
             }
 
             await prisma.clients.update({

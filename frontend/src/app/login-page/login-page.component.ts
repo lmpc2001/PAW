@@ -34,14 +34,18 @@ export class LoginPageComponent implements OnInit {
       }).subscribe((data: any) => {
         if (data.login) {
           localStorage.setItem('token', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
           if(nextPath){
             this.router.navigate([nextPath])
           } else {
-            this.router.navigate(['/', 'ClientDash'])
+            data.user.roule.description == 'admin' ? this.router.navigate(['/', 'ShopDash']) : this.router.navigate(['/', 'ClientDash'])
           }
         }
       }, () => {
         this.display = true
+        setTimeout(() => {
+          this.display = false;
+        }, 5000)
       })
     } catch (error) {
       console.log(error)

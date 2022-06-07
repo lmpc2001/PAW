@@ -115,7 +115,7 @@ module.exports = {
             phone_number = Number(phone_number);
 
 
-            const employee = await prisma.employees.findUnique({
+            let employee = await prisma.employees.findUnique({
                 where: {
                     id
                 }
@@ -123,6 +123,16 @@ module.exports = {
 
             if (!employee) {
                 return response.status(200).send("Employee not found!");
+            }
+
+            employee = await prisma.user.findUnique({
+                where: {
+                    email
+                }
+            })
+
+            if (employee) {
+                return response.status(200).send("Email is already beeing used");
             }
 
             await prisma.employees.update({

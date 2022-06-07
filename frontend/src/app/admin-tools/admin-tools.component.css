@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+#adminTools.hidde {
+    display: none;
+}
+
 #adminTools .tabela {
     transition: .5s;
     display: flex;
