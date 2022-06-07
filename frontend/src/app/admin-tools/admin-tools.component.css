@@ -1,4 +1,4 @@
-#adminTools {
+.adminTools {
     transition: .5s;
     width: 100%;
     height: auto;
@@ -12,11 +12,11 @@
     align-items: center;
 }
 
-#adminTools.hidde {
+.adminTools.hidde {
     display: none;
 }
 
-#adminTools .tabela {
+.adminTools .tabela {
     transition: .5s;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     height: auto;
 }
 
-#adminTools .tabela .option {
+.adminTools .tabela .option {
     transition: .5s;
     display: flex;
     align-items: center;
@@ -39,58 +39,58 @@
     border: 2px solid transparent;
 }
 
-#adminTools .tabela .option:hover {
+.adminTools .tabela .option:hover {
     transition: .5s;
     border: 2px solid var(--roxo);
     transform: scale(1.005);
     cursor: pointer;
 }
 
-#adminTools .tabela .option.active {
+.adminTools .tabela .option.active {
     transition: .5s;
     border: 2px solid var(--roxo);
 }
 
-#adminTools .tabela .option svg {
+.adminTools .tabela .option svg {
     transition: .5s;
     stroke: var(--tongle-color);
     width: 30px;
     height: auto;
 }
 
-#adminTools .tabela .option .svg.active {
+.adminTools .tabela .option .svg.active {
     transition: .5s;
     transform: rotateZ(180deg);
     stroke: var(--roxo);
 }
 
-#adminTools .tabela .option svg:hover {
+.adminTools .tabela .option svg:hover {
     transition: .5s;
     stroke: var(--roxo);
     transform: scale(1.04);
 }
 
-#adminTools .tabela .infoTable.active {
+.adminTools .tabela .infoTable.active {
     transition: .5s;
     height: auto;
 }
 
-#adminTools .tabela .infoTable.inactive {
+.adminTools .tabela .infoTable.inactive {
     transition: .5s;
     height: 0;
 }
 
-#adminTools .tabela .infoTable.inactive {
+.adminTools .tabela .infoTable.inactive {
     transition: .5s;
     height: 0;
 }
 
-#adminTools .tabela .infoTable.inactive .line {
+.adminTools .tabela .infoTable.inactive .line {
     transition: .5s;
     display: none;
 }
 
-#adminTools .tabela .infoTable.active .line {
+.adminTools .tabela .infoTable.active .line {
     transition: .5s;
     display: unset;
 }

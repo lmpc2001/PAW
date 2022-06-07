@@ -13,9 +13,7 @@ export class ErroPopUpComponent implements OnInit, OnDestroy {
   @Input() type: boolean = true
   @Input() display: boolean = false
 
-  constructor() {
-    this.setDisplay()
-   }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -32,11 +30,6 @@ export class ErroPopUpComponent implements OnInit, OnDestroy {
     this.display = false;
   }
 
-  setDisplay(){
-    this.subscription = this.fiveSeconds.subscribe(() => {
-      this.display = false;
-    });
-  }
 
   ngOnDestroy() {
     this.subscription?.unsubscribe();

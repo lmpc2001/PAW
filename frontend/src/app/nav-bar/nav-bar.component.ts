@@ -12,7 +12,16 @@ interface linkProps {
 export class NavBarComponent implements OnInit {
   @Input() page: String | undefined
 
-  constructor() {}
+  constructor() {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    if(user.roule.description == 'admin') {
+      this.link1.name = 'Admin Dashboard'
+      this.link1.to = '/ShopDash'
+    } else if (user.roule.description == 'user') {
+      this.link1.name = 'Shop Dashboard'
+      this.link1.to = '/ShopDash'
+    }
+  }
 
   getPage(linkName:string) {
     switch (linkName){
@@ -36,6 +45,11 @@ export class NavBarComponent implements OnInit {
   link3: linkProps = {
     name: 'Market Place',
     to: '/MarketPlace',
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }
 
   ngOnInit(): void {}
