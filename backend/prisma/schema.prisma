@@ -52,6 +52,7 @@ model Clients {
   user_id      String?     @db.ObjectId @unique
   user         User?       @relation(fields: [user_id], references: [id], onDelete: Cascade)
   name         String
+  nif          Int?
   purchases    Purchases[]
   accounts     Accounts?
   phone_number Int

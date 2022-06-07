@@ -3,7 +3,8 @@ interface IPurchase{
     employee_id?: string;
     client_id?: string;
     nif?: string;
-    total_price: number;
+    books: Array<string>
+    total_price?: number;
 }
 
 export class Purchase {
