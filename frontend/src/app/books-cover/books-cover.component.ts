@@ -71,4 +71,16 @@ export class BooksCoverComponent implements OnInit {
     })
   }
 
+  editCapability(){
+    const user = JSON.parse(localStorage.getItem('user')!);
+    if(user.roule.description == 'admin' || user.roule.description == 'user') {
+      return ""
+    } 
+    return "true"
+  }
+
+  saveEditBook(){
+    
+  }
+
 }

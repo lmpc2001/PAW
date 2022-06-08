@@ -6,6 +6,7 @@ interface IClient {
     phone_number: number;
     email: string;
     password?: string;
+    nif?:number;
 }
 
 export class Client {
