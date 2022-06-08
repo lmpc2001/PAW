@@ -12,7 +12,7 @@ module.exports = {
             const { email, password } = request.body;
             const hashPassword = SHA256(password).toString();
 
-            if(email != null && password != null){
+            if(email == null && password == null){
                 return response.status(404).send("An email and password must be provided!");
             }
 
