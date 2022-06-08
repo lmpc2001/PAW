@@ -62,6 +62,16 @@ module.exports = {
 
             phone_number = Number(phone_number);
 
+            const user = await prisma.user.findUnique({
+                where:{
+                    email
+                }
+            });
+
+            if (user) {
+                return response.status(400).send("Email is already beeing used");
+            }
+
             if (platform == "web") {
                 await prisma.user.create({
                     data: {
@@ -119,7 +129,7 @@ module.exports = {
             })
 
             if (client) {
-                return response.status(200).send("Email is already beeing used");
+                return response.status(400).send("Email is already beeing used");
             }
 
             await prisma.clients.update({
