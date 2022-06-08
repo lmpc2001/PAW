@@ -14,17 +14,19 @@ export class NavBarComponent implements OnInit {
 
   constructor() {
     const user = JSON.parse(localStorage.getItem('user')!);
-    if(user.roule.description == 'admin') {
-      this.link1.name = 'Admin Dashboard'
-      this.link1.to = '/ShopDash'
-    } else if (user.roule.description == 'user') {
-      this.link1.name = 'Shop Dashboard'
-      this.link1.to = '/ShopDash'
+    if (user.roule !== undefined) {
+      if (user.roule.description == 'admin') {
+        this.link1.name = 'Admin Dashboard'
+        this.link1.to = '/ShopDash'
+      } else if (user.roule.description == 'user') {
+        this.link1.name = 'Shop Dashboard'
+        this.link1.to = '/ShopDash'
+      }
     }
   }
 
-  getPage(linkName:string) {
-    switch (linkName){
+  getPage(linkName: string) {
+    switch (linkName) {
       case this.page:
         return "linksNav active";
       default:
@@ -52,5 +54,5 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem('user');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
