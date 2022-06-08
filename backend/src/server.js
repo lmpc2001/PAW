@@ -1,13 +1,12 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
-const routes = require('./routes/index');
-const path = require('path');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
+const path = require('path');
+const routes = require('./routes/index');
 
 const swaggerUI = require('swagger-ui-express');
 const swaggerConfig = require('./swaggerConfig.json');
-
 
 const PORT = process.env.PORT || 3333;
 

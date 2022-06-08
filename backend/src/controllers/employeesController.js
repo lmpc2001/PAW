@@ -52,17 +52,19 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { name, email, password, phone_number } = request.body;
+            let { name, email, password, phone_number } = request.body.employee;
 
             const user = await prisma.user.findUnique({
                 where:{
-                    email
+                    email: email
                 }
             });
 
             if (user) {
                 return response.status(400).send("Email is already beeing used");
             }
+
+            phone_number = Number(phone_number);
 
             await prisma.user.create({
                 data: {
