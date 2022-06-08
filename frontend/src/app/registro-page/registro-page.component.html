@@ -22,8 +22,9 @@
             </div>
             <input name="inputName" ng-model="inputName" type="text" placeholder="Name" name="name" [(ngModel)]="name" required>
             <input name="inputEmail" ng-model="inputEmail" type="email" placeholder="Email" name="email" [(ngModel)]="email" required>
-            <input name="inputTlm" ng-model="inputTlm" type="tel" placeholder="Phone number" name="phone_number" [(ngModel)]="phone_number" required maxlength="9" minlength="9">
+            <input ng-model="inputTlm" type="tel" placeholder="Phone number" name="phone_number" [(ngModel)]="phone_number" required maxlength="9" minlength="9">
             <input name="inputPassword" ng-model="inputPassword" type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+            <input ng-model="inputNIF" type="number" placeholder="NIF" name="nif" [(ngModel)]="nif" required maxlength="9" minlength="9">
             <button class="btnConfirmar" (click)="submit()">Confirmar</button>
         </form>
     </div>

@@ -13,8 +13,9 @@ export class RegistroPageComponent implements OnInit {
   @Input() userType: string = 'cliente';
   @Input() name: string = '';
   @Input() email: string = '';
-  @Input() phone_number: number = 0;
+  @Input() phone_number: number | undefined;
   @Input() password: string = '';
+  @Input() nif: number | undefined;
 
   msg = "Email ou password incorreta"
   type = true
@@ -46,8 +47,9 @@ export class RegistroPageComponent implements OnInit {
           client: {
             name: this.name,
             email: this.email,
-            phone_number: this.phone_number,
-            password: this.password
+            phone_number: Number (this.phone_number),
+            password: this.password,
+            nif: Number (this.nif)
           }
         }).subscribe({
           complete: () => {
@@ -70,7 +72,7 @@ export class RegistroPageComponent implements OnInit {
           employee: {
             name: this.name,
             email: this.email,
-            phone_number: this.phone_number,
+            phone_number: Number (this.phone_number),
             password: this.password
           }
         }).subscribe({
