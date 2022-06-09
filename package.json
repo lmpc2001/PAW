@@ -1,8 +1,13 @@
 {
     "name": "rootfolder",
     "scripts": {
-        "start-all": "concurrently \"cd frontend && yarn install && yarn start\"  \"cd backend && yarn install && yarn dev\" \"cd backend && yarn install && yarn prisma studio\" ",
-        "test": "cd frontend && ng test"
+        "start-all": "concurrently \"yarn start-frontend\"  \"yarn start-backend\" \"yarn start-prisma\" ",
+        "start-backend": "cd backend && yarn install && yarn dev",
+        "start-frontend": "cd frontend && yarn install && yarn start",
+        "start-prisma": "cd backend && yarn install && yarn prisma studio",
+        "test-angular": "cd frontend && ng test",
+        "test-api": "newman run Postman/Coleções/PAW.postman_collection.json",
+        "test-all": "concurrently \"yarn test-angular\" \"yarn test-api\""
     },
     "dependencies": {
         "concurrently": "^7.2.1"
