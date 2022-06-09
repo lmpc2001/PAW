@@ -1,7 +1,7 @@
 {
     "name": "rootfolder",
     "scripts": {
-        "start-all": "concurrently \"cd frontend && yarn start\"  \"cd backend && yarn dev\" \"cd backend && yarn prisma studio\" ",
+        "start-all": "concurrently \"cd frontend && yarn install && yarn start\"  \"cd backend && yarn install && yarn dev\" \"cd backend && yarn install && yarn prisma studio\" ",
         "test": "cd frontend && ng test"
     },
     "dependencies": {
