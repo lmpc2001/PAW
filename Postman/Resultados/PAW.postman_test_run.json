@@ -1,0 +1,1218 @@
+{
+	"id": "607b1555-8d35-487a-90d6-ac71b62dd0af",
+	"name": "PAW",
+	"timestamp": "2022-06-09T15:37:03.622Z",
+	"collection_id": "19209730-9cc84a9e-ed1d-4851-8bae-f51482e6f08f",
+	"folder_id": 0,
+	"environment_id": "e3c4730a-7973-4517-a9b0-2565c45d699c",
+	"totalPass": 100,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "cfce366a-957a-4a70-8289-c136a7aeebae",
+			"name": "List Books",
+			"url": "http://localhost:3333/books/",
+			"time": 412,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				412
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "7f071679-1934-447c-b0a3-db3f4f7e91b0",
+			"name": "Show Book",
+			"url": "http://localhost:3333/books/search/",
+			"time": 359,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				359
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "4f35122f-41f3-4ec0-9874-84e66d505225",
+			"name": "Create Book",
+			"url": "http://localhost:3333/books/create",
+			"time": 4,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "c2002c26-a441-4b37-a6ce-618e060d4032",
+			"name": "Update Book",
+			"url": "http://localhost:3333/books/update/62715722196f36295645503b",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "498d6e1b-91e1-43d5-b8de-6c30d270a141",
+			"name": "Delete Book",
+			"url": "http://localhost:3333/books/delete/62973dc73462c55becccffc4",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "8135a586-fb9e-4f16-a969-577c833564dd",
+			"name": "List purchases",
+			"url": "http://localhost:3333/purchases/",
+			"time": 4,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "208f2bac-f7df-4077-ba54-f7672923c4b2",
+			"name": "Show purchase",
+			"url": "http://localhost:3333/purchases/search/6271576d196f36295645503d",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "20b1fce1-ef8f-409e-bfdd-3c9bb6652598",
+			"name": "Create Buy",
+			"url": "http://localhost:3333/purchases/create",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "27f0ca5c-05f0-4acb-94e8-d485864a0521",
+			"name": "Update Book",
+			"url": "http://localhost:3333/books/update/625b0b1c24be7002205b3cf5",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "e1625ca9-ed0b-424b-83ba-204511862430",
+			"name": "Delete purchase",
+			"url": "http://localhost:3333/purchases/delete/6271576d196f36295645503d",
+			"time": 4,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "8b0ed57b-4c1f-4fd5-bcfb-ad6e9ada6e3b",
+			"name": "Close Purchase",
+			"url": "http://localhost:3333/purchases/closePurchase/626eb770f126638adaced4d1",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "9a771390-2770-4c96-bf7b-37343c583e89",
+			"name": "List Employees",
+			"url": "http://localhost:3333/employees/",
+			"time": 887,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				887
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "1ffe940d-9829-4bd9-a0ea-b76e55dc11d3",
+			"name": "Show Employee",
+			"url": "http://localhost:3333/employees/search/627154094197b688f6f74ca7",
+			"time": 364,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				364
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "4a4f0f89-13f9-4de4-b15a-800038d87b41",
+			"name": "Create Employee",
+			"url": "http://localhost:3333/employees/create",
+			"time": 5,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "d563940e-d70f-4f49-aca6-f0dc5218b35c",
+			"name": "Create Admin Employee",
+			"url": "http://localhost:3333/employees/admin/create",
+			"time": 1353,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"O codigo de status é 201": true,
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O codigo de status é 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1353
+			],
+			"allTests": [
+				{
+					"O codigo de status é 201": true,
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "bb87a60e-4583-4b25-b573-23036e05db26",
+			"name": "Update Employee",
+			"url": "http://localhost:3333/employees/update/627154094197b688f6f74ca7",
+			"time": 576,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				576
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "a24f2d43-6ba1-4f5b-bc26-f3b795d8bce9",
+			"name": "Delete Employee",
+			"url": "http://localhost:3333/employees/delete/627154184197b688f6f74caa",
+			"time": 127,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				127
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "74151e1c-2570-4fdb-b58d-d1b9e4630b7e",
+			"name": "List Clients",
+			"url": "http://localhost:3333/clients/",
+			"time": 516,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				516
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "209086d9-29eb-4b2f-b8b4-7a9217af4ff2",
+			"name": "Show Client",
+			"url": "http://localhost:3333/clients/search/629796dd08a65796ba559032",
+			"time": 81,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				81
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "ef16dea7-df7a-4db6-b79e-523d1f1864bc",
+			"name": "Create Client",
+			"url": "http://localhost:3333/clients/create?platform=web",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "82f9e9c3-a998-4e1b-b218-ffa82f97bd36",
+			"name": "Create Loyalty Program",
+			"url": "http://localhost:3333/clients/create/loyalty_program",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "fde5369b-a9bd-46f3-bc2d-1bcce9a0d6e9",
+			"name": "Update Client",
+			"url": "http://localhost:3333/clients/update/629796dd08a65796ba559032",
+			"time": 340,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				340
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "1952f3c6-0564-4ce6-94c4-bad8596beb10",
+			"name": "Delete Client",
+			"url": "http://localhost:3333/clients/delete/627160af8a23c0a3477a831d",
+			"time": 584,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint retorna os codigos esperados": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint retorna os codigos esperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				584
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint retorna os codigos esperados": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		},
+		{
+			"id": "81212405-a958-49c2-b8d4-59eca7384650",
+			"name": "Login",
+			"url": "http://localhost:3333/session/login/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"O tempo de resposta é menor ou igual a 30s": true,
+				"O endpoint does não retorna codigos inesperados": true,
+				"API responde dentro do tempo limite": true,
+				"Content-Type está presente": true
+			},
+			"testPassFailCounts": {
+				"O tempo de resposta é menor ou igual a 30s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"O endpoint does não retorna codigos inesperados": {
+					"pass": 1,
+					"fail": 0
+				},
+				"API responde dentro do tempo limite": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type está presente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"O tempo de resposta é menor ou igual a 30s": true,
+					"O endpoint does não retorna codigos inesperados": true,
+					"API responde dentro do tempo limite": true,
+					"Content-Type está presente": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 5654,
+	"collection": {
+		"requests": [
+			{
+				"id": "cfce366a-957a-4a70-8289-c136a7aeebae",
+				"method": "GET"
+			},
+			{
+				"id": "7f071679-1934-447c-b0a3-db3f4f7e91b0",
+				"method": "GET"
+			},
+			{
+				"id": "4f35122f-41f3-4ec0-9874-84e66d505225",
+				"method": "POST"
+			},
+			{
+				"id": "c2002c26-a441-4b37-a6ce-618e060d4032",
+				"method": "PUT"
+			},
+			{
+				"id": "498d6e1b-91e1-43d5-b8de-6c30d270a141",
+				"method": "DELETE"
+			},
+			{
+				"id": "8135a586-fb9e-4f16-a969-577c833564dd",
+				"method": "GET"
+			},
+			{
+				"id": "208f2bac-f7df-4077-ba54-f7672923c4b2",
+				"method": "GET"
+			},
+			{
+				"id": "20b1fce1-ef8f-409e-bfdd-3c9bb6652598",
+				"method": "POST"
+			},
+			{
+				"id": "27f0ca5c-05f0-4acb-94e8-d485864a0521",
+				"method": "PUT"
+			},
+			{
+				"id": "e1625ca9-ed0b-424b-83ba-204511862430",
+				"method": "DELETE"
+			},
+			{
+				"id": "8b0ed57b-4c1f-4fd5-bcfb-ad6e9ada6e3b",
+				"method": "POST"
+			},
+			{
+				"id": "9a771390-2770-4c96-bf7b-37343c583e89",
+				"method": "GET"
+			},
+			{
+				"id": "1ffe940d-9829-4bd9-a0ea-b76e55dc11d3",
+				"method": "GET"
+			},
+			{
+				"id": "4a4f0f89-13f9-4de4-b15a-800038d87b41",
+				"method": "POST"
+			},
+			{
+				"id": "d563940e-d70f-4f49-aca6-f0dc5218b35c",
+				"method": "POST"
+			},
+			{
+				"id": "bb87a60e-4583-4b25-b573-23036e05db26",
+				"method": "PUT"
+			},
+			{
+				"id": "a24f2d43-6ba1-4f5b-bc26-f3b795d8bce9",
+				"method": "DELETE"
+			},
+			{
+				"id": "74151e1c-2570-4fdb-b58d-d1b9e4630b7e",
+				"method": "GET"
+			},
+			{
+				"id": "209086d9-29eb-4b2f-b8b4-7a9217af4ff2",
+				"method": "GET"
+			},
+			{
+				"id": "ef16dea7-df7a-4db6-b79e-523d1f1864bc",
+				"method": "POST"
+			},
+			{
+				"id": "82f9e9c3-a998-4e1b-b218-ffa82f97bd36",
+				"method": "POST"
+			},
+			{
+				"id": "fde5369b-a9bd-46f3-bc2d-1bcce9a0d6e9",
+				"method": "PUT"
+			},
+			{
+				"id": "1952f3c6-0564-4ce6-94c4-bad8596beb10",
+				"method": "DELETE"
+			},
+			{
+				"id": "81212405-a958-49c2-b8d4-59eca7384650",
+				"method": "POST"
+			}
+		]
+	}
+}
