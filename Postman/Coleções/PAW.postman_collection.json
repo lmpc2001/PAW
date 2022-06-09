@@ -1,0 +1,1870 @@
+{
+	"info": {
+		"_postman_id": "9cc84a9e-ed1d-4851-8bae-f51482e6f08f",
+		"name": "PAW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "List Books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "U2FsdGVkX18QsG7YdZj2upGcVJUDbGL1aBeJ9VAHTrnQVUlBJj9fzznT6xDigq2pXmnW9l078ue+YEcdFk9W088Nc/oDBlAR8abVguLUeup/yZagqUQkFadCY0HyTP9x0iEzd//YYGGKWlju0RMI5ol+oh8anP7QdCd+KexQAWSkOw5X5MvcGUxOaURT3Iq/RU26uBRO1B7y+yThFsZxL7ZUz7VYXelPw6Az6ZEZl4TpR6xrOT5AgmRCwSb73xFwhSSf345YZiCkaLhyUUa80DrrlT5LifYRSEu0KMfdGPm+e5zopYkLjY3R8LnhP9mFSKLbuEeFNl9QRnm5Mcvm5AqAUpYjuZuLNNnnZAFmUhUJ5ggS+3CyTlWCQ8jRkvzULE9LHnvhF2cfakmrsvodUdAFhatcVxE2F6PJBplVCOsRKSoKJl8F97V0ef/jB2wBCnw7W5N5TfAsHsGeFTqhRhJkJqAPfEnwwa/iprIVLCV9Z+Gci1m6aZ49GL742E7CyuuA9zKTC/7mv7ePCVoOMtIAYD1bZqYh1bxA/pcCMzFqHvURznW782xpvasIgwXomOpNnRq+53eAERA65cCBLCMF0xcNCSmBxSEANDPLtTTD8scaKM/nGRdfHzSOx13xfCmmcKzmNfdtJ1nJ9RBh8wsAoT4+9NQbOft5EUDC84jj+SYKMbizvHkH+4Mkg6RmK4DxqzOFLXZ3YLv4WSexyYuLeWqfzL36icQWOZoMLz43K2Hj9f7Pvk5cX9mfP+a/+/u5I9wW6YyI7YYMx8LRnex+G1zDHBz7tFrLIWdMCEFTDIHMVsHXwA5uYvBoP8ncq8qEoaJpavbsVPj9RjfT4YjR5TqZ0pj1+0esasmFWGI=",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6IjYyNzE1NDE4NDE5N2I2ODhmNmY3NGNhYSIsInJvdWxlIjp7ImRlc2NyaXB0aW9uIjoiYWRtaW4ifSwiaWF0IjoxNjUxNTk1NDUwLCJleHAiOjE2NTE1OTcyNTB9.wAF5m-YTe4M3wCjxGHqSTI2z369cRE1R9COTUwmOwKc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": \"gfrtdhjfjfy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/search/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"search",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "\"U2FsdGVkX1/QZ89JWex/3LfnDoU6xwuPcpelzdffXOYezPJxivOfqvYE/byyv1TSRTeHYWuJzyglOiJHqHHI2qD++ayj94Z+w7QL5FkCNN9N3S18Cs1S3R5Us+Vt5GFSbfNycsmMFmivTQCT0ZQxdgPMxbfucR6PsQS4gXCnW1xFQ4LOr2W4OuWtd2aD7PQZWzep9qwl8KqKAyjIh7VzK3sqVi/8OyKP5BCGs1zilGJHd5P3vefd5iGujI/7FSsn498/Clwe7S6BPy3fojlpLqyJ8lOYXsGwvUkWDd9mA45u6OXbmlQ/OtjOTHIHxrlrgTD6RaeUShloSU9+Thbm2KlVXE3VewEnoIqrjD0n1nFWf5cCqyAXrEhP3mwBR1d5Ljkc+CUoJ7TfHHAxOQxt2BAXcy55dI557FjNPU6bkxG/ner4navftmrl7opHilvpBLUlXsxKvXJf/442J8RbJqDhNsS20eiNXCALyQKfjpAxC0fWfVVriIhjdr3OD2a+8OGmiK1aPzVZO8P3RgTp9toRfW8vm3x9v+uLsbZsk4jBV6afCditX0fkCSeci3xd7VDNAwGxmG3EKpcIWo5nxBrFcD+9AC7XdkUVUaSU3NzsMSOUnuxl674Vk9yYmsXhThn5Le8LaPaATcGOOEhpoen7zeVEpF15OXlcZt4iJlxEeNxpuRi7lOHrhu5LqUu7lUgR72JkJ+v9pl7y5Ca4JYRRNAybqiUa2vXmGCPOtYvJuNpL4eWzP/cy58Y57zrt6XhhxGYsqqxbF+LqUddkkaNWNpopkHjTGeoK0kzsOuDohr9YaI/ExEj3P0Vd2jFhMljM9BKJvo41SF3q30XKo2zrYtu4swWYCNOACEX8eUw=\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": " title_1",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": " autor_1",
+									"type": "text"
+								},
+								{
+									"key": "bar_code",
+									"value": " codigodebarras_1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": " 80",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": " gfrtdhjfjfy",
+									"type": "text"
+								},
+								{
+									"key": "units_stock",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": " usado",
+									"type": "text"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/luism/Desktop/ESTG/Capturar.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/books/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6IjYyNzE1NDE4NDE5N2I2ODhmNmY3NGNhYSIsInJvdWxlIjp7ImRlc2NyaXB0aW9uIjoiYWRtaW4ifSwiaWF0IjoxNjUxNTk1NDUwLCJleHAiOjE2NTE1OTcyNTB9.wAF5m-YTe4M3wCjxGHqSTI2z369cRE1R9COTUwmOwKc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee_id\": \"625b0a7c44470934aa48d46a\",\r\n    \"title\": \"title_1\",\r\n    \"author\": \"autor_1\",\r\n    \"bar_code\": \"codigodebarras_2\",\r\n    \"price\": 4.65,\r\n    \"state\": \"usado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/update/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62715722196f36295645503b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "U2FsdGVkX1+PeAZbPLD6ypjQoy95G9BXd3sza1TtkZIMQw/3BUuti4nOVFL3ZNbGYbu1yBeAgFOag3oTZB3LL7J/gXFYqanCBkXW30UlEoNWKU7eEcprNvMHzWW6d1ggAfSpfA1S6gc5/vC0PDGhbMpUBQwQLqO0JZkmFrQTtU3GPAUBcpq0udYcRwMCfDjt3Q2KGANndFrfMOUObW929e2tpRC2iRbM2Ny3qRga/wVqndq0zy5RHMsWjIDtcp2qs1w55DrS0IxXZiP8JYUeonOjpNpDS9VMz+Oak4EKyEiW2kqAdF2hj9lbHSsdl/mCuez9eYcx2GXiaIGn7DJd252Fl1i2tT9CKiwUM7xz6JYk06EzlloZV4l3uB0agfRdHknL2IJfn/ipnUeTZvLVcaCd0RZuLhfpf4F0LAnslGPwagUg06QymOMoVl2ONMnXaEioHFImEFBVvhYRsZAa0j4tBwYGMgz2hwkYMVbUFFgC8/TWtbVzusk2EWRVEWnxBYkElj1r4qCYY0Z6LXQsZNp0CRJ97osD+BKYnp4eY3qzn2rtRNtP31b8eB5M3f009wUewGvQ+vwoq2PUo8IjXKhJ9BRpVzbyrcgjB+FjP3E9XSAT8LtptPPF8rhr4IEsFZsO57g0uIDnqSAm7uNkl2gxbJsXJ5Syqw/KDyxehjSGaGuH5CgTetrEiQzEO/zEkppsoQiCaCUvTVjFlbmTKR4WLRpZu/JHwMc/OmrKcM6kvKCVoOfit4xuzxDu03bVQQe3nq4DuFHk+eVkK53+BRxKpeYMuzam11AXlEwFcqk2xEoDaOCkycnBvVoU+vinS69+CN+YhyAY6lboIUJxheJKPzBcmBt0ndFn1uJQgf4=",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/delete/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62973dc73462c55becccffc4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buys",
+			"item": [
+				{
+					"name": "List purchases",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6IjYyNzE1NDE4NDE5N2I2ODhmNmY3NGNhYSIsInJvdWxlIjp7ImRlc2NyaXB0aW9uIjoiYWRtaW4ifSwiaWF0IjoxNjUxNTk0OTY4LCJleHAiOjE2NTE1OTY3Njh9.NdecllTmnfP3fyyR56JchBLI2FwvL6GHmsDee4h1m8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchases/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchases",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show purchase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6IjYyNzE1NDE4NDE5N2I2ODhmNmY3NGNhYSIsInJvdWxlIjp7ImRlc2NyaXB0aW9uIjoiYWRtaW4ifSwiaWF0IjoxNjUxNTk0OTY4LCJleHAiOjE2NTE1OTY3Njh9.NdecllTmnfP3fyyR56JchBLI2FwvL6GHmsDee4h1m8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"autor_1\",\r\n    \"title\": \"title_2\",\r\n    \"isbn\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/purchases/search/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchases",
+								"search",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6271576d196f36295645503d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Buy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6IjYyNzE1NDE4NDE5N2I2ODhmNmY3NGNhYSIsInJvdWxlIjp7ImRlc2NyaXB0aW9uIjoiYWRtaW4ifSwiaWF0IjoxNjUxNTk0Nzg2LCJleHAiOjE2NTE1OTY1ODZ9.GskESjb0j8kR4uWfQRLZ7bh2Dp3YpEC_ozEWCp7Y7IU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/purchases/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchases",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee_id\": \"625b0a7c44470934aa48d46a\",\r\n    \"title\": \"title_1\",\r\n    \"author\": \"autor_1\",\r\n    \"bar_code\": \"codigodebarras_1\",\r\n    \"price\": 4.65,\r\n    \"state\": \"usado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/update/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "625b0b1c24be7002205b3cf5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete purchase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6IjYyNzE1NDE4NDE5N2I2ODhmNmY3NGNhYSIsInJvdWxlIjp7ImRlc2NyaXB0aW9uIjoiYWRtaW4ifSwiaWF0IjoxNjUxNTk1NDUwLCJleHAiOjE2NTE1OTcyNTB9.wAF5m-YTe4M3wCjxGHqSTI2z369cRE1R9COTUwmOwKc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchases/delete/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchases",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6271576d196f36295645503d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close Purchase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchases/closePurchase/:purchase_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchases",
+								"closePurchase",
+								":purchase_id"
+							],
+							"variable": [
+								{
+									"key": "purchase_id",
+									"value": "626eb770f126638adaced4d1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "List Employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/employees/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/employees/search/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employees",
+								"search",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "627154094197b688f6f74ca7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Empregado 1\",\r\n    \"email\": \"funcionario1@teste.com\",\r\n    \"password\": \"password1\",\r\n    \"phone_number\": 912345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/employees/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employees",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Admin Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O codigo de status é 201\", function(){",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Administrador\",\r\n    \"email\": \"admin@teste.com\",\r\n    \"password\": \"password1\",\r\n    \"phone_number\": 910000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/employees/admin/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employees",
+								"admin",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Empregado 2\",\r\n    \"phone_number\": 912345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/employees/update/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employees",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "627154094197b688f6f74ca7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/employees/delete/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employees",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "627154184197b688f6f74caa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "List Clients",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clients/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clients/search/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								"search",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "629796dd08a65796ba559032"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee_id\": \"\",\r\n    \"name\": \"Client Postman\",\r\n    \"email\": {{clientEmail}},\r\n    \"password\": {{defaultPassword}},\r\n    \"phone_number\": {{defaultTlm}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/clients/create?platform=web",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								"create"
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "web"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Loyalty Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_id\": \"627153d44197b688f6f74ca4\", \r\n    \"points\": 50, \r\n    \"transfer_description\": \"Criação do programa de fidelização\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/clients/create/loyalty_program",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								"create",
+								"loyalty_program"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/clients/update/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "629796dd08a65796ba559032"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"pm.test(\"O endpoint retorna os codigos esperados\", () => {",
+									"  const expectedStatusCodes = [200, 201];",
+									"",
+									"  pm.expect(pm.response.code).to.be.oneOf(",
+									"    expectedStatusCodes,",
+									"    `Esperava-se ${expectedStatusCodes} mas obteve ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clients/delete/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "627160af8a23c0a3477a831d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"O tempo de resposta é menor ou igual a 30s\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(30000);",
+									"});",
+									"",
+									"",
+									"pm.test(\"O endpoint does não retorna codigos inesperados\", () => {",
+									"  const unexpectedStatusCodes = [404, 500];",
+									"",
+									"  pm.expect(pm.response.code).to.not.be.oneOf(",
+									"    unexpectedStatusCodes,",
+									"    `Não esperava receber ${unexpectedStatusCodes} mas recebeu ${pm.response.code}.`",
+									"  );",
+									"});",
+									"",
+									"pm.test(\"API responde dentro do tempo limite\", () => {",
+									"  const expectedTimeInMilliseconds = 3000;",
+									"",
+									"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+									"    expectedTimeInMilliseconds + 1,",
+									"    `O endpoint não responde dentro do tempo limite ${expectedTimeInMilliseconds} ms. Respondeu em ${pm.response.responseTime} ms`",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type está presente\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {{adminEmail}},\r\n    \"password\": {{defaultPassword}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/session/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"session",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "adminEmail",
+			"value": "admin@teste.com",
+			"type": "string"
+		},
+		{
+			"key": "defaultPassword",
+			"value": "password1",
+			"type": "string"
+		},
+		{
+			"key": "funcionarioEmail",
+			"value": "funcionario@teste.com",
+			"type": "string"
+		},
+		{
+			"key": "clientEmail",
+			"value": "cliente@teste.com",
+			"type": "string"
+		},
+		{
+			"key": "defaultTlm",
+			"value": "960000000",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:3333",
+			"type": "string"
+		}
+	]
+}
