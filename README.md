@@ -28,28 +28,49 @@ Este projeto consiste no desenvolvimento de uma API REST e de um Website utiliza
 git clone https://github.com/lmpc2001/PAW.git
 ```
 
-### Ligar tudo
+### Desenvolvimento
+
+#### Ligar tudo
 
 ```bash
 yarn start-all
 ```
 
-### Prisma studio
+#### Prisma studio
 
 ``` bash
-cd /backend && yarn prisma studio
+yarn start-prisma
 ```
 
-### Ligar o backend
+#### Ligar o backend
 
 ```bash
-cd /backend && yarn dev
+yarn start-backend
 ```
 
-### Ligar o frontend
+#### Ligar o frontend
 
 ``` bash
-cd /frontend && yarn start
+yarn start-frontend
+```
+
+### Testes
+
+#### Testar tudo
+``` bash
+yarn test-all
+```
+
+#### Testes á API pelo Newman
+
+``` bash
+yarn test-api
+```
+
+#### Testes ao frontend do Angular
+
+``` bash
+yarn test-angular
 ```
 
 
@@ -58,7 +79,7 @@ cd /frontend && yarn start
 ### Administrador
 
 ```
-email: admin1@teste.com
+email: admin@teste.com
 password: password1
 ```
 ### Funcionario
