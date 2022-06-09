@@ -26,12 +26,11 @@ export type ChartOptions = {
 @Component({
   selector: 'app-client-dash-page',
   templateUrl: './client-dash-page.component.html',
-  styleUrls: ['./client-dash-page.component.css']
+  styleUrls: ['./client-dash-page.component.css'],
 })
 export class ClientDashPageComponent implements OnInit {
   @ViewChild('chart') chart: ChartComponent | undefined
   public chartOptions: Partial<ChartOptions>
-  public users: Partial<ChartOptions>
   public fidelizacoes: Partial<ChartOptions>
   public vendidos: Partial<ChartOptions>
   public comprados: Partial<ChartOptions>
@@ -40,6 +39,58 @@ export class ClientDashPageComponent implements OnInit {
   public compradosGraph: Partial<ChartOptions>
   public pontosGraph: Partial<ChartOptions>
 
+  /**Informação estatistica para os graficos */
+  private timestamp = [
+    '2018-09-19T00:00:00.000Z',
+    '2018-09-19T01:30:00.000Z',
+    '2018-09-19T02:30:00.000Z',
+    '2018-09-19T03:30:00.000Z',
+    '2018-09-19T04:30:00.000Z',
+    '2018-09-19T05:30:00.000Z',
+    '2018-09-19T06:30:00.000Z',
+  ]
+
+  private vendidosData = {
+    unidades: {
+      titulo: 'Unidades',
+      data: [0, 40, 10, 6, 2, 65, 52],
+    },
+    ganhos: {
+      titulo: 'Ganhos',
+      data: [0, 80, 24, 41, 3, 100, 60],
+    },
+    titulo: 'Vendidos',
+  }
+
+  private compradosData = {
+    unidades: {
+      titulo: 'Unidades',
+      data: [0, 10, 8, 0, 71, 9, 42],
+    },
+    gasto: {
+      titulo: 'Comprados',
+      data: [0, 5, 12, 0, 5, 20, 80],
+    },
+    titulo: 'Comprados',
+  }
+
+  private pontosData = {
+    ganhos: {
+      titulo: 'Ganhos',
+      data: [0, 40, 50, 51, 42, 109, 100],
+    },
+    gastos: {
+      titulo: 'Gastos',
+      data: [51, 15, 45, 32, 60, 52, 41],
+    },
+    titulo: 'Pontos',
+  }
+
+  private fidelizacoesData = {
+    title: 'Fidelizacoes',
+    data: [6, 74, 40, 51, 49, 77, 4],
+  }
+  /**----------------------------------------*/
   constructor() {
     this.chartOptions = {
       chart: {
@@ -54,18 +105,10 @@ export class ClientDashPageComponent implements OnInit {
       },
       xaxis: {
         type: 'datetime',
-        categories: [
-          '2018-09-19T00:00:00.000Z',
-          '2018-09-19T01:30:00.000Z',
-          '2018-09-19T02:30:00.000Z',
-          '2018-09-19T03:30:00.000Z',
-          '2018-09-19T04:30:00.000Z',
-          '2018-09-19T05:30:00.000Z',
-          '2018-09-19T06:30:00.000Z',
-        ],
+        categories: this.timestamp,
       },
       tooltip: {
-        theme: "black",
+        theme: 'black',
         x: {
           format: 'dd/MM/yy HH:mm',
         },
@@ -75,64 +118,64 @@ export class ClientDashPageComponent implements OnInit {
     this.vendidosGraph = {
       series: [
         {
-          name: 'Unidades',
-          data: [0, 40, 10 , 6, 2, 65, 52],
+          name: this.vendidosData.unidades.titulo,
+          data: this.vendidosData.unidades.data,
         },
         {
-          name: 'Ganhos',
-          data: [0, 80, 24, 41, 3, 100, 60],
-        }
+          name: this.vendidosData.ganhos.titulo,
+          data: this.vendidosData.ganhos.data,
+        },
       ],
       title: {
-        text: 'Vendidos',
+        text: this.vendidosData.titulo,
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      }
+      },
     }
 
     this.compradosGraph = {
       series: [
         {
-          name: 'Unidades',
-          data: [0, 10, 8 , 0, 71, 9, 42],
+          name: this.compradosData.unidades.titulo,
+          data: this.compradosData.unidades.data,
         },
         {
-          name: 'Comprados',
-          data: [0, 5, 12, 0, 5, 20, 80],
-        }
+          name: this.compradosData.gasto.titulo,
+          data: this.compradosData.gasto.data,
+        },
       ],
       title: {
-        text: 'Comprados',
+        text: this.compradosData.titulo,
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      }
+      },
     }
 
     this.pontosGraph = {
       series: [
         {
-          name: 'Ganhos',
-          data: [0, 40, 50 , 51, 42, 109, 100],
+          name: this.pontosData.ganhos.titulo,
+          data: this.pontosData.ganhos.data,
         },
         {
-          name: 'Gastos',
-          data: [51, 15, 45, 32, 60, 52, 41],
-        }
+          name: this.pontosData.gastos.titulo,
+          data: this.pontosData.gastos.data,
+        },
       ],
       title: {
-        text: 'Pontos',
+        text: this.pontosData.titulo,
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      }
+      },
     }
 
     this.boxes = {
@@ -144,7 +187,7 @@ export class ClientDashPageComponent implements OnInit {
         },
         sparkline: {
           enabled: true,
-        }
+        },
       },
       dataLabels: {
         enabled: false,
@@ -152,92 +195,66 @@ export class ClientDashPageComponent implements OnInit {
       stroke: {
         curve: 'smooth',
       },
-      tooltip: {theme: "black"},
+      tooltip: { theme: 'black' },
       xaxis: {
         type: 'datetime',
-        categories: [
-          '2018-09-19T00:00:00.000Z',
-          '2018-09-19T01:30:00.000Z',
-          '2018-09-19T02:30:00.000Z',
-          '2018-09-19T03:30:00.000Z',
-          '2018-09-19T04:30:00.000Z',
-          '2018-09-19T05:30:00.000Z',
-          '2018-09-19T06:30:00.000Z',
-        ],
-      }
-    }
-
-    this.users = {
-      series: [
-        {
-          name: 'Users',
-          data: [10, 41, 35, 51, 49, 62, 69],
-        }
-      ],
-      title: {
-        text: 'Users',
-        offsetX: 30,
-        style: {
-          fontSize: '30px',
-          color: '#fff',
-        },
-      }      
+        categories: this.timestamp,
+      },
     }
 
     this.fidelizacoes = {
       series: [
         {
-          name: 'Fidelizacoes',
-          data: [6, 74, 40, 51, 49, 77, 4],
+          name: this.fidelizacoesData.title,
+          data: this.fidelizacoesData.data,
         },
       ],
       title: {
-        text: 'Fidelizações',
+        text: this.fidelizacoesData.title,
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      }
+      },
     }
 
     this.vendidos = {
       series: [
         {
-          name: 'Vendidos',
-          data: [5, 69, 35, 32, 49, 62, 86],
+          name: this.vendidosData.titulo,
+          data: this.vendidosData.unidades.data,
         },
       ],
       title: {
-        text: 'Vendidos',
+        text: this.vendidosData.titulo,
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      }
+      },
     }
 
     this.comprados = {
       series: [
         {
-          name: 'Comprados',
-          data: [10, 0, 12, 51, 35, 9, 63],
+          name: this.compradosData.titulo,
+          data: this.compradosData.unidades.data,
         },
       ],
       title: {
-        text: 'Comprados',
+        text: this.compradosData.titulo,
         offsetX: 30,
         style: {
           fontSize: '30px',
           color: '#fff',
         },
-      }
+      },
     }
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  page = "DashBoard"
+  page = 'DashBoard'
 }
