@@ -22,18 +22,18 @@ export class EmployeeService {
   }
 
   getEmployee(filter: string): Observable<Employee> {
-    return this.http.get<Employee>(baseUrl + '/search/' + filter)
+    return this.http.get<Employee>(baseUrl + 'search/' + filter)
   }
 
   createEmployee(employee: Employee):Observable<Employee> {
-    return this.http.post<Employee>(baseUrl + '/create', JSON.stringify(employee), httpOptions)
+    return this.http.post<Employee>(baseUrl + 'create', JSON.stringify(employee), httpOptions)
   }
 
   updateEmployee(id:string, employee: Employee):Observable<Employee> {
-    return this.http.put<Employee>(baseUrl + '/update/' + id, JSON.stringify(employee), httpOptions)
+    return this.http.put<Employee>(baseUrl + 'update/' + id, JSON.stringify(employee), httpOptions)
   }
 
   deleteEmployee(id:string):Observable<Employee> {
-    return this.http.delete<Employee>(baseUrl + '/delete/' + id)
+    return this.http.delete<Employee>(baseUrl + 'delete/' + id)
   }
 }

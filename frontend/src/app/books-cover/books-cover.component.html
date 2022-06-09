@@ -11,8 +11,8 @@
 <div class="{{this.bookEditbtn}}">
     <div class="box">
         <div class="flex">
-            <h1 class="visible">{{this.bookName}}</h1>
-            <svg class="visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" (click)="bookEdit()">
+            <h1>{{this.bookName}}</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" (click)="bookEdit()">
                 <line x1="12" y1="8" x2="12" y2="16" fill="#fff"  stroke-miterlimit="10" />
                 <line x1="16" y1="12" x2="8" y2="12" fill="#fff"  stroke-miterlimit="10" />
                 <circle cx="12" cy="12" r="10" fill="none"  />
@@ -21,10 +21,10 @@
         <div class="info">
             <div class="textos">
                 <div class="textosInfo">
-                    <h3 class="visible">Autor: {{this.bookAutor}}</h3>
-                    <h3 class="visible">ISPM: {{this.bookISBN}}</h3>
-                    <h3 class="visible">Unidades: {{this.bookUnits}}</h3>
-                    <h3 class="visible">Preço: {{this.bookPrice}} euros</h3>
+                    Autor:<input disabled="{{this.editCapability()}}" placeholder="{{this.bookAutor}}"> ISPM:
+                    <input disabled="{{this.editCapability()}}" placeholder="{{this.bookISBN}}"> Unidades:
+                    <input disabled="{{this.editCapability()}}" placeholder="{{this.bookUnits}}"> Preço:
+                    <input disabled="{{this.editCapability()}}" placeholder="{{this.bookPrice}} euros">
                     <div class="flex">
                         <h3>Usado:</h3>
                         <div class="{{getToogleState()}}">
@@ -32,6 +32,7 @@
                         </div>
                     </div>
                 </div>
+                <button class="btnEliminar" disabled="{{this.editCapability()}}" (click)="saveEditBook()">Submeter adlterações</button>
                 <button class="btnEliminar" (click)="actionBook()">{{this.getTextBtn()}}</button>
             </div>
             <img class="imagePopUp" src="{{this.imageUrl}}" alt="Imagem" />

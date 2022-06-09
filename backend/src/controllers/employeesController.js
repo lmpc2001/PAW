@@ -52,8 +52,19 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { name, email, password, phone_number } = request.body;
+            let { name, email, password, phone_number } = request.body.employee;
 
+            const user = await prisma.user.findUnique({
+                where:{
+                    email: email
+                }
+            });
+
+            if (user) {
+                return response.status(400).send("Email is already beeing used");
+            }
+
+            phone_number = Number(phone_number);
 
             await prisma.user.create({
                 data: {
@@ -115,7 +126,7 @@ module.exports = {
             phone_number = Number(phone_number);
 
 
-            const employee = await prisma.employees.findUnique({
+            let employee = await prisma.employees.findUnique({
                 where: {
                     id
                 }
@@ -123,6 +134,16 @@ module.exports = {
 
             if (!employee) {
                 return response.status(200).send("Employee not found!");
+            }
+
+            employee = await prisma.user.findUnique({
+                where: {
+                    email
+                }
+            })
+
+            if (employee) {
+                return response.status(400).send("Email is already beeing used");
             }
 
             await prisma.employees.update({

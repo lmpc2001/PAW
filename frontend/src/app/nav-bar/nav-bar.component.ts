@@ -12,10 +12,21 @@ interface linkProps {
 export class NavBarComponent implements OnInit {
   @Input() page: String | undefined
 
-  constructor() {}
+  constructor() {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    if (user.roule !== undefined) {
+      if (user.roule.description == 'admin') {
+        this.link1.name = 'Admin Dashboard'
+        this.link1.to = '/ShopDash'
+      } else if (user.roule.description == 'user') {
+        this.link1.name = 'Shop Dashboard'
+        this.link1.to = '/ShopDash'
+      }
+    }
+  }
 
-  getPage(linkName:string) {
-    switch (linkName){
+  getPage(linkName: string) {
+    switch (linkName) {
       case this.page:
         return "linksNav active";
       default:
@@ -38,5 +49,10 @@ export class NavBarComponent implements OnInit {
     to: '/MarketPlace',
   }
 
-  ngOnInit(): void {}
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  }
+
+  ngOnInit(): void { }
 }

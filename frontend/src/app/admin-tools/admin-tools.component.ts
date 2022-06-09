@@ -18,13 +18,14 @@ export class AdminToolsComponent implements OnInit {
     this.getAllClients();
   }
 
-  id = 'JJM35J7NGF31'
-  nome = 'João'
-  date = '28/07/96'
-  phone_number = 968547784
-  email = 'goncalopedrogil@gmail.com'
-  dataContextFunc = 'funcionario'
-  dataContextUser = 'user'
+  showAdminTools() {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    if(user.roule.description == 'admin') {
+      return ''
+    } else {
+      return 'hidde'
+    }
+  }
 
   dropDownClientes: string = 'inactive'
   dropDownFuncionarios: string = 'inactive'

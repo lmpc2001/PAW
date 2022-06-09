@@ -12,6 +12,10 @@ module.exports = {
             const { email, password } = request.body;
             const hashPassword = SHA256(password).toString();
 
+            if(email == null && password == null){
+                return response.status(404).send("An email and password must be provided!");
+            }
+
             const user = await prisma.user.findFirst({
                 where: {
                     email,
@@ -23,14 +27,14 @@ module.exports = {
                 return response.status(404).send("User not found!");
             }
 
-            let user_logedIn = await prisma.clients.findFirst({
+            let user_logedIn = await prisma.clients.findUnique({
                 where: {
                     user_id: user.id
                 }
             })
 
             if (!user_logedIn) {
-                user_logedIn = await prisma.employees.findFirst({
+                user_logedIn = await prisma.employees.findUnique({
                     where: {
                         user_id: user.id
                     },
@@ -54,6 +58,7 @@ module.exports = {
             return response.status(200).json({
                 login: true,
                 token: AES.encrypt(login_token, `${process.env.SECRET}`).toString(),
+                user: user_logedIn,
             })
         } catch (error) {
             next(error)
