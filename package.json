@@ -1,0 +1,10 @@
+{
+    "name": "rootfolder",
+    "scripts": {
+        "start-all": "concurrently \"cd frontend && yarn start\"  \"cd backend && yarn dev\" \"cd backend && yarn prisma studio\" ",
+        "test": "cd frontend && ng test"
+    },
+    "dependencies": {
+        "concurrently": "^7.2.1"
+    }
+}

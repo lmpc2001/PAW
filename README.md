@@ -20,10 +20,60 @@ Este projeto consiste no desenvolvimento de uma API REST e de um Website utiliza
 - [x] Integração de APIs externas para pagamentos ;
 - [x] Login;
 
-## Clonar o repositorio
-``` 
+
+## Comandos
+### Clonar o repositorio
+
+``` bash
 git clone https://github.com/lmpc2001/PAW.git
 ```
+
+### Ligar tudo
+
+```bash
+yarn start-all
+```
+
+### Prisma studio
+
+``` bash
+cd /backend && yarn prisma studio
+```
+
+### Ligar o backend
+
+```bash
+cd /backend && yarn dev
+```
+
+### Ligar o frontend
+
+``` bash
+cd /frontend && yarn start
+```
+
+
+## Credenciais para testes
+
+### Administrador
+
+```
+email: admin1@teste.com
+password: password1
+```
+### Funcionario
+
+```
+email: funcionario@teste.com
+password: password1
+```
+### Cliente
+
+```
+email: cliente@teste.com
+password: password1
+```
+
 ### Autores:
 
 - Luís Costa (8200737)
