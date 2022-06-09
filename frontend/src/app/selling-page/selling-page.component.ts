@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
+import { Router } from '@angular/router'
 import { BookService } from '../services/rest/book/book.service'
 import { Book } from '../services/rest/models/book'
 
@@ -33,6 +33,7 @@ export class SellingPageComponent implements OnInit {
   /* --------------------------------- */
   previewPhotos: string = ''
 
+  
   constructor(public rest: BookService, private router: Router) {}
 
   ngOnInit(): void {
@@ -90,6 +91,8 @@ export class SellingPageComponent implements OnInit {
       complete: () => this.router.navigate(['/']),
       error: (error) => console.log(error),
     })
+
+    this.changeBookBtnState()
   }
 
   // getBook(id: string) {
