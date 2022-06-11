@@ -105,5 +105,5 @@ password: password1
 ### Autores:
 
 - Luís Costa (8200737)
-- Gonçalo Gil (8200335)
+- [Gonçalo Gil](https://github.com/GoncaloGil0) (8200335)
 - José Conde (8200350)
