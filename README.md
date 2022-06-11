@@ -83,24 +83,11 @@ yarn test-angular
 
 ## Credenciais para testes
 
-### Administrador
-
-```
-email: admin@teste.com
-password: password1
-```
-### Funcionario
-
-```
-email: funcionario@teste.com
-password: password1
-```
-### Cliente
-
-```
-email: cliente@teste.com
-password: password1
-```
+| Tipo         | Email | Password |
+|--------------|:-----:|-----------:|
+| Administrador | admin@teste.com | password1 |
+| Funcionario | funcionario@teste.com | password1 |
+| Cliente | cliente@teste.com | password1 |
 
 ### Autores:
 
