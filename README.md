@@ -1,7 +1,11 @@
 # Programação em Ambiente Web
 
 ![PAW](https://img.shields.io/badge/Faculdade-PAW-orange)
-![Nota](https://img.shields.io/badge/Nota%20final-X-orange)
+![Nota final](https://img.shields.io/badge/Nota%20final-X-orange)
+<br/>
+![Nota milestone1](https://img.shields.io/badge/Nota%20Primeira%20Milestone-X-blue)
+![Nota milestone2](https://img.shields.io/badge/Nota%20Segunda%20Milestone-X-blue)
+
 
 ## Descrição
 Projeto desenvolvido no âmbito da disciplina de Programação em Ambiente Web
