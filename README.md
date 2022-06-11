@@ -57,15 +57,15 @@ yarn start-frontend
 ### Testes
 
 #### Testar tudo
-Para testar tudo certifique-se que tem o backend ligado, para isso pode usar os comandos [yarn start-all](####Ligar-tudo)
- ou [yarn start-backend](####Ligar-o-backend)
+Para testar tudo certifique-se que tem o backend ligado, para isso pode usar os comandos [yarn start-all](#ligar-tudo)
+ ou [yarn start-backend](#ligar-o-backend)
 ``` bash
 yarn test-all
 ```
 
 #### Testes á API pelo Newman
-Para testar a API certifique-se que tem o backend ligado, para isso pode usar os comandos [yarn start-all](####Ligar-tudo)
- ou [yarn start-backend](####Ligar-o-backend)
+Para testar a API certifique-se que tem o backend ligado, para isso pode usar os comandos [yarn start-all](#ligar-tudo)
+ ou [yarn start-backend](#ligar-o-backend)
 ``` bash
 yarn test-api
 ```
