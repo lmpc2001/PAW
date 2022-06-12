@@ -91,6 +91,6 @@ yarn test-angular
 
 ### Autores:
 
-- Luís Costa (8200737)
+- [Luís Costa](https://github.com/lmpc2001) (8200737)
 - [Gonçalo Gil](https://github.com/GoncaloGil0) (8200335)
 - José Conde (8200350)

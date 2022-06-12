@@ -21,23 +21,32 @@ module.exports = {
 
     async search(request, response, next) {
         try {
-            const { author, title, isbn, minimun, maximun } = request.body;
+            const { author, title, isbn, minimun, maximun, state } = request.body;
+
+            console.log(request.body)
 
             const books = await prisma.books.findMany({
                 where: {
-                    author: author != null ? author : undefined,
-                    title: title != null ? title : undefined,
-                    isbn: isbn != null ? isbn : undefined,
-                    price: (minimun & maximun != null) ? {
+                    author: author != '' ? author : undefined,
+                    title: title != '' ? title : undefined,
+                    isbn: isbn != '' ? isbn : undefined,
+                    price: (minimun & maximun > 0) ? {
                         gt: minimun,
                         lt: maximun
-                    } : undefined
+                    } : undefined,
+                    state: state != null ? state : undefined,
                 }
             });
+
+            // console.log(books)
 
             if (!books) {
                 return response.status(404).send("Book not found!");
             }
+
+            books.map(book => {
+                book.coverImage = `http://localhost:3333/uploads/${book.coverImage}`;
+            })
 
             // return response.status(200).render('bookView', { books })
             return response.status(200).json({ books })

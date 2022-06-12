@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { Book } from '../models/book';
+import { filter, Observable } from 'rxjs';
+import { Book, ISearchBook, IUpdateBook } from '../models/book';
 
 const baseUrl = 'http://localhost:3333/books';
 const httpOptions = {
@@ -22,8 +22,9 @@ export class BookService {
     return this.http.get(baseUrl, httpOptions);
   }
 
-  getBook(filter: string): Observable<Book> {
-    return this.http.get<Book>(baseUrl + '/search/' + filter)
+  getFilteredBook(filteredBook: ISearchBook): Observable<any> {
+    console.log(filteredBook.state)
+    return this.http.post(baseUrl +'/search/', filteredBook, httpOptions)
   }
 
   createBook(book: Book):Observable<Book> {
@@ -40,7 +41,7 @@ export class BookService {
     return this.http.post<Book>(baseUrl + '/create', formData, httpOptions)
   }
 
-  updateBook(id:string, book: Book):Observable<Book> {
+  updateBook(id:string, book: IUpdateBook):Observable<Book> {
     return this.http.put<Book>(baseUrl + '/update/' + id, JSON.stringify(book), httpOptions)
   }
 

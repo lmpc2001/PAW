@@ -10,7 +10,7 @@ const uploads = multer(multerConfig);
 const bookRouter = Router();
 
 bookRouter.get('/', bookController.index);
-bookRouter.get('/search/', bookController.search);
+bookRouter.post('/search/', bookController.search);
 bookRouter.post('/create', [loginMidlleware, checkRoule('user')],uploads.single('coverImage'),bookController.create);
 bookRouter.put('/update/:id', [loginMidlleware, checkRoule('user')],bookController.update);
 bookRouter.delete('/delete/:id', [loginMidlleware, checkRoule('user')],bookController.delete);

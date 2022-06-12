@@ -94,6 +94,16 @@ module.exports = {
         try {
             const { name, email, password, phone_number } = request.body;
 
+            const user = await prisma.user.findUnique({
+                where:{
+                    email: email
+                }
+            });
+
+            if (user) {
+                return response.status(400).send("Email is already beeing used");
+            }
+            
             await prisma.user.create({
                 data: {
                     employees: {

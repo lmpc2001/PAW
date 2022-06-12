@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { BookService } from '../services/rest/book/book.service'
+import { Book } from '../services/rest/models/book';
 
 @Component({
   selector: 'app-books-cover',
@@ -8,6 +9,8 @@ import { BookService } from '../services/rest/book/book.service'
   styleUrls: ['./books-cover.component.css'],
 })
 export class BooksCoverComponent implements OnInit {
+  bookData: Book | undefined
+
   @Input() id: string = ''
   @Input() imageUrl: string = ''
   @Input() bookName: string = 'Não existe'
@@ -16,6 +19,8 @@ export class BooksCoverComponent implements OnInit {
   @Input() bookISBN: string = 'Não existe'
   @Input() bookUnits: number = 0
   @Input() bookState: string = ''
+
+  @Input() books:Array<any> = [];
 
   @Input() page: string = ''
 
@@ -26,10 +31,10 @@ export class BooksCoverComponent implements OnInit {
   ngOnInit(): void {}
 
   getToogleState() {
-    if (this.bookState) {
-      return 'checkbox active'
+    if (this.bookState == 'Novo') {
+      return 'checkbox'
     }
-    return 'checkbox'
+    return 'checkbox active'
   }
 
   bookEdit() {
@@ -54,19 +59,11 @@ export class BooksCoverComponent implements OnInit {
       return 'Comprar livro'
     }
   }
-  
-  // handleBtnClick() {
-  //   if (this.page == 'Selling') {
-  //     this.rest.deleteBook(this.id)
-  //   } else {
-  //     return 'Comprar livro'
-  //   }
-  // }
 
 
   deleteBook(){
     this.rest.deleteBook(this.id).subscribe({
-      complete: () => console.log('Sucesso'),
+      complete: () => this.books.splice(this.books.indexOf(this.id)) ,
       error: (error:any) => console.log(error),
     })
   }
@@ -80,7 +77,15 @@ export class BooksCoverComponent implements OnInit {
   }
 
   saveEditBook(){
-    
+    this.rest.updateBook(this.id, {
+      price: this.bookPrice,
+      units_stock: this.bookUnits,
+      author: this.bookAutor,
+      isbn: this.bookISBN
+    }).subscribe({
+      complete: () => console.log('Sucesso') ,
+      error: (error:any) => console.log(error),
+    })
   }
 
 }

@@ -4,13 +4,13 @@
     <div class="filter">
         <h1>Filtros</h1>
         <h3>Nome do livro:</h3>
-        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="Nome" name="title" [(ngModel)]="title">
         <h3>ISBN do livro:</h3>
-        <input type="text" placeholder="ISBN">
+        <input type="text" placeholder="ISBN" name="isbn" [(ngModel)]="isbn">
         <h3>Valor minimo:</h3>
-        <input type="number" placeholder="Valor minimo" min="0">
+        <input type="number" placeholder="Valor minimo" min="0" name="valMin" [(ngModel)]="valMin">
         <h3>Valor maximo:</h3>
-        <input type="number" placeholder="Valor maximo" min="0">
+        <input type="number" placeholder="Valor maximo" min="0" name="valMax" [(ngModel)]="valMax">
         <h3>Autor do livro:</h3>
         <div class="dropDown" (click)="changeDropedAutor()">
             <div class="placeHolder">
@@ -20,41 +20,25 @@
                     <polyline points="5 9 12 16 19 9" fill="none" stroke-miterlimit="10" />
                 </svg>
             </div>
-            <div class={{this.dropedAutor}}>
-                <button class="escolha" (click)="changeAutorLabel('José Antonio Pinto')" href="">José Antonio
-                    Pinto</button>
-                <button class="escolha" (click)="changeAutorLabel('José Pinto')" href="">José Pinto</button>
-                <button class="escolha" (click)="changeAutorLabel('Gonçalo Pedro')" href="">Gonçalo Pedro</button>
-                <button class="escolha" (click)="changeAutorLabel('Luis Pires')" href="">Luis Pires</button>
-                <button class="escolha" (click)="changeAutorLabel('Frontend')" href="">Frontend</button>
-                <button class="escolha" (click)="changeAutorLabel('BackEnd')" href="">Backend</button>
-                <button class="escolha" (click)="changeAutorLabel('DEVOPS')" href="">DEVOPS</button>
+            <div class={{this.dropedAutor}} *ngFor="let book of this.books">
+                <button class="escolha" (click)="changeAutorLabel(book.author)" href="">{{book.author}}</button>
             </div>
         </div>
 
         <div class="flex">
-            <h3>Usados</h3>
+            <h3>Estado do livro: {{this.state}}</h3>
             <div class="checkbox">
-                <input type="checkbox" value="1" id="checkboxOneInput" />
+                <input name="inputCheckbox" ng-model="inputCheckbox" type="checkbox" value="1" id="checkboxOneInput" (change)="changeBookState()" />
                 <label for="checkboxOneInput"></label>
             </div>
         </div>
-
-        <div class="flex">
-            <h3>Novos</h3>
-            <div class="checkbox">
-                <input type="checkbox" value="1" id="checkboxTwoInput" />
-                <label for="checkboxTwoInput"></label>
-            </div>
-
-        </div>
-
+        <button class="btnConfirmar" (click)="this.getFilteredBooks()">Filtrar livro</button>
     </div>
 
     <div class="library">
         <h1>Livros</h1>
         <div class="booksArray" *ngFor="let book of this.books">
-            <app-books-cover [page]="this.page" [bookAutor]="book.author" [bookISBN]="book.isbn" [bookName]="book.title"
+            <app-books-cover [page]="this.page" [books]="books" [bookAutor]="book.author" [bookISBN]="book.isbn" [bookName]="book.title"
                 [bookPrice]="book.price" [bookState]="book.state" [bookUnits]="book.units_stock"
                 [imageUrl]="book.coverImage" class="gridItem"></app-books-cover>
         </div>

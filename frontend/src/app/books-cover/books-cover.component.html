@@ -21,10 +21,11 @@
         <div class="info">
             <div class="textos">
                 <div class="textosInfo">
-                    Autor:<input disabled="{{this.editCapability()}}" placeholder="{{this.bookAutor}}"> ISPM:
-                    <input disabled="{{this.editCapability()}}" placeholder="{{this.bookISBN}}"> Unidades:
-                    <input disabled="{{this.editCapability()}}" placeholder="{{this.bookUnits}}"> Preço:
-                    <input disabled="{{this.editCapability()}}" placeholder="{{this.bookPrice}} euros">
+                    Autor:<input disabled="{{this.editCapability()}}" placeholder="{{this.bookAutor}}" name="bookAutor" [(ngModel)]="bookAutor"> 
+                    ISBN:<input disabled="{{this.editCapability()}}" placeholder="{{this.bookISBN}}" name="bookISBN" [(ngModel)]="bookISBN"> 
+                    Unidades:<input disabled="{{this.editCapability()}}" placeholder="{{this.bookUnits}}" name="bookUnits" [(ngModel)]="bookUnits"> 
+                    Preço:<input disabled="{{this.editCapability()}}" placeholder="{{this.bookPrice}} euros" name="bookPrice" [(ngModel)]="bookPrice">
+                    
                     <div class="flex">
                         <h3>Usado:</h3>
                         <div class="{{getToogleState()}}">

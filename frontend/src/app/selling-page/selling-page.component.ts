@@ -9,7 +9,7 @@ import { Book } from '../services/rest/models/book'
   styleUrls: ['./selling-page.component.css'],
 })
 export class SellingPageComponent implements OnInit {
-  books!: any;
+  books: Array<any> = [];
 
   @Input() title: string = ''
   @Input() author: string = ''
@@ -18,23 +18,12 @@ export class SellingPageComponent implements OnInit {
   @Input() units_stock: number = 0
   @Input() coverImage!: File
   @Input() bookData: Book | undefined
+  @Input() state: 'Novo' | 'Usado' = 'Novo';
 
-  /* -----------------------------
-  Variaveis para ir buscar à DB para a popUp dos livros
-  ----------------------------- */
-  id: string =''
-  imageUrl: string = ''
-  bookName: string = ''
-  bookPrice: number = 0
-  bookAutor: string = ''
-  bookISBN: string = ''
-  bookUnits: number = 0
-  bookState: string = ''
-  /* --------------------------------- */
   previewPhotos: string = ''
 
-  
-  constructor(public rest: BookService, private router: Router) {}
+
+  constructor(public rest: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -66,6 +55,14 @@ export class SellingPageComponent implements OnInit {
     this.client = client
   }
 
+  changeBookState() {
+    if (this.state == 'Novo') {
+      this.state = 'Usado'
+    } else {
+      this.state = 'Novo'
+    }
+  }
+
   setImage(event: Event) {
     const element = event.target as HTMLInputElement
     let file: FileList | null = element.files
@@ -83,29 +80,17 @@ export class SellingPageComponent implements OnInit {
       isbn: this.isbn,
       coverImage: this.coverImage,
       units_stock: this.units_stock,
-      state: "Usado",
+      state: this.state,
     })
 
 
     this.rest.createBook(this.bookData).subscribe({
-      complete: () => this.router.navigate(['/']),
-      error: (error) => console.log(error),
+      complete: () => console.log('Sucesso'),
+      error: (error) => this.router.navigate(['/Selling']),
     })
 
     this.changeBookBtnState()
   }
-
-  // getBook(id: string) {
-  //   this.rest.getBook(id).subscribe((book:any) => {
-  //     this.imageUrl = book.coverImage.
-  //     this.bookName = book.title
-  //     this.bookPrice = book.price,
-  //     this.bookAutor = book.author,
-  //     this.bookISBN = book.isbn
-  //     this.bookUnits = book.units_stock
-  //     this.bookState = book.state
-  //   })
-  // }
 
   getAllBooks() {
     this.rest.getAllBooks().subscribe((data: any) => {
