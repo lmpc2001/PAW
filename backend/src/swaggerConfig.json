@@ -345,6 +345,13 @@
                     "Clients"
                 ],
                 "description": "Returns a specific client from the system",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "A specific client.",
@@ -402,6 +409,20 @@
                     {
                         "name": "phone_number",
                         "in": "body"                        
+                    }
+                ]
+            },
+            "delete": {
+                "description": "Delete an existent client from the system",
+                "tags": [
+                    "Clients"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Client ID",
+                        "in": "path",
+                        "required": true
                     }
                 ]
             },
@@ -533,6 +554,13 @@
                     "Employees"
                 ],
                 "description": "Returns a specific employee from the system",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "A specific employee.",
@@ -594,7 +622,7 @@
                 ]
             },
             "delete": {
-                "description": "Delete an existent clinet from the system",
+                "description": "Delete an existent employee from the system",
                 "tags": [
                     "Employees"
                 ],
@@ -735,6 +763,13 @@
                     "Purchases"
                 ],
                 "description": "Returns a specific purchase from the system",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "A specific purchase.",
