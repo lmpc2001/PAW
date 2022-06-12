@@ -38,7 +38,7 @@
     <div class="library">
         <h1>Livros</h1>
         <div class="booksArray" *ngFor="let book of this.books">
-            <app-books-cover [page]="this.page" [books]="books" [bookAutor]="book.author" [bookISBN]="book.isbn" [bookName]="book.title"
+            <app-books-cover [page]="this.page" [books]="books" [id]="book.id" [bookAutor]="book.author" [bookISBN]="book.isbn" [bookName]="book.title"
                 [bookPrice]="book.price" [bookState]="book.state" [bookUnits]="book.units_stock"
                 [imageUrl]="book.coverImage" class="gridItem"></app-books-cover>
         </div>
