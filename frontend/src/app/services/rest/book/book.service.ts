@@ -42,7 +42,7 @@ export class BookService {
   }
 
   updateBook(id:string, book: IUpdateBook):Observable<Book> {
-    return this.http.put<Book>(baseUrl + '/update/' + id, JSON.stringify(book), httpOptions)
+    return this.http.put<Book>(baseUrl + '/update/' + id, book, httpOptions)
   }
 
   deleteBook(id:string):Observable<Book> {

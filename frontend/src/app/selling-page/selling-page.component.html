@@ -35,7 +35,7 @@
                     <div class="flex">
                         <h3>{{this.state}}</h3>
                         <div class="checkbox">
-                            <input type="checkbox" value="1" id="checkboxOneInput" (change)="changeBookState()"/>
+                            <input type="checkbox" value="1" id="checkboxOneInput" (change)="changeBookState()" />
                             <label for="checkboxOneInput"></label>
                         </div>
                     </div>
@@ -51,6 +51,8 @@
             <input type="text" placeholder="ISBN" name="isbn" [(ngModel)]="isbn">
             <h3>Valor minimo:</h3>
             <input type="number" placeholder="Valor minimo" min="0" name="valMin" [(ngModel)]="valMin">
+            <h3>Valor maximo:</h3>
+            <input type="number" placeholder="Valor maximo" min="0" name="valMax" [(ngModel)]="valMax">
             <h3>Autor:</h3>
             <div class="dropDown" (click)="changeDropedAutor()">
                 <div class="placeHolder">
@@ -64,15 +66,15 @@
                     <button class="escolha" (click)="changeAutorLabel(book.author)" href="">{{book.author}}</button>
                 </div>
             </div>
-
+            <button class="btnConfirmar" (click)="this.getFilteredBooks()">Filtrar livro</button>
         </div>
     </div>
 
     <div class="library">
         <h1>Vendas</h1>
         <div class="booksArray" *ngFor="let book of this.books">
-            <app-books-cover [page]="this.page" [id]="book.id" [bookAutor]="book.author" [bookISBN]="book.isbn" [bookName]="book.title"
-                [bookPrice]="book.price" [bookState]="book.state" [bookUnits]="book.units_stock"
+            <app-books-cover [page]="this.page" [id]="book.id" [bookAutor]="book.author" [bookISBN]="book.isbn"
+                [bookName]="book.title" [bookPrice]="book.price" [bookState]="book.state" [bookUnits]="book.units_stock"
                 [imageUrl]="book.coverImage" class="gridItem"></app-books-cover>
         </div>
 

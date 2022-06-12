@@ -19,6 +19,8 @@ export class SellingPageComponent implements OnInit {
   @Input() coverImage!: File
   @Input() bookData: Book | undefined
   @Input() state: 'Novo' | 'Usado' = 'Novo';
+  @Input() valMin: number = 0;
+  @Input() valMax: number = 0;
 
   previewPhotos: string = ''
 
@@ -109,5 +111,20 @@ export class SellingPageComponent implements OnInit {
       this.createBookBtn = 'create active'
       this.newImage = 'new-image cross'
     }
+  }
+
+  getFilteredBooks() {
+    console.log(this.state);
+    this.rest.getFilteredBook({
+      state: this.state,
+      author: this.author,
+      isbn: this.isbn,
+      title: this.title,
+      valMin: this.valMin,
+      valMax: this.valMax
+    }).subscribe((data: any) => {
+      console.log(data)
+      this.books = data.books;
+    })
   }
 }

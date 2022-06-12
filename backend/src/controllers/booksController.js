@@ -100,9 +100,9 @@ module.exports = {
     async update(request, response, next) {
         try {
             const { id } = request.params;
-            const { title,
+            let { title,
                 author,
-                bar_code,
+                units_stock,
                 price,
                 state,
                 coverImage } = request.body;
@@ -117,6 +117,9 @@ module.exports = {
                 return response.status(200).send("Book not found!");
             }
 
+            units_stock = Number(units_stock);
+            price = Number(price);
+
             await prisma.books.update({
                 where: {
                     id
@@ -124,7 +127,6 @@ module.exports = {
                 data: {
                     title,
                     author,
-                    bar_code,
                     price,
                     state,
                     coverImage

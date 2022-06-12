@@ -71,12 +71,13 @@ export class BooksCoverComponent implements OnInit {
   editCapability(){
     const user = JSON.parse(localStorage.getItem('user')!);
     if(user.roule.description == 'admin' || user.roule.description == 'user') {
-      return ""
+      return false
     } 
-    return "true"
+    return true
   }
 
   saveEditBook(){
+    console.log('entrei')
     this.rest.updateBook(this.id, {
       price: this.bookPrice,
       units_stock: this.bookUnits,

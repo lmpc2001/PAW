@@ -240,12 +240,6 @@
 									"type": "text"
 								},
 								{
-									"key": "bar_code",
-									"value": " codigodebarras_1",
-									"type": "text",
-									"disabled": true
-								},
-								{
 									"key": "price",
 									"value": " 80",
 									"type": "text"
@@ -334,7 +328,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"employee_id\": \"625b0a7c44470934aa48d46a\",\r\n    \"title\": \"title_1\",\r\n    \"author\": \"autor_1\",\r\n    \"bar_code\": \"codigodebarras_2\",\r\n    \"price\": 4.65,\r\n    \"state\": \"usado\"\r\n}",
+							"raw": "{\r\n    \"employee_id\": \"625b0a7c44470934aa48d46a\",\r\n    \"title\": \"title_1\",\r\n    \"author\": \"autor_1\",\r\n    \"price\": 4.65,\r\n    \"state\": \"usado\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -693,7 +687,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"employee_id\": \"625b0a7c44470934aa48d46a\",\r\n    \"title\": \"title_1\",\r\n    \"author\": \"autor_1\",\r\n    \"bar_code\": \"codigodebarras_1\",\r\n    \"price\": 4.65,\r\n    \"state\": \"usado\"\r\n}",
+							"raw": "{\r\n    \"employee_id\": \"625b0a7c44470934aa48d46a\",\r\n    \"title\": \"title_1\",\r\n    \"author\": \"autor_1\",\r\n     \"price\": 4.65,\r\n    \"state\": \"usado\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
