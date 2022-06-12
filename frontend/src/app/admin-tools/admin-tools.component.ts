@@ -54,14 +54,12 @@ export class AdminToolsComponent implements OnInit {
 
   getAllEmployees() {
     this.restE.getAllEmployees().subscribe((data: any) => {
-      console.log(data);
       this.employees = data.employees;
     })
   }
 
   getAllClients() {
     this.restC.getAllClients().subscribe((data: any) => {
-      console.log(data);
       this.clients = data.clients;
     })
   }

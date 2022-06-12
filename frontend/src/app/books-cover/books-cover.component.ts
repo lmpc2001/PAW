@@ -77,7 +77,6 @@ export class BooksCoverComponent implements OnInit {
   }
 
   saveEditBook(){
-    console.log('entrei')
     this.rest.updateBook(this.id, {
       price: this.bookPrice,
       units_stock: this.bookUnits,

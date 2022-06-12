@@ -23,7 +23,6 @@ export class BookService {
   }
 
   getFilteredBook(filteredBook: ISearchBook): Observable<any> {
-    console.log(filteredBook.state)
     return this.http.post(baseUrl +'/search/', filteredBook, httpOptions)
   }
 

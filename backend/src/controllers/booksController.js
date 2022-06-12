@@ -23,7 +23,6 @@ module.exports = {
         try {
             const { author, title, isbn, minimun, maximun, state } = request.body;
 
-            console.log(request.body)
 
             const books = await prisma.books.findMany({
                 where: {
@@ -38,7 +37,6 @@ module.exports = {
                 }
             });
 
-            // console.log(books)
 
             if (!books) {
                 return response.status(404).send("Book not found!");

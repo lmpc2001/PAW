@@ -114,7 +114,6 @@ export class SellingPageComponent implements OnInit {
   }
 
   getFilteredBooks() {
-    console.log(this.state);
     this.rest.getFilteredBook({
       state: this.state,
       author: this.author,
