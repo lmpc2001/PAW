@@ -32,8 +32,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/book"
+                                        "$ref": "#/components/schemas/Book"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Book not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -48,78 +58,61 @@
                 "parameters": [
                     {
                         "name": "title",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "author",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "price",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "units_stock",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "isbn",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "state",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "coverImage",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "employee_id",
-                        "in": "request",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "user_id",
-                        "in": "request",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "New Book was created.",
+                        "description": "Book updated.",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/book"
+                                        "$ref": "#/components/schemas/Book"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Book not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -136,36 +129,37 @@
                 "parameters": [
                     {
                         "name": "id",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "path"                        
                     },
                     {
                         "name": "author",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "path"                        
                     },
                     {
                         "name": "isbn",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "path"                        
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "A specific book.",  
+                        "description": "A specific book.",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/book"
+                                        "$ref": "#/components/schemas/Book"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Book not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -181,52 +175,31 @@
                     {
                         "name": "id",
                         "description": "Book ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "path"
                     },
                     {
                         "name": "title",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "author",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "price",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "units_stock",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "isbn",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     },
                     {
                         "name": "state",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "body"
                     }
                 ]
             },
@@ -239,10 +212,7 @@
                     {
                         "name": "id",
                         "description": "Book ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "path"                        
                     }
                 ]
             },
@@ -254,7 +224,7 @@
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/components/schemas/book"
+                                    "$ref": "#/components/schemas/Book"
                                 }
                             }
                         }
@@ -263,28 +233,22 @@
                 "201": {
                     "description": "New Book is created.",
                     "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "string",
-                                "items": {
-                                    "$ref": "#/components/schemas/book"
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
-                    }
                 },
                 "404": {
                     "description": "Book not found",
                     "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "string",
-                                "items": {
-                                    "$ref": "#/components/schemas/book"
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
-                    }
                 }
             }
         },
@@ -302,8 +266,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/client"
+                                        "$ref": "#/components/schemas/Client"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Client not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -319,38 +293,23 @@
                     {
                         "name": "employee_id",
                         "optional": true,
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "name",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "email",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "password",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "phone_number",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     }
                 ],
                 "responses": {
@@ -361,8 +320,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/client"
+                                        "$ref": "#/components/schemas/Client"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Client not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -379,22 +348,23 @@
                 "responses": {
                     "200": {
                         "description": "A specific client.",
-                        "parameters": [
-                            {
-                                "name": "id",
-                                "in": "params",
-                                "schema": {
-                                    "$ref": "#/definitions/Clients"
-                                }
-                            }
-                        ],
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/client"
+                                        "$ref": "#/components/schemas/Client"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Client not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -410,46 +380,28 @@
                     {
                         "name": "id",
                         "description": "Book ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Books"
-                        }
+                        "in": "path"                        
                     },
                     {
                         "name": "employee_id",
                         "optional": true,
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "name",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "email",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "password",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     },
                     {
                         "name": "phone_number",
-                        "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Clients"
-                        }
+                        "in": "body"                        
                     }
                 ]
             },
@@ -461,7 +413,7 @@
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/components/schemas/book"
+                                    "$ref": "#/components/schemas/Book"
                                 }
                             }
                         }
@@ -470,28 +422,22 @@
                 "201": {
                     "description": "New Client was created.",
                     "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "string",
-                                "items": {
-                                    "$ref": "#/components/schemas/book"
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
-                    }
                 },
                 "404": {
                     "description": "Client not found",
                     "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "string",
-                                "items": {
-                                    "$ref": "#/components/schemas/book"
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
-                    }
                 }
             }
         },
@@ -509,8 +455,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/employee"
+                                        "$ref": "#/components/schemas/Employee"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Employee not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -526,30 +482,22 @@
                     {
                         "name": "name",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     },
                     {
                         "name": "email",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     },
                     {
                         "name": "password",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     },
                     {
                         "name": "phone_number",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -560,8 +508,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/employee"
+                                        "$ref": "#/components/schemas/Employee"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Employee not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -578,22 +536,23 @@
                 "responses": {
                     "200": {
                         "description": "A specific employee.",
-                        "parameters": [
-                            {
-                                "name": "id",
-                                "in": "params",
-                                "schema": {
-                                    "$ref": "#/definitions/Employees"
-                                }
-                            }
-                        ],
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/employee"
+                                        "$ref": "#/components/schemas/Employee"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Employee not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -609,38 +568,28 @@
                     {
                         "name": "id",
                         "description": "Book ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "in": "path",
+                        "required": true
                     },
                     {
                         "name": "name",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     },
                     {
                         "name": "email",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     },
                     {
                         "name": "password",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     },
                     {
                         "name": "phone_number",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "required": true
                     }
                 ]
             },
@@ -653,10 +602,8 @@
                     {
                         "name": "id",
                         "description": "Employee ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/Employees"
-                        }
+                        "in": "path",
+                        "required": true
                     }
                 ]
             },
@@ -668,7 +615,7 @@
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/components/schemas/employee"
+                                    "$ref": "#/components/schemas/Employee"
                                 }
                             }
                         }
@@ -677,28 +624,22 @@
                 "201": {
                     "description": "New Employee was created.",
                     "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "string",
-                                "items": {
-                                    "$ref": "#/components/schemas/book"
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
-                    }
                 },
                 "404": {
                     "description": "Employee not found",
                     "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "string",
-                                "items": {
-                                    "$ref": "#/components/schemas/book"
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
-                    }
                 }
             }
         },
@@ -716,8 +657,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/purchase"
+                                        "$ref": "#/components/schemas/Purchase"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Purchase not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -733,30 +684,22 @@
                     {
                         "name": "employee_id",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     },
                     {
                         "name": "client_id",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     },
                     {
                         "name": "nif",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     },
                     {
                         "name": "books",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -767,8 +710,18 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/purchase"
+                                        "$ref": "#/components/schemas/Purchase"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Purchase not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -785,22 +738,23 @@
                 "responses": {
                     "200": {
                         "description": "A specific purchase.",
-                        "parameters": [
-                            {
-                                "name": "id",
-                                "in": "params",
-                                "schema": {
-                                    "$ref": "#/definitions/purchase"
-                                }
-                            }
-                        ],
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/purchase"
+                                        "$ref": "#/components/schemas/Purchase"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Purchase not found",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
@@ -816,38 +770,28 @@
                     {
                         "name": "id",
                         "description": "Book ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "in": "path",
+                        "required": true
                     },
                     {
                         "name": "employee_id",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     },
                     {
                         "name": "client_id",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     },
                     {
                         "name": "nif",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     },
                     {
                         "name": "books",
                         "in": "body",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "required": true
                     }
                 ]
             },
@@ -860,10 +804,8 @@
                     {
                         "name": "id",
                         "description": "Book ID",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/purchase"
-                        }
+                        "in": "path",
+                        "required": true
                     }
                 ]
             },
@@ -875,7 +817,7 @@
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/components/schemas/purchase"
+                                    "$ref": "#/components/schemas/Purchase"
                                 }
                             }
                         }
@@ -888,7 +830,7 @@
                             "schema": {
                                 "type": "string",
                                 "items": {
-                                    "$ref": "#/components/schemas/purchase"
+                                    "$ref": "#/components/schemas/Purchase"
                                 }
                             }
                         }
@@ -901,7 +843,7 @@
                             "schema": {
                                 "type": "string",
                                 "items": {
-                                    "$ref": "#/components/schemas/purchase"
+                                    "$ref": "#/components/schemas/Purchase"
                                 }
                             }
                         }
@@ -921,9 +863,12 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/employee"
+                                    "type": "object",
+                                    "properties": {
+                                        "token": {
+                                            "type":"string",
+                                            "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                                        }
                                     }
                                 }
                             }
@@ -932,63 +877,252 @@
                     "404": {
                         "description": "User not found",
                         "content": {
-                            "application/json": {
+                            "aplication/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/employee"
-                                    }
+                                    "$ref": "#/components/schemas/GeneralError"
                                 }
                             }
                         }
                     }
                 }
             }
-        },
-        "/session/logout": {
-            "post": {
-                "description": "User loged out from the system",
-                "tags": [
-                    "Session"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "params",
-                        "schema": {
-                            "$ref": "#/definitions/session"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "LogedOut",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/session"
-                                    }
-                                }
-                            }
-                        }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GeneralError": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
                     },
-                    "404": {
-                        "description": "User not found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/session"
-                                    }
-                                }
-                            }
-                        }
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "password": {
+                        "type": "string",
+                        "format": "password"
+                    }
+                }
+            },
+            "Client": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "telephone_contact"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "employee_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "nif": {
+                        "type": "integer"
+                    },
+                    "phone_number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "created_at": {
+                        "type": "datetime",
+                        "format": "YYYY-MM-DDTHH:mm:SSZ"
+                    }
+                }
+            },
+            "Employee": {
+                "type": "object",
+                "required": [
+                    "roule_id",
+                    "name",
+                    "telephone_contact"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "roule_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "created_at": {
+                        "type": "datetime",
+                        "format": "YYYY-MM-DDTHH:mm:SSZ"
+                    }
+                }
+            },
+            "Book": {
+                "type": "object",
+                "required": [
+                    "employee_id",
+                    "title",
+                    "author",
+                    "state",
+                    "price",
+                    "isbn",
+                    "units_stock",
+                    "cover_image"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "employee_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "author": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string",
+                        "format": "novo/usado"
+                    },
+                    "price": {
+                        "type": "float"
+                    },
+                    "isbn": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "units_stock": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "cover_image": {
+                        "type": "string"
+                    },
+                    "registered_at": {
+                        "type": "datetime",
+                        "format": "YYYY-MM-DDTHH:mm:SSZ"
+                    }
+                }
+            },
+            "Purchase": {
+                "type": "object",
+                "required": [
+                    "client_id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "employee_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "client_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "nif": {
+                        "type": "integer"
+                    },
+                    "total_price": {
+                        "type": "float"
+                    },
+                    "acumulated_points": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "created_at": {
+                        "type": "datetime",
+                        "format": "YYYY-MM-DDTHH:mm:SSZ"
+                    }
+                }
+            },
+            "Accounts": {
+                "type": "object",
+                "required": [
+                    "client_id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "client_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "points": {
+                        "type": "int",
+                        "format": "int32"
+                    },
+                    "transfer_description": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "datetime",
+                        "format": "YYYY-MM-DDTHH:mm:SSZ"
+                    }
+                }
+            },
+            "Roules": {
+                "type": "object",
+                "required": [
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "description": {
+                        "type": "string"
                     }
                 }
             }
+
         }
     }
 }
