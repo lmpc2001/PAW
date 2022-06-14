@@ -32,6 +32,7 @@ export class LoginPageComponent implements OnInit {
         email: this.email,
         password: this.password
       }).subscribe((data: any) => {
+        console.log(data);
         if (data.login) {
           localStorage.setItem('token', data.token);
           localStorage.setItem('user', JSON.stringify(data.user));
@@ -41,7 +42,7 @@ export class LoginPageComponent implements OnInit {
             if (data.user.roule === undefined) {
               this.router.navigate(['ClientDash'])
             } else {
-              data.user.roule.description == 'admin' && this.router.navigate(['/', 'ShopDash'])
+              data.user.roule.description == 'admin' || data.user.roule.description == 'user' && this.router.navigate(['/', 'ShopDash'])
             }
           }
         }
