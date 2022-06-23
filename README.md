@@ -1,10 +1,10 @@
 # Programação em Ambiente Web
 
 ![PAW](https://img.shields.io/badge/Faculdade-PAW-orange)
-![Nota final](https://img.shields.io/badge/Nota%20final-X-orange)
+![Nota final](https://img.shields.io/badge/Nota%20final-14-orange)
 <br/>
 ![Nota milestone1](https://img.shields.io/badge/Nota%20Primeira%20Milestone-15-blue)
-![Nota milestone2](https://img.shields.io/badge/Nota%20Segunda%20Milestone-X-blue)
+![Nota milestone2](https://img.shields.io/badge/Nota%20Segunda%20Milestone-14-blue)
 
 
 ## Descrição
